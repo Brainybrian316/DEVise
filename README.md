@@ -22,7 +22,7 @@
 - [Meet The Developer](#meet-the-developer)
 - [Contributing](#-contributing)
 - [Support](#show-your-support)
-- [Contributors](#-contributors)
+- [Contributors](#contributors)
 - [License](#-license)
 
 ***
