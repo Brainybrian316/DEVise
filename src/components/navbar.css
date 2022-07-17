@@ -1,0 +1,23 @@
+/* #nav-image {
+  width: 10vw;
+  height: 10vh;
+  margin: 0;
+  padding: 0;
+  border-radius: 100%;
+} */
+
+
+#fancy-nav {
+  font-family:arial rgb(255, 254, 254);
+  background-image: 
+    linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 
+    background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;  
+  animation: move 1000s linear infinite;
+}
+@keyframes move {
+  to {
+    background-position: 4500vh;
+  }
+  }
