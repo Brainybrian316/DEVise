@@ -20,14 +20,11 @@ export default function Navbar() {
         let dropDownMenu= document.getElementById('header-menu')
         btn.classList.toggle('active');
         dropDownMenu.classList.toggle('active');
-    
     }
     )
   });
 
-    
-
-
+  
 
 
   return (
@@ -41,36 +38,27 @@ export default function Navbar() {
         <i className="fa-solid fa-z"></i>
         </div>
         <div className="nav-item nav-btn " id="header-btn" 
-        onClick={() => setIsOpen(!isOpen)}
-        >
+        onClick={() => setIsOpen(!isOpen)}>
             <span></span>
             <span></span>
             <span></span>
         </div>
     </div>
-    <div className="header-nav" id="header-menu"
-     onClick={handleClick}
-    >
+    <div className="header-nav" id="header-menu">
         <div className="nav-left">
             <div className="nav-item text-center">
-                <a href="#">
-                    <span className="icon">
-                        <i className="fab fa-wrapper fa-github" aria-hidden="true"></i>
-                    </span>
+                <a href="#home">
+                       Home
                 </a>
             </div>
             <div className="nav-item text-center">
-                <a href="#">
-                    <span className="icon">
-                        <i className="fab fa-wrapper fa-slack" aria-hidden="true"></i>
-                    </span>
+                <a href="#ideabin">
+                   IdeaBin
                 </a>
             </div>
             <div className="nav-item text-center">
-                <a href="#">
-                    <span className="icon">
-                        <i className="fab fa-wrapper fa-twitter" aria-hidden="true"></i>
-                    </span>
+                <a href="#projectfeed">
+                    ProjectFeed
                 </a>
             </div>
             <div className="nav-item has-sub toggle-hover" id="dropdown">
@@ -84,24 +72,16 @@ export default function Navbar() {
         </div>
 
         <div className="nav-right">
-            <div className="nav-item active">
-                <a href="#">Active</a>
+            <div className="nav-item">
+                <a href="#login">Login</a>
             </div>
             <div className="nav-item">
-                <a href="#">Link 1</a>
+                <a href="#signup">Sign-Up</a>
             </div>
-            <div className="nav-item has-sub" id="dropdown">
-                <a className="nav-dropdown-link">Click Me</a>
-                <ul className="dropdown-menu" role="menu">
-                    <li role="menu-item"><a href="#">First Item</a></li>
-                    <li role="menu-item"><a href="#">Second Item</a></li>
-                    <li role="menu-item"><a href="#">Third Item</a></li>
-                    <li className="dropdown-menu-divider"></li>
-                    <li role="menu-item"><a href="#">Fourth Item</a></li>
-                </ul>
+            
             </div>
         </div>
     </div>
-</div>
+
   );
 }
