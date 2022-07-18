@@ -1,6 +1,7 @@
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema,  } = mongoose;
 
-const DeviseProjectsSchema = new Schema({
+const deviseProjectsSchema = new Schema({
   // id is a string for now, if we decide to use something like uuid we can change that later.
   id: {
     type: String,
@@ -11,11 +12,11 @@ const DeviseProjectsSchema = new Schema({
   },
   //description is the detailed description of the project, displayed on the project page.
   description: {
-    type: Text,
+    type: String,
   },
   //summary is the SHORT description of the project - this should be displayed on the rendered card.
   summary: {
-    type: Text,
+    type: String,
   },
   //for now the authors are DEVise. Eventually it will include all contributors to a template similar to an nom package.
   authors: [
@@ -54,9 +55,11 @@ const DeviseProjectsSchema = new Schema({
     default: Date.now,
   },
   // this will be how the model knows which file to associate with the project, or we can make it a download link to a separate server/drive if needed.
-  templateId: {
-    type: String,
-  },
+  // templateId: {
+  //   type: String,
+  // },
 });
 
-module.exports = DeviseProjectsSchema;
+const DevProjects = mongoose.model('DevProjects', deviseProjectsSchema);
+
+module.exports = DevProjects;

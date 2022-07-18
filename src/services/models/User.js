@@ -13,6 +13,11 @@ const userSchema = new Schema({
     required: true,
     trim: true,
   },
+   username: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   email: {
     type: String,
     required: true,
@@ -28,9 +33,7 @@ const userSchema = new Schema({
     required: true,
     validate: {
       validator: function (v) {
-        return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
-          v
-        );
+        return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(v);
       },
     },
   },
