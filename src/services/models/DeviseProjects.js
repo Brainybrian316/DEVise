@@ -1,6 +1,7 @@
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-const DeviseProjectsSchema = new Schema({
+const deviseProjectsSchema = new Schema({
   // id is a string for now, if we decide to use something like uuid we can change that later.
   id: {
     type: String,
@@ -59,4 +60,6 @@ const DeviseProjectsSchema = new Schema({
   },
 });
 
-module.exports = DeviseProjectsSchema;
+const DevProjects = mongoose.model('DevProjects', deviseProjectsSchema);
+
+module.exports = DevProjects;
