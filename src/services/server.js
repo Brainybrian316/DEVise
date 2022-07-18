@@ -25,8 +25,8 @@ const apolloServer = new ApolloServer({
 });
 
 
- apolloServer.start();
-apolloServer.applyMiddleware({ app, path: '/graphql' });
+//  apolloServer.start();
+// apolloServer.applyMiddleware({ app, path: '/graphql' });
 
 
 
