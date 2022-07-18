@@ -55,9 +55,9 @@ const deviseProjectsSchema = new Schema({
     default: Date.now,
   },
   // this will be how the model knows which file to associate with the project, or we can make it a download link to a separate server/drive if needed.
-  templateId: {
-    type: String,
-  },
+  // templateId: {
+  //   type: String,
+  // },
 });
 
 const DevProjects = mongoose.model('DevProjects', deviseProjectsSchema);
