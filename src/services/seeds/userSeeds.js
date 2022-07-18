@@ -16,7 +16,7 @@ console.log('Seeding users...');
       lastName: faker.name.lastName(),
       username: faker.fake('{{name.firstName}} {{name.lastName}}'),
       email: faker.internet.email(),
-      password: faker.internet.password(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/),
+      password: faker.internet.password(),
     });
     userSchema.push(user);
   }
