@@ -58,3 +58,5 @@ const DeviseProjectsSchema = new Schema({
     type: String,
   },
 });
+
+module.exports = DeviseProjectsSchema;

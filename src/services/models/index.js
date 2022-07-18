@@ -1,4 +1,4 @@
-const User = require('./User');
+const User = require("./User");
+const DeviseProjects = require("./DeviseProjects");
 
-
-module.exports = { User };
+module.exports = { User, DeviseProjects };
