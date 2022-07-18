@@ -33,7 +33,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postinstall": "semantic-ui-css-patch",
-    "seeds": "cd services && npm run seeds"
+    "seeds": "node ./src/services/seeds/index.js"
   },
   "eslintConfig": {
     "extends": [
