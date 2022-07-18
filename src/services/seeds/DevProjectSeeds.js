@@ -2,7 +2,6 @@ const { faker } = require('@faker-js/faker');
 const MongoClient = require('mongodb').MongoClient;
 const  DevProjects = require('../models/DeviseProjects');
 
-
 async function seedDevProjects() {
   console.log('Seeding dev projects...');
   const client = new MongoClient('mongodb://localhost:27017/devise', { useNewUrlParser: true });
