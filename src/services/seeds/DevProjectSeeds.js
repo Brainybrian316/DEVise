@@ -13,7 +13,7 @@ async function seedDevProjects() {
   const devProjectSchema = [];
   for (let i = 0; i < 10; i++) {
     const Project = new DevProjects({
-      title: faker.name.title(),
+      title: faker.name.words(3),
       description: faker.lorem.paragraph(10),
       summary: faker.lorem.sentence(3),
       author: faker.name.firstName(),

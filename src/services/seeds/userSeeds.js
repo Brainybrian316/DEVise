@@ -14,9 +14,9 @@ console.log('Seeding users...');
     const user = new User({
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName(),
-      username: faker.internet.userName(),
+      username: faker.fake('{{name.firstName}} {{name.lastName}}'),
       email: faker.internet.email(),
-      password: faker.internet.password(),
+      password: faker.internet.password(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/),
     });
     userSchema.push(user);
   }

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose;
+const { Schema,  } = mongoose;
 
 const deviseProjectsSchema = new Schema({
   // id is a string for now, if we decide to use something like uuid we can change that later.
@@ -12,11 +12,11 @@ const deviseProjectsSchema = new Schema({
   },
   //description is the detailed description of the project, displayed on the project page.
   description: {
-    type: Text,
+    type: String,
   },
   //summary is the SHORT description of the project - this should be displayed on the rendered card.
   summary: {
-    type: Text,
+    type: String,
   },
   //for now the authors are DEVise. Eventually it will include all contributors to a template similar to an nom package.
   authors: [
