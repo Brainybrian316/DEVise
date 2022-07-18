@@ -14,7 +14,7 @@ console.log('Seeding users...');
     const user = new User({
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName(),
-      username: faker.fake('{{name.firstName}} {{name.lastName}}'),
+      username: faker.fake('{{name.firstName}}{{name.lastName}}'),
       email: faker.internet.email(),
       password: faker.internet.password(),
     });
@@ -23,6 +23,8 @@ console.log('Seeding users...');
   await users.insertMany(userSchema);
   await client.close();
 }
+
+
 
 module.exports = seedUsers;
 

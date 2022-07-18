@@ -13,14 +13,14 @@ async function seedDevProjects() {
   const devProjectSchema = [];
   for (let i = 0; i < 10; i++) {
     const Project = new DevProjects({
-      title: faker.lorem.words(3),
+      title: faker.random.words(3),
       description: faker.lorem.paragraph(10),
       summary: faker.lorem.sentence(3),
-      author: faker.name.firstName(),
+      authors: [faker.name.firstName(), faker.name.firstName(), faker.name.firstName()],
       mainImage: faker.image.imageUrl(),
       images: [faker.image.imageUrl(), faker.image.imageUrl(), faker.image.imageUrl()],
       videos: [faker.image.imageUrl(), faker.image.imageUrl(), faker.image.imageUrl()],
-      tags: [faker.lorem.word(), faker.lorem.word(), faker.lorem.word()],
+      tags: [faker.random.word(), faker.random.word(), faker.random.word()],
       createdAt: faker.date.past(),
       updatedAt: faker.date.past(),
     })
