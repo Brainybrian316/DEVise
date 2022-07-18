@@ -1,29 +1,34 @@
 const express = require('express');
 const path = require('path');
 const db = require('./config/connection');
-// const { ApolloServer } = require('apollo-server-express');
-// import { readFile } from 'fs/promises';
+const { ApolloServer } = require('apollo-server-express');
+const { resolvers } = require('./schemas/resolvers');
+const { readFile } = require('fs/promises');
 // import { expressjwt } from 'express-jwt';
 // import jwt from 'jsonwebtoken';
-// const  { typeDefs, resolvers } = require('./schemas/index');
 // import { authMiddleware } from './utils/auth';
 
 
 const PORT = process.env.PORT || 3000;
+
 const app = express();
-
-
-
-// const apolloServer = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-//   // context: authMiddleware,
-// });
-
-// apolloServer.applyMiddleware({ app, path: '/graphql' });
-
-app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+
+const typeDefs =  readFile('./schemas/schema.graphql', 'utf-8');
+
+const apolloServer = new ApolloServer({
+  typeDefs,
+  resolvers,
+  // context: authMiddleware,
+});
+
+
+ apolloServer.start();
+apolloServer.applyMiddleware({ app, path: '/graphql' });
+
+
 
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
