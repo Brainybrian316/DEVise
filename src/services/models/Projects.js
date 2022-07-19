@@ -1,7 +1,6 @@
-import mongoose from 'mongoose';
+const mongoose = require("mongoose");
 
-const projectsSchema = mongoose.Schema(
-	{
+const projectsSchema = new Schema({
 		user: {
 			type: mongoose.Schema.Types.ObjectId,
 			required: true,
@@ -43,6 +42,19 @@ const projectsSchema = mongoose.Schema(
 	{
 		timestamps: true,
 	}
+);
+
+const reviewsSchema = new Schema({
+		user: {
+			type: mongoose.Schema.Types.ObjectId,
+			required: true,
+			ref: 'User',
+		},
+		name: { type: String, required: true },
+		rating: { type: Number, required: true, default: 0 },
+		review: { type: String, required: true },
+	},
+	{ timestamps: true }
 );
     
 const Projects = mongoose.model('Projects', projectsSchema);
