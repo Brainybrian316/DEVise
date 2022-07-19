@@ -34,7 +34,7 @@ async function seedDevProjects() {
   await devprojects.insertMany(devProjectSchema);
    
   const devProjects = await devprojects.find({}).toArray();
-  const devProjectsJson = JSON.stringify(devProjects);
+  const devProjectsJson = JSON.stringify(devProjects, null, 2);
   fs.writeFileSync('./src/services/seeds/data/devProjects.json', devProjectsJson);
   await client.close();
 }

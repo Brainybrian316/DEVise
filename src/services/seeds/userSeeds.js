@@ -29,7 +29,7 @@ async function seedUsers() {
   }
   await users.insertMany(userSchema);
   const usersJson = await users.find({}).toArray();
-  const usersJsonString = JSON.stringify(usersJson);
+  const usersJsonString = JSON.stringify(usersJson, null, 2);
   fs.writeFileSync('./src/services/seeds/data/users.json', usersJsonString);
   await client.close();
 }

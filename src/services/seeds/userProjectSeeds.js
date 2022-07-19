@@ -54,7 +54,7 @@ async function seedUserProjects() {
   await userprojects.insertMany(userProjectSchema);
   // create json object of userProjectData inside of user.json
   const userProjects = await userprojects.find({}).toArray();
-  const userProjectsJson = JSON.stringify(userProjects);
+  const userProjectsJson = JSON.stringify(userProjects, null, 2);
   fs.writeFileSync('./src/services/seeds/data/userProjects.json', userProjectsJson);
 
   await client.close();
