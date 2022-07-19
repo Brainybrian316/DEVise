@@ -2,6 +2,7 @@
 const {gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+########### 'GET' requests ###########
 type Query {
   users: [User]
   devProjects: [DevProjects]
@@ -9,7 +10,19 @@ type Query {
   devProject(id: ID!): DevProjects
 }
 
+########### 'POST', 'PUT', 'DELETE' requests ###########
 
+type Mutation {
+  createUser(input: CreateUserInput!): User
+  updateUser(id: ID!, input: UpdateUserInput!): User
+  deleteUser(id: ID!): User
+  createDevProject(input: CreateDevProjectInput!): DevProjects
+  updateDevProject(id: ID!, input: UpdateDevProjectInput!): DevProjects
+  deleteDevProject(id: ID!): DevProjects
+}
+
+
+############### User schema ###############
 type User {
   _id: ID!
   firstName: String
@@ -18,6 +31,24 @@ type User {
   email: String
   password: String
 }
+
+input CreateUserInput {
+  firstName: String
+  lastName: String
+  username: String
+  email: String
+  password: String
+}
+
+input UpdateUserInput {
+  firstName: String
+  lastName: String
+  username: String
+  email: String
+  password: String
+}
+
+############### Dev Projects schema ###############
 
 type DevProjects {
   _id: ID!
@@ -31,6 +62,28 @@ type DevProjects {
   tags: [String]
   createdAt: String
   updatedAt: String
+}
+
+input CreateDevProjectInput {
+  title: String
+  description: String
+  summary: String
+  authors: [String]
+  mainImage: String
+  images: [String]
+  videos: [String]
+  tags: [String]
+}
+
+input UpdateDevProjectInput {
+  title: String
+  description: String
+  summary: String
+  authors: [String]
+  mainImage: String
+  images: [String]
+  videos: [String]
+  tags: [String]
 }
 `;
 

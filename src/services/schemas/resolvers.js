@@ -16,7 +16,29 @@ const resolvers = {
     devProject: async (_, { id }) => {
       return await DevProjects.findById(id);
     }
-  }
+  },
+  Mutation: {
+    createUser: async (_, { input }) => {
+      // rejectIf(!User); // if user is not logged in, reject
+      return await User.create(input);
+  },
+  updateUser: async (_, { id, input }) => {
+    return await User.findByIdAndUpdate(id, input);
+ },
+   deleteUser: async (_, { id }) => {
+      return await User.findByIdAndDelete(id);
+   },
+   createDevProject: async (_, { input }) => {
+      return await DevProjects.create(input);
+   },
+   updateDevProject: async (_, { id, input }) => {
+      return await DevProjects.findByIdAndUpdate(id, input);
+   },
+   deleteDevProject: async (_, { id }) => {
+      return await DevProjects.findByIdAndDelete(id);
+   }
+   
 }
+};
 
 module.exports = resolvers;
