@@ -2,12 +2,15 @@
 const {gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+########### 'GET' requests ###########
 type Query {
   users: [User]
   devProjects: [DevProjects]
   user(id: ID!): User
   devProject(id: ID!): DevProjects
 }
+
+########### 'POST', 'PUT', 'DELETE' requests ###########
 
 type Mutation {
   createUser(input: CreateUserInput!): User
@@ -18,6 +21,8 @@ type Mutation {
   deleteDevProject(id: ID!): DevProjects
 }
 
+
+############### User schema ###############
 type User {
   _id: ID!
   firstName: String
@@ -42,6 +47,8 @@ input UpdateUserInput {
   email: String
   password: String
 }
+
+############### Dev Projects schema ###############
 
 type DevProjects {
   _id: ID!
