@@ -7,7 +7,7 @@ const projectData = () => {
       title: faker.random.words(3),
       description: faker.lorem.paragraph(10),
       summary: faker.lorem.sentence(3),
-      authors: `Devise`,
+      authors: `'Devise'`,
       mainImage: faker.image.imageUrl(),
       images: [faker.image.imageUrl(), faker.image.imageUrl(), faker.image.imageUrl()],
       videos: [faker.image.imageUrl(), faker.image.imageUrl(), faker.image.imageUrl()],
