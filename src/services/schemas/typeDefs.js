@@ -8,6 +8,7 @@ type Query {
   devProjects: [DevProjects]
   user(id: ID!): User
   devProject(id: ID!): DevProjects
+  userProjects: [UserProjects]
 }
 
 ########### 'POST', 'PUT', 'DELETE' requests ###########
@@ -84,6 +85,24 @@ input UpdateDevProjectInput {
   images: [String]
   videos: [String]
   tags: [String]
+}
+
+############### User Projects schema ##############
+
+type UserProjects {
+  _id: ID
+  user: ID
+  title: String
+  description: String
+  summary: String
+  contributors: [String]
+  mainImage: String
+  images: [String]
+  videos: [String]
+  tags: [String]
+  rating: Int
+  numReviews: Int
+  price: Float
 }
 `;
 

@@ -1,6 +1,7 @@
 const { faker } = require('@faker-js/faker');
 const MongoClient = require('mongodb').MongoClient;
 const User = require('../models/User');
+const fs = require('fs');
 
 const userData = () => {
   const firstName = faker.name.firstName();
@@ -16,7 +17,6 @@ const userData = () => {
 };
 
 async function seedUsers() {
-  console.log('Seeding users...');
   const client = new MongoClient('mongodb://localhost:27017/devise', { useNewUrlParser: true });
   await client.connect();
   const db = client.db();
@@ -28,6 +28,9 @@ async function seedUsers() {
     userSchema.push(user);
   }
   await users.insertMany(userSchema);
+  const usersJson = await users.find({}).toArray();
+  const usersJsonString = JSON.stringify(usersJson, null, 2);
+  fs.writeFileSync('./src/services/seeds/data/users.json', usersJsonString);
   await client.close();
 }
 
