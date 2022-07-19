@@ -24,6 +24,9 @@ const resolvers = {
   },
    deleteUser: async (_, { id }) => {
       return await User.findByIdAndDelete(id);
+   },
+   updateUser: async (_, { id, input }) => {
+      return await User.findByIdAndUpdate(id, input);
    }
 }
 };
