@@ -33,9 +33,6 @@ const userProjectsSchema = new Schema({
 		tags: {
 			type: String,
 		},
-		description: {
-			type: String,
-		},
 		// reviews: [reviewsSchema],
 		rating: {
 			type: Number,
