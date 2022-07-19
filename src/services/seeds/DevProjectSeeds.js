@@ -1,6 +1,7 @@
 const { faker } = require('@faker-js/faker');
 const MongoClient = require('mongodb').MongoClient;
 const  DevProjects = require('../models/DeviseProjects');
+const fs = require('fs');
 
 const projectData = () => {
   const project = new DevProjects({
@@ -31,6 +32,10 @@ async function seedDevProjects() {
     devProjectSchema.push(Project);
   }
   await devprojects.insertMany(devProjectSchema);
+   
+  const devProjects = await devprojects.find({}).toArray();
+  const devProjectsJson = JSON.stringify(devProjects);
+  fs.writeFileSync('./src/services/seeds/data/devProjects.json', devProjectsJson);
   await client.close();
 }
 
