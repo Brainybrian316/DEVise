@@ -36,7 +36,7 @@ const userProjectsSchema = new Schema({
 		description: {
 			type: String,
 		},
-		reviews: [reviewsSchema],
+		// reviews: [reviewsSchema],
 		rating: {
 			type: Number,
 			default: 0,
@@ -55,19 +55,19 @@ const userProjectsSchema = new Schema({
 	}
 );
 
-const reviewsSchema = new Schema({
-		user: {
-			type: mongoose.Schema.Types.ObjectId,
-			required: true,
-			ref: 'User',
-		},
-		// name or title? what is name for?
-		title: { type: String, },
-		rating: { type: Number, default: 0 },
-		review: { type: String },
-	},
-	{ timestamps: true }
-);
+// const reviewsSchema = new Schema({
+// 		user: {
+// 			type: mongoose.Schema.Types.ObjectId,
+// 			required: true,
+// 			ref: 'User',
+// 		},
+// 		// name or title? what is name for?
+// 		title: { type: String, },
+// 		rating: { type: Number, default: 0 },
+// 		review: { type: String },
+// 	},
+// 	{ timestamps: true }
+// );
     
 const UserProjects = mongoose.model('UserProjects', userProjectsSchema);
 
