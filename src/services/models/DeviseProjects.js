@@ -15,33 +15,25 @@ const deviseProjectsSchema = new Schema({
     type: String,
   },
   //for now the authors are DEVise. Eventually it will include all contributors to a template similar to an nom package.
-  authors: [
-    {
-      type: String,
+  authors: {
+      type: Array, 
     },
-  ],
   //main image will be required
   mainImage: {
     type: String,
   },
   //images applies to subsidiary images - these are optional
-  images: [
-    {
-      type: String,
+  images: {
+      type: Array,
     },
-  ],
   //videos will not be required
-  videos: [
-    {
-      type: String,
+  videos:{
+      type: Array,
     },
-  ],
   //tags are a potential future feature. For now, they are just a string array
-  tags: [
-    {
-      type: String,
+  tags: {
+      type: Array,
     },
-  ],
   createdAt: {
     type: Date,
     default: Date.now,
