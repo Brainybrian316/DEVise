@@ -22,6 +22,9 @@ const resolvers = {
       // rejectIf(!User); // if user is not logged in, reject
       return await User.create(input);
   },
+   deleteUser: async (_, { id }) => {
+      return await User.findByIdAndDelete(id);
+   }
 }
 };
 
