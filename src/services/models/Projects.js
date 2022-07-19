@@ -1,41 +1,58 @@
 const mongoose = require("mongoose");
+const { Schema, } = mongoose;
 
-const projectsSchema = new Schema({
+const userProjectsSchema = new Schema({
 		user: {
 			type: mongoose.Schema.Types.ObjectId,
-			required: true,
 			ref: 'User',
 		},
-		name: {
+		title: {
 			type: String,
-			required: true,
-		},
-		image: {
-			type: String,
-			required: true,
-		},
-		category: {
-			type: String,
-			required: true,
 		},
 		description: {
 			type: String,
-			required: true,
+		},
+		summary: {
+			type: String,
+		},
+		contributors: [
+			{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'User',
+			},
+		],
+		mainImage: {
+			type: String,
+		},
+		images: [
+			{
+			type: String,
+		  }
+		],
+		videos: [
+			{
+			type: String,
+			}
+		],
+		tags: {
+			type: String,
+
+		},
+		description: {
+			type: String,
+
 		},
 		reviews: [reviewsSchema],
 		rating: {
 			type: Number,
-			required: true,
 			default: 0,
 		},
 		numReviews: {
 			type: Number,
-			required: true,
 			default: 0,
 		},
 		price: {
 			type: Number,
-			required: true,
 			default: 0,
 		},
 	},
@@ -50,13 +67,14 @@ const reviewsSchema = new Schema({
 			required: true,
 			ref: 'User',
 		},
-		name: { type: String, required: true },
-		rating: { type: Number, required: true, default: 0 },
-		review: { type: String, required: true },
+		// name or title? what is name for?
+		title: { type: String, },
+		rating: { type: Number, default: 0 },
+		review: { type: String },
 	},
 	{ timestamps: true }
 );
     
-const Projects = mongoose.model('Projects', projectsSchema);
+const UserProjects = mongoose.model('UserProjects', userProjectsSchema);
 
-module.exports = Projects;
+module.exports = UserProjects;

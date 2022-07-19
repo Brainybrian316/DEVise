@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 const { Schema,  } = mongoose;
 
 const deviseProjectsSchema = new Schema({
-  // id is a string for now, if we decide to use something like uuid we can change that later.
-  id: {
-    type: String,
-  },
   //title of the project.
   title: {
     type: String,
