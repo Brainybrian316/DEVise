@@ -35,3 +35,21 @@ const userProjectData = () => {
   });
   return userProject;
 }
+
+async function seedUserProjects() {
+  console.log('Seeding user projects...');
+  const client = new MongoClient('mongodb://localhost:27017/devise', { useNewUrlParser: true });
+  await client.connect();
+  const db = client.db();
+  await db.collection('userprojects').deleteMany({});
+  const userprojects = db.collection('userprojects');
+  const userProjectSchema = [];
+  for (let i = 0; i < 10; i++) {
+    const Project = new UserProjects(userProjectData());
+    userProjectSchema.push(Project);
+  }
+  await userprojects.insertMany(userProjectSchema);
+  await client.close();
+}
+
+module.exports = seedUserProjects;
