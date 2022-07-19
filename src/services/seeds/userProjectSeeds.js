@@ -29,8 +29,8 @@ const userProjectData = () => {
       faker.random.word(),
       faker.random.word(),
     ],
-    rating: faker.datatypes.number({ min: 0, max: 5 }),
-    numReviews: faker.datatypes.number(),
+    rating: faker.datatype.number({ max: 5 }),
+    numReviews: faker.datatype.number({ max: 100}),
     price: faker.commerce.price(1, 20, 2, '$')
   });
   return userProject;
