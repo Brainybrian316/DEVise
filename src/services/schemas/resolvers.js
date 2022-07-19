@@ -1,5 +1,5 @@
 
-const { User, DevProjects  } = require('../models');
+const { User, DevProjects, UserProjects  } = require('../models');
 
 
 const resolvers = {
@@ -9,6 +9,9 @@ const resolvers = {
     },
     devProjects: async () => {
       return await DevProjects.find();
+    },
+    userProjects: async () => {
+      return await UserProjects.find();
     },
     user: async (_, { id }) => {
       return await User.findById(id);
