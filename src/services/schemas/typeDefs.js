@@ -13,10 +13,27 @@ type Mutation {
   createUser(input: CreateUserInput!): User
   deleteUser(id: ID!): User
   updateUser(id: ID!, input: UpdateUserInput!): User
+  createDevProject(input: CreateDevProjectInput!): DevProjects
 }
 
 type User {
   _id: ID!
+  firstName: String
+  lastName: String
+  username: String
+  email: String
+  password: String
+}
+
+input CreateUserInput {
+  firstName: String
+  lastName: String
+  username: String
+  email: String
+  password: String
+}
+
+input UpdateUserInput {
   firstName: String
   lastName: String
   username: String
@@ -38,20 +55,15 @@ type DevProjects {
   updatedAt: String
 }
 
-input CreateUserInput {
-  firstName: String
-  lastName: String
-  username: String
-  email: String
-  password: String
-}
-
-input UpdateUserInput {
-  firstName: String
-  lastName: String
-  username: String
-  email: String
-  password: String
+input CreateDevProjectInput {
+  title: String
+  description: String
+  summary: String
+  authors: [String]
+  mainImage: String
+  images: [String]
+  videos: [String]
+  tags: [String]
 }
 `;
 

@@ -27,6 +27,9 @@ const resolvers = {
    },
    updateUser: async (_, { id, input }) => {
       return await User.findByIdAndUpdate(id, input);
+   },
+   createDevProject: async (_, { input }) => {
+      return await DevProjects.create(input);
    }
 }
 };
