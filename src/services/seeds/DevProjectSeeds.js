@@ -25,33 +25,17 @@ async function seedDevProjects() {
   await client.connect();
   const db = client.db();
   await db.collection('devprojects').deleteMany({});
-  const projects = db.collection('devprojects');
-  const projectSchema = [];
-
+  const devprojects = db.collection('devprojects');
+  const devProjectSchema = [];
+  for (let i = 0; i < 10; i++) {
+    const Project = new DevProjects(projectData());
+    devProjectSchema.push(Project);
+  }
+  await devprojects.insertMany(devProjectSchema);
+  await client.close();
 }
-// async function seedDevProjects() {
 
-//   const devprojects = db.collection('devprojects');
-//   const devProjectSchema = [];
-//   for (let i = 0; i < 10; i++) {
-//     const Project = new DevProjects({
-//       title: faker.random.words(3),
-//       description: faker.lorem.paragraph(10),
-//       summary: faker.lorem.sentence(3),
-//       authors: [faker.name.firstName(), faker.name.firstName(), faker.name.firstName()],
-//       mainImage: faker.image.imageUrl(),
-//       images: [faker.image.imageUrl(), faker.image.imageUrl(), faker.image.imageUrl()],
-//       videos: [faker.image.imageUrl(), faker.image.imageUrl(), faker.image.imageUrl()],
-//       tags: [faker.random.word(), faker.random.word(), faker.random.word()],
-//       createdAt: faker.date.past(),
-//       updatedAt: faker.date.past(),
-//     })
-//     devProjectSchema.push(Project);
-//   }
-//   await devprojects.insertMany(devProjectSchema);
-//   await client.close();
-// }
+module.exports = seedDevProjects;
 
-// module.exports = seedDevProjects;
 
 
