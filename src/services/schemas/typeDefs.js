@@ -42,6 +42,7 @@ input CreateUserInput {
   username: String
   email: String
   password: String
+}
 `;
 
 module.exports = typeDefs;

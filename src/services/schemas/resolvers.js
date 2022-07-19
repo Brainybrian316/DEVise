@@ -18,7 +18,7 @@ const resolvers = {
     }
   },
   Mutation: {
-    createUser: async (_, { input }, { User }) => {
+    createUser: async (_, { input }) => {
       // rejectIf(!User); // if user is not logged in, reject
       return await User.create(input);
   },
