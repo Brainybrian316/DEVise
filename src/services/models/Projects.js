@@ -24,23 +24,17 @@ const userProjectsSchema = new Schema({
 		mainImage: {
 			type: String,
 		},
-		images: [
-			{
-			type: String,
-		  }
-		],
-		videos: [
-			{
-			type: String,
-			}
-		],
+		images: {
+			type: Array,
+		  },
+		videos: {
+			type: Array,
+			},
 		tags: {
 			type: String,
-
 		},
 		description: {
 			type: String,
-
 		},
 		reviews: [reviewsSchema],
 		rating: {
