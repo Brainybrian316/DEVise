@@ -2,7 +2,9 @@ const { faker } = require('@faker-js/faker');
 const MongoClient = require('mongodb').MongoClient;
 const  UserProjects = require('../models/UserProjects');
 
+
 const userProjectData = () => {
+  
   const userProject = new UserProjects({
      user: faker.database.mongodbObjectId(),
      title: faker.random.words(3),
@@ -31,13 +33,13 @@ const userProjectData = () => {
     ],
     rating: faker.datatype.number({ max: 5 }),
     numReviews: faker.datatype.number({ max: 100}),
-    price: faker.commerce.price(1, 20, 2, '$')
+    price: faker.commerce.price(1, 20,)
   });
   return userProject;
 }
 
+
 async function seedUserProjects() {
-  console.log('Seeding user projects...');
   const client = new MongoClient('mongodb://localhost:27017/devise', { useNewUrlParser: true });
   await client.connect();
   const db = client.db();

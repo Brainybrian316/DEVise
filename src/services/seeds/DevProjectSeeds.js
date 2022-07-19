@@ -20,7 +20,6 @@ const projectData = () => {
 
 
 async function seedDevProjects() {
-  console.log('Seeding dev projects...');
   const client = new MongoClient('mongodb://localhost:27017/devise', { useNewUrlParser: true });
   await client.connect();
   const db = client.db();
