@@ -33,6 +33,9 @@ const resolvers = {
    },
    updateDevProject: async (_, { id, input }) => {
       return await DevProjects.findByIdAndUpdate(id, input);
+   },
+   deleteDevProject: async (_, { id }) => {
+      return await DevProjects.findByIdAndDelete(id);
    }
    
 }

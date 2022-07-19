@@ -15,7 +15,7 @@ type Mutation {
   deleteUser(id: ID!): User
   createDevProject(input: CreateDevProjectInput!): DevProjects
   updateDevProject(id: ID!, input: UpdateDevProjectInput!): DevProjects
-
+  deleteDevProject(id: ID!): DevProjects
 }
 
 type User {
