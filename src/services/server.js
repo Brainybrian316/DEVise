@@ -1,4 +1,7 @@
+
+const  { ApolloServerPluginDrainHttpServer } = require('apollo-server-core');
 const express = require('express');
+const http = require('http');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { resolvers, typeDefs } = require('./schemas');
@@ -8,45 +11,40 @@ const db = require('./config/connection');
 // import { expressjwt } from 'express-jwt';
 // import jwt from 'jsonwebtoken';
 
+const PORT = process.env.PORT || 4000;
 
+async function startApolloServer() {
+  const app = express();
+  const httpServer = http.createServer(app);
 
-const PORT = process.env.PORT || 3000;
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    csrfPrevention: true,
+    cache: 'bounded',
+    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+  });
 
-const app = express();
-
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  // context: authMiddleware,
-});
-
-
-server.applyMiddleware({ app, path: '/graphql' });
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
-
-
-
-//  server.start();
-// server.applyMiddleware({ app, path: '/graphql' });
-
-
-
-// if we're in production, serve client/build as static assets
+await server.start();
+server.applyMiddleware({ app, path: '/' });
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-// get all is *
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
-
 
 db.once('open', () => {
   app.listen(PORT, () => {
     console.log(`API server running on port ${PORT}!`);
     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
-});
+}
+);
+}
+
+startApolloServer();
+
+
+

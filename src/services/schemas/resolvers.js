@@ -4,7 +4,7 @@ const { User } = require('../models');
 
 const resolvers = {
   Query: {
-    getAllUsers: async () =>  {
+    users: async () =>  {
       return await User.findAll({});
     }
   }
