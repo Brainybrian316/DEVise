@@ -9,6 +9,9 @@ type Query {
   devProject(id: ID!): DevProjects
 }
 
+type Mutation {
+  createUser(input: CreateUserInput!): User
+}
 
 type User {
   _id: ID!
@@ -32,6 +35,13 @@ type DevProjects {
   createdAt: String
   updatedAt: String
 }
+
+input CreateUserInput {
+  firstName: String
+  lastName: String
+  username: String
+  email: String
+  password: String
 `;
 
 module.exports = typeDefs;
