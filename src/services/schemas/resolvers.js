@@ -9,6 +9,12 @@ const resolvers = {
     },
     devProjects: async () => {
       return await DevProjects.find();
+    },
+    user: async (_, { id }) => {
+      return await User.findById(id);
+    },
+    devProject: async (_, { id }) => {
+      return await DevProjects.findById(id);
     }
   }
 }

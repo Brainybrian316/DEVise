@@ -5,6 +5,8 @@ const typeDefs = gql`
 type Query {
   users: [User]
   devProjects: [DevProjects]
+  user(id: ID!): User
+  devProject(id: ID!): DevProjects
 }
 
 
@@ -22,7 +24,7 @@ type DevProjects {
   title: String
   description: String
   summary: String
-  authors: String
+  authors: [String]
   mainImage: String
   images: [String]
   videos: [String]
