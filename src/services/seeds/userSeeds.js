@@ -1,6 +1,7 @@
 const { faker } = require('@faker-js/faker');
 const MongoClient = require('mongodb').MongoClient;
 const User = require('../models/User');
+const fs = require('fs');
 
 const userData = () => {
   const firstName = faker.name.firstName();
@@ -27,6 +28,9 @@ async function seedUsers() {
     userSchema.push(user);
   }
   await users.insertMany(userSchema);
+  const usersJson = await users.find({}).toArray();
+  const usersJsonString = JSON.stringify(usersJson);
+  fs.writeFileSync('./src/services/seeds/users.json', usersJsonString);
   await client.close();
 }
 

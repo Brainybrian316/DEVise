@@ -1,6 +1,8 @@
 const { faker } = require('@faker-js/faker');
 const MongoClient = require('mongodb').MongoClient;
 const  UserProjects = require('../models/UserProjects');
+const fs = require('fs');
+const userJson = require('./userProjects.json');
 
 
 const userProjectData = () => {
@@ -51,6 +53,11 @@ async function seedUserProjects() {
     userProjectSchema.push(Project);
   }
   await userprojects.insertMany(userProjectSchema);
+  // create json object of userProjectData inside of user.json
+  const userProjects = await userprojects.find({}).toArray();
+  const userProjectsJson = JSON.stringify(userProjects);
+  fs.writeFileSync('./src/services/seeds/userProjects.json', userProjectsJson);
+
   await client.close();
 }
 
