@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
-const productSchema = mongoose.Schema(
-    {
+const projectsSchema = mongoose.Schema(
+	{
 		user: {
 			type: mongoose.Schema.Types.ObjectId,
 			required: true,
@@ -14,9 +14,17 @@ const productSchema = mongoose.Schema(
 		image: {
 			type: String,
 			required: true,
-
-        },
-        rating: {
+		},
+		category: {
+			type: String,
+			required: true,
+		},
+		description: {
+			type: String,
+			required: true,
+		},
+		reviews: [reviewsSchema],
+		rating: {
 			type: Number,
 			required: true,
 			default: 0,
@@ -30,11 +38,12 @@ const productSchema = mongoose.Schema(
 			type: Number,
 			required: true,
 			default: 0,
-        {
-            timestamps: true,
-        },
-        
-    );
+		},
+	},
+	{
+		timestamps: true,
+	}
+);
     
 const Projects = mongoose.model('Projects', projectsSchema);
 
