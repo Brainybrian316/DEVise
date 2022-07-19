@@ -1,23 +1,18 @@
 const express = require('express');
-const path = require('path');
-const db = require('./config/connection');
 const { ApolloServer } = require('apollo-server-express');
-const { resolvers } = require('./schemas/resolvers');
-// const { typeDefs }  = require('./schemas/schema.graphql');
-const { readFile } = require('fs/promises');
+const path = require('path');
+const { resolvers, typeDefs } = require('./schemas');
+// import { authMiddleware } from './utils/auth';
+const db = require('./config/connection');
+// const { readFile } = require('fs/promises');
 // import { expressjwt } from 'express-jwt';
 // import jwt from 'jsonwebtoken';
-// import { authMiddleware } from './utils/auth';
+
 
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-
-const typeDefs = readFile(path.join(__dirname, './schemas/schema.graphql'), 'utf-8');
 
 const server = new ApolloServer({
   typeDefs,
@@ -26,24 +21,32 @@ const server = new ApolloServer({
 });
 
 
- server.start();
 server.applyMiddleware({ app, path: '/graphql' });
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+
+
+
+//  server.start();
+// server.applyMiddleware({ app, path: '/graphql' });
 
 
 
 // if we're in production, serve client/build as static assets
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, '../client/build')));
-// }
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
-// // get all is *
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-// });
+// get all is *
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
 
 db.once('open', () => {
-  app.listen({ port: PORT }, () => {
-    console.log(`Server running on port http://localhost:${PORT}`);
-    console.log(`GraphQL endpoint at http://localhost:${PORT}/graphql`)
+  app.listen(PORT, () => {
+    console.log(`API server running on port ${PORT}!`);
+    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
 });
