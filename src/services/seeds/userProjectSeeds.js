@@ -3,11 +3,10 @@ const MongoClient = require('mongodb').MongoClient;
 const  UserProjects = require('../models/UserProjects');
 const fs = require('fs');
 const User = require('../models/User');
-const db = require('../config/connection.js');
+const { dblClick } = require('@testing-library/user-event/dist/click');
 
 
 const userProjectData = () => {
-  
   const userProject = new UserProjects({
      title: faker.random.words(3),
      description: faker.lorem.paragraph(10),
@@ -35,7 +34,8 @@ const userProjectData = () => {
     ],
     rating: faker.datatype.number({ max: 5 }),
     numReviews: faker.datatype.number({ max: 100}),
-    price: faker.commerce.price(1, 20,)
+    price: faker.commerce.price(1, 20,),
+    user: '',
   });
   return userProject;
 }
@@ -52,17 +52,17 @@ async function seedUserProjects() {
     const Project = new UserProjects(userProjectData());
     userProjectSchema.push(Project);
   }
-  // insert userId into user property 
-  const userIds = await User.find({});
+  // put user id in userProjects user field
+  const users = await db.collection('users').find({}).toArray();
   for (let i = 0; i < userProjectSchema.length; i++) {
-    userProjectSchema[i].user = userIds[i]._id;
+    userProjectSchema[i].user = users[i]._id;
   }
 
   await userprojects.insertMany(userProjectSchema);
   // create json object of userProjectData inside of user.json
   const userProjects = await userprojects.find({}).toArray();
   const userProjectsJson = JSON.stringify(userProjects, null, 2);
-  fs.writeFileSync('./src/services/seeds/data/userProjects.json', userProjectsJson);
+ fs.writeFileSync('./src/services/seeds/data/userProjects.json', userProjectsJson);
 
   await client.close();
 }
