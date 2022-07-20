@@ -5,10 +5,11 @@ const typeDefs = gql`
 ########### 'GET' requests ###########
 type Query {
   users: [User]
-  devProjects: [DevProjects]
   user(id: ID!): User
+  devProjects: [DevProjects]
   devProject(id: ID!): DevProjects
   userProjects: [UserProjects]
+  userProject(id: ID!): UserProjects
 }
 
 ########### 'POST', 'PUT', 'DELETE' requests ###########
@@ -20,6 +21,9 @@ type Mutation {
   createDevProject(input: CreateDevProjectInput!): DevProjects
   updateDevProject(id: ID!, input: UpdateDevProjectInput!): DevProjects
   deleteDevProject(id: ID!): DevProjects
+  createUserProjects(input: CreateUserProjectsInput!): UserProjects
+  updateUserProjects(id: ID!, input: UpdateUserProjectsInput!): UserProjects
+  deleteUserProjects(id: ID!): UserProjects
 }
 
 
@@ -61,8 +65,6 @@ type DevProjects {
   images: [String]
   videos: [String]
   tags: [String]
-  createdAt: String
-  updatedAt: String
 }
 
 input CreateDevProjectInput {
@@ -91,7 +93,6 @@ input UpdateDevProjectInput {
 
 type UserProjects {
   _id: ID
-  user: ID
   title: String
   description: String
   summary: String
@@ -102,7 +103,39 @@ type UserProjects {
   tags: [String]
   rating: Int
   numReviews: Int
-  price: Float
+  price: Int  
+  user: String
+}
+
+input CreateUserProjectsInput {
+  title: String
+  description: String
+  summary: String
+  contributors: [String]
+  mainImage: String
+  images: [String]
+  videos: [String]
+  tags: [String]
+  rating: Int
+  numReviews: Int
+  price: Int
+  user: String
+}
+
+input UpdateUserProjectsInput {
+  title: String
+  description: String
+  summary: String
+  contributors: [String]
+  mainImage: String
+  images: [String]
+  videos: [String]
+  tags: [String]
+  rating: Int
+  numReviews: Int
+  price: Int
+  user: String
+
 }
 `;
 
