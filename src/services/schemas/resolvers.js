@@ -1,5 +1,5 @@
 
-const { User, DevProjects, UserProjects  } = require('../models');
+const { User, DevProjects, UserProjects, Subscriptions  } = require('../models');
 
 
 const resolvers = {
@@ -13,6 +13,9 @@ const resolvers = {
     userProjects: async () => {
       return await UserProjects.find();
     },
+    subscriptions: async () => {
+      return await Subscriptions.find();
+    },
     user: async (_, { id }) => {
       return await User.findById(id);
     },
@@ -21,6 +24,9 @@ const resolvers = {
     },
     userProject: async (_, { id }) => {
       return await UserProjects.findById(id);
+    },
+    subscriptions: async (_, { id }) => {
+      return await Subscriptions.findById(id);
     }
   },
   Mutation: {

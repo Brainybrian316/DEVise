@@ -10,6 +10,8 @@ type Query {
   devProject(id: ID!): DevProjects
   userProjects: [UserProjects]
   userProject(id: ID!): UserProjects
+  subscriptions: [Subscriptions]
+  subscription(id: ID!): Subscription
 }
 
 ########### 'POST', 'PUT', 'DELETE' requests ###########
@@ -136,6 +138,17 @@ input UpdateUserProjectsInput {
   price: Int
   user: String
 
+}
+
+############### Subscriptions schema ###############
+
+type Subscriptions {
+  _id: ID!
+  tier: String
+  name: String
+  perks: [String]
+  price: Float
+  users: [String]
 }
 `;
 
