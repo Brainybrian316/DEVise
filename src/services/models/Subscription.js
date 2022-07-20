@@ -16,5 +16,17 @@ const subscriptionSchema = new Schema ({
         type: Array,
         default: []
     },
-    
+    price: {
+        type: Schema.Types.Decimal128,
+        required: true,
+        // round data to two decimal places
+        set: value => {new mongoose.Types.Decimal128.fromString(value.toFixed(2))}
+    },
+    users: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "User"
+        }
+    ]
+
 })
