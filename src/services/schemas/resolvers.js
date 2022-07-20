@@ -42,6 +42,9 @@ const resolvers = {
    },
    createUserProjects: async (_, { input }) => {
       return await UserProjects.create(input);
+   },
+   updateUserProjects: async (_, { id, input }) => {
+      return await UserProjects.findByIdAndUpdate(id, input);
    }
    
 }
