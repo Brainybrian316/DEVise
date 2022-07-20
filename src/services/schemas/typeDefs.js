@@ -107,7 +107,6 @@ type UserProjects {
 }
 
 input CreateUserProjectsInput {
-  user: String
   title: String
   description: String
   summary: String
@@ -119,6 +118,7 @@ input CreateUserProjectsInput {
   rating: Int
   numReviews: Int
   price: Int
+  user: String
 
 }
 `;

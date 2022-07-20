@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 const { Schema, } = mongoose;
 
 const userProjectsSchema = new Schema({
-		user: {
-			type: Schema.Types.ObjectId,
-			ref: 'User',
-		},
 		title: {
 			type: String,
 		},
@@ -51,6 +47,10 @@ const userProjectsSchema = new Schema({
 		price: {
 			type: Number,
 			default: 0,
+		},
+		user: {
+			type: Schema.Types.ObjectId,
+			ref: 'User',
 		},
 	},
 	{
