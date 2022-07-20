@@ -11,11 +11,7 @@ const userProjectData = () => {
      title: faker.random.words(3),
      description: faker.lorem.paragraph(10),
      summary: faker.lorem.sentence(3),
-     contributors: [
-      faker.database.mongodbObjectId(), 
-      faker.database.mongodbObjectId(),
-      faker.database.mongodbObjectId(),
-    ],
+     contributors: [],
     mainImage: faker.image.imageUrl(),
     images: [
       faker.image.imageUrl(),
@@ -56,6 +52,11 @@ async function seedUserProjects() {
   const users = await db.collection('users').find({}).toArray();
   for (let i = 0; i < userProjectSchema.length; i++) {
     userProjectSchema[i].user = users[i]._id;
+  }
+  const contributors = await db.collection('users').find({}).toArray();
+  for (let i = 0; i < userProjectSchema.length; i++) {
+    const randomContributor = contributors[Math.floor(Math.random() * contributors.length)];
+    userProjectSchema[i].contributors.push(randomContributor._id);
   }
 
   await userprojects.insertMany(userProjectSchema);
