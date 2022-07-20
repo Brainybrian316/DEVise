@@ -48,12 +48,16 @@ async function seedUserProjects() {
     const Project = new UserProjects(userProjectData());
     userProjectSchema.push(Project);
   }
-  // put user id in userProjects user field
-  const contributors = await db.collection('users').find({}).toArray();
-  for (let i = 0; i < userProjectSchema.length; i++) {
-    const randomContributor = contributors[Math.floor(Math.random() * contributors.length)];
-    userProjectSchema[i].contributors.push(randomContributor._id);
-  }
+   // put user id in userProjects user field
+   const users = await db.collection('users').find({}).toArray();
+   for (let i = 0; i < userProjectSchema.length; i++) {
+     userProjectSchema[i].user = users[i]._id;
+   }
+   const contributors = await db.collection('users').find({}).toArray();
+   for (let i = 0; i < userProjectSchema.length; i++) {
+     const randomContributor = contributors[Math.floor(Math.random() * contributors.length)];
+     userProjectSchema[i].contributors.push(randomContributor._id);
+   }
 
   await userprojects.insertMany(userProjectSchema);
   // create json object of userProjectData inside of user.json
