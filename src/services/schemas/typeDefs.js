@@ -10,7 +10,7 @@ type Query {
   userProjects: [UserProjects]
   userProject(id: ID!): UserProjects
   subscriptions: [Subscriptions]
-  subscription(id: ID!): Subscription
+  subscriptions(id: ID!): Subscription
 }
 
 ########### 'POST', 'PUT', 'DELETE' requests ###########
