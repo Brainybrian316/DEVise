@@ -101,6 +101,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <Box
+            id="logo"
             component="img"
             sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
             alt="DEVise logo"
