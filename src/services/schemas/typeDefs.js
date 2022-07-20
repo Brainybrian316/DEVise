@@ -20,6 +20,7 @@ type Mutation {
   createDevProject(input: CreateDevProjectInput!): DevProjects
   updateDevProject(id: ID!, input: UpdateDevProjectInput!): DevProjects
   deleteDevProject(id: ID!): DevProjects
+  createUserProject(input: CreateUserProjectInput!): UserProjects
 }
 
 
@@ -91,7 +92,7 @@ input UpdateDevProjectInput {
 
 type UserProjects {
   _id: ID
-  user: ID
+  user: User
   title: String
   description: String
   summary: String
@@ -103,6 +104,11 @@ type UserProjects {
   rating: Int
   numReviews: Int
   price: Float
+}
+
+input CreateUserProjectsInput {
+  user: User!
+  project: UserProjects!
 }
 `;
 
