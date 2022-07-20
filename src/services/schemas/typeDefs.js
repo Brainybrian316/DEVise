@@ -5,10 +5,11 @@ const typeDefs = gql`
 ########### 'GET' requests ###########
 type Query {
   users: [User]
-  devProjects: [DevProjects]
   user(id: ID!): User
+  devProjects: [DevProjects]
   devProject(id: ID!): DevProjects
   userProjects: [UserProjects]
+  userProject(id: ID!): UserProjects
 }
 
 ########### 'POST', 'PUT', 'DELETE' requests ###########
@@ -22,6 +23,7 @@ type Mutation {
   deleteDevProject(id: ID!): DevProjects
   createUserProjects(input: CreateUserProjectsInput!): UserProjects
   updateUserProjects(id: ID!, input: UpdateUserProjectsInput!): UserProjects
+  deleteUserProjects(id: ID!): UserProjects
 }
 
 

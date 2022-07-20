@@ -45,6 +45,9 @@ const resolvers = {
    },
    updateUserProjects: async (_, { id, input }) => {
       return await UserProjects.findByIdAndUpdate(id, input);
+   },
+   deleteUserProjects: async (_, { id }) => {
+      return await UserProjects.findByIdAndDelete(id);
    }
    
 }
