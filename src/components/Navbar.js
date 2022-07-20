@@ -7,11 +7,10 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+
 
 const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'About Us', 'Contact', 'Sign In'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -39,7 +38,14 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Box
+            component="img"
+            sx={{
+            height: 64,
+            }}
+            alt="Your logo."
+            src='https://i.pinimg.com/236x/7b/e2/db/7be2dbac345f7c212f295b4464ef91af.jpg'
+        />
           <Typography
             variant="h6"
             noWrap
@@ -55,7 +61,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            DEVISE
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -111,7 +117,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            DEVISE
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -126,7 +132,8 @@ const ResponsiveAppBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Button variant="contained">Sign Up</Button>
+            <Button onClick={() => {alert('clicked');
+                }} variant="contained">Sign Up</Button>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
