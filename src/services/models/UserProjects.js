@@ -24,15 +24,21 @@ const userProjectsSchema = new Schema({
 		mainImage: {
 			type: String,
 		},
-		images: {
-			type: Array,
-		  },
-		videos: {
-			type: Array,
-			},
-		tags: {
+		images: [
+			 {
+				type: String,
+			}
+		],
+		videos: [
+			{
 			type: String,
-		},
+			}
+		],
+	  tags: [
+			{
+				type: String,
+			}
+		],
 		// reviews: [reviewsSchema],
 		rating: {
 			type: Number,

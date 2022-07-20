@@ -39,6 +39,9 @@ const resolvers = {
    },
    deleteDevProject: async (_, { id }) => {
       return await DevProjects.findByIdAndDelete(id);
+   },
+   createUserProjects: async (_, { input }) => {
+      return await UserProjects.create(input);
    }
    
 }
