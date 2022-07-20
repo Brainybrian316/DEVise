@@ -65,8 +65,6 @@ type DevProjects {
   images: [String]
   videos: [String]
   tags: [String]
-  createdAt: String
-  updatedAt: String
 }
 
 input CreateDevProjectInput {
