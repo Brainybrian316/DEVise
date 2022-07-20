@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './navbar.css';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -39,12 +40,11 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <Box
+            id="logo"
             component="img"
-            sx={{
-            height: 64,
-            }}
-            alt="Your logo."
-            src='https://i.pinimg.com/236x/7b/e2/db/7be2dbac345f7c212f295b4464ef91af.jpg'
+            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+            alt="DEVise logo"
+            src='https://i.postimg.cc/ThFt1dmY/DEVise-D-Logo-Ver1-0.png'
         />
           <Typography
             variant="h6"
@@ -100,7 +100,12 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Box
+            component="img"
+            sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
+            alt="DEVise logo"
+            src='https://i.postimg.cc/ThFt1dmY/DEVise-D-Logo-Ver1-0.png'
+        />
           <Typography
             variant="h5"
             noWrap

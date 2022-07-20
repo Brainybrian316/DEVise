@@ -6,6 +6,12 @@
   border-radius: 100%;
 } */
 
+#logo {
+  max-height: 150px;
+  max-width: 200px;
+  width: 50px;
+  height: 50px;
+}
 
 #fancy-nav {
   font-family:arial rgb(255, 254, 254);
@@ -21,3 +27,4 @@
     background-position: 4500vh;
   }
   }
+
