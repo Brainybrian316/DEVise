@@ -44,7 +44,7 @@ const deviseProjectsSchema = new Schema({
   ],
 },
 {
-  timestamps: true,
+ timestamps: true,
 });
 
 const DevProjects = mongoose.model('DevProjects', deviseProjectsSchema);
