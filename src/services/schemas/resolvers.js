@@ -18,6 +18,9 @@ const resolvers = {
     },
     devProject: async (_, { id }) => {
       return await DevProjects.findById(id);
+    },
+    userProject: async (_, { id }) => {
+      return await UserProjects.findById(id);
     }
   },
   Mutation: {
