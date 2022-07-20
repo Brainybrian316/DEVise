@@ -12,10 +12,11 @@ const subscriptionSchema = new Schema ({
         required: true,
         trim: true
     },
-    perks: {
-        type: Array,
-        default: []
-    },
+    perks: [
+        {
+            type: String
+        }
+    ],
     price: {
         type: Schema.Types.Decimal128,
         required: true,
@@ -30,3 +31,7 @@ const subscriptionSchema = new Schema ({
     ]
 
 })
+
+const Subscriptions = mongoose.model('Subscriptions', subscriptionSchema);
+
+module.exports = Subscriptions
