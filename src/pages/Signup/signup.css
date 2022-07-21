@@ -1,0 +1,14 @@
+
+#form-group{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+#form-btn {
+margin-top: 20px;
+margin-left: 180px;
+
+}
+

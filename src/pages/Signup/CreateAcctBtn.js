@@ -17,7 +17,7 @@ export default function CreateAcctBtn() {
     return (
       <ThemeProvider theme={theme}>
       <Button 
-      sx={{ m: 2, float: 'right', }}
+      id="form-btn"
       onClick={() => {alert('clicked');
     }} variant="contained">Create Account</Button>
       </ThemeProvider>
