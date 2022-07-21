@@ -3,7 +3,8 @@ import { Container, Box, Typography, Button, TextareaAutosize, Input, InputLabel
 import emailjs from '@emailjs/browser';
 
 
-export default function Contact() {
+export default function Contact(props) {
+    const [result, showResult] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -15,16 +16,22 @@ export default function Contact() {
         e.target,
         process.env.REACT_APP_YOUR_PUBLIC_KEY,
       )
-    .then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      },
-    );
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        },
+      );
     e.target.reset();
-  }
+    showResult(true);
+  };
+
+  setTimeout(() => {
+    showResult(false);
+  }, 5000);
+
 
   return (
     <>
@@ -39,7 +46,7 @@ export default function Contact() {
           mt: 3,
         }}
       >
-        <form className="contact-form" action="" onSubmit={sendEmail}>
+         <form className="contact-form" action="" onSubmit={sendEmail}>
         <Box my={2}>
           <Typography variant="h4" component="h1" gutterBottom>
             Contact
@@ -50,7 +57,7 @@ export default function Contact() {
           </Box>
 
           <Box>
-            <InputLabel htmlFor="email">Email:</InputLabel>
+            <InputLabel htmlFor="Email">Email:</InputLabel>
             <Input
               sx={{
                 bgcolor: 'background.paper',
@@ -59,7 +66,7 @@ export default function Contact() {
                 marginTop: '10px',
                 width: '100%',
               }}
-              id="email"
+              id="Email"
               name="email"
               type="email"
               autoComplete="email"
@@ -71,13 +78,13 @@ export default function Contact() {
         </Box>
 
         <Box>
-            <InputLabel htmlFor="message">Message:</InputLabel>
+            <InputLabel htmlFor="Message">Message:</InputLabel>
             <TextareaAutosize
               style={{ width: '100%', fontFamily: 'Arial',
              fontSize: '16px', 
             }}
               minRows={3}
-              id="message"
+              id="Message"
               name="message"
               type="message"
               autoComplete="message"
@@ -143,6 +150,7 @@ export default function Contact() {
             variant="contained"
             color="primary"
             type="submit"
+            value="Send"
             onClick={() => {
               alert('Thank you for your interest in DEVise. We will be in touch soon.');
             }}
