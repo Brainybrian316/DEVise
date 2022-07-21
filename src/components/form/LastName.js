@@ -1,5 +1,3 @@
-
-
 import * as React from 'react';
 import FormControlUnstyled, {
   useFormControlUnstyledContext,
@@ -112,21 +110,11 @@ const HelperText = styled((props) => {
   font-size: 0.875rem;
 `;
 
-export default function GroupInput() {
+export default function LastName() {
   return (
     <div>
       <FormControlUnstyled defaultValue="" required>
-        <Label>Username</Label>
-        <Input />
-        <HelperText />
-      </FormControlUnstyled>
-      <FormControlUnstyled defaultValue="" required>
-        <Label>Email</Label>
-        <Input />
-        <HelperText />
-      </FormControlUnstyled>
-      <FormControlUnstyled defaultValue="" required>
-        <Label>Password</Label>
+        <Label>Last Name</Label>
         <Input />
         <HelperText />
       </FormControlUnstyled>

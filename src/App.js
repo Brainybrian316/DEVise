@@ -5,12 +5,12 @@ import ContactForm from './pages/Contact';
 
 
 
+
 function App() {
   return (
     <div>    
     <Navbar />
-    <HomePage /> 
-   <ContactForm />
+    <HomePage />
     
     </div>
   );
