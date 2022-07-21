@@ -6,8 +6,17 @@ export default function Contact() {
   return (
     <>
 
-      <Container maxWidth="sm">
-        <Box my={4}>
+      <Container maxWidth="sm"
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          bgcolor: '#ffd180',
+          borderRadius: '10px',
+          mx: 'auto',
+          mt: 3,
+        }}
+      >
+        <Box my={2}>
           <Typography variant="h4" component="h1" gutterBottom>
             Contact
           </Typography>
@@ -16,7 +25,7 @@ export default function Contact() {
           </Typography>
           </Box>
 
-          <Box my={4}>
+          <Box>
             <InputLabel htmlFor="email">Email:</InputLabel>
             <Input
               sx={{
@@ -36,6 +45,8 @@ export default function Contact() {
               required
             />
         </Box>
+
+        
         
         <Box 
           sx={{ display: { xs: 'flex', md: 'flex' } }}
@@ -79,12 +90,13 @@ export default function Contact() {
           </Typography>
         </Box>
 
-        <Box my={4}>
+        <Box>
           <Button
             sx={{
               border: '1px solid #ced4da',
               borderRadius: '4px',
               marginTop: '10px',
+              marginBottom: '10px',
               float: 'right',
             }}
             variant="contained"
