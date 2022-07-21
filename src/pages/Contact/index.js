@@ -1,4 +1,4 @@
-import { Container, Box, Typography, Button, TextField, Input  } from '@mui/material';
+import { Container, Box, Typography, Button, TextField, Input, InputLabel  } from '@mui/material';
 
 
 
@@ -17,18 +17,24 @@ export default function Contact() {
           </Box>
 
           <Box my={4}>
+            <InputLabel htmlFor="email">Email:</InputLabel>
             <Input
+              sx={{
+                bgcolor: 'background.paper',
+                border: '1px solid #ced4da',
+                borderRadius: '4px',
+                marginTop: '10px',
+                width: '100%',
+              }}
               id="email"
               name="email"
-              label="Email"
               type="email"
-              fullWidth
               autoComplete="email"
               autoFocus
+              color= 'secondary'
+              placeholder='Enter your email'
+              required
             />
-            <Typography variant="p" component="p" gutterBottom>
-              Email input goes here
-            </Typography>
         </Box>
         
         <Box 
@@ -73,7 +79,24 @@ export default function Contact() {
           </Typography>
         </Box>
 
-
+        <Box my={4}>
+          <Button
+            sx={{
+              border: '1px solid #ced4da',
+              borderRadius: '4px',
+              marginTop: '10px',
+              float: 'right',
+            }}
+            variant="contained"
+            color="primary"
+            type="submit"
+            onClick={() => {
+              alert('Thank you for your interest in DEVise. We will be in touch soon.');
+            }}
+          >
+            Submit
+          </Button>
+        </Box>
       </Container>
   
     </>
