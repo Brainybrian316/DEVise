@@ -1,4 +1,4 @@
-import { Container, Box, Typography, Button, TextField, Input, InputLabel  } from '@mui/material';
+import { Container, Box, Typography, Button, TextareaAutosize, Input, InputLabel  } from '@mui/material';
 
 
 
@@ -46,7 +46,24 @@ export default function Contact() {
             />
         </Box>
 
-        
+        <Box>
+            <InputLabel htmlFor="message">Message:</InputLabel>
+            <TextareaAutosize
+              style={{ width: '100%', fontFamily: 'Arial',
+             fontSize: '16px', 
+            }}
+              minRows={3}
+              id="message"
+              name="message"
+              type="message"
+              autoComplete="message"
+              autoFocus
+              color= 'secondary'
+              placeholder='Enter your message'
+            />
+        </Box>
+
+
         
         <Box 
           sx={{ display: { xs: 'flex', md: 'flex' } }}
