@@ -21,16 +21,25 @@ export default function Contact() {
               Email input goes here
             </Typography>
         </Box>
-        {/* yes or no radio */}
-        <Box my={4}>
-          <Typography variant="p" component="p" gutterBottom>
+        
+        <Box 
+          sx={{ display: { xs: 'flex', md: 'flex' } }}
+          my={4}>
+          <Typography 
+          sx={{ mr: 2 }}
+          variant="p" 
+          component="p" 
+          gutterBottom>
             Interested in this project being put into production?
           </Typography>
-          <Input type="radio" name="radio-button-demo" value="yes" />
+          <Input 
+          type="radio" 
+          name="yes" 
+          value="yes" />
           <Typography variant="p" component="p" gutterBottom>
             Yes
           </Typography>
-          <Input type="radio" name="radio-button-demo" value="no" />
+          <Input type="radio" name="no" value="no" />
           <Typography variant="p" component="p" gutterBottom>
             No
           </Typography>
