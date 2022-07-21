@@ -15,7 +15,9 @@ export default function loginBtn() {
     });
   return (
     <ThemeProvider theme={theme}>
-    <Button onClick={() => {alert('clicked');
+    <Button 
+    sx={{ mr: 1, }}
+    onClick={() => {alert('clicked');
   }} variant="contained">Login</Button>
     </ThemeProvider>
   );
