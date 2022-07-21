@@ -1,7 +1,6 @@
 
 import {Box, Container} from '@mui/material/';
-
-
+import Avatar from './avatar';
 
 export default function ProfilePage() {
   return (
@@ -21,7 +20,9 @@ export default function ProfilePage() {
     height: '100vh',
     backgroundColor: 'primary.dark',
   }}
-/>
+>
+  <Avatar />
+  </Box>
 <Box
   sx={{
     width: '100vw',
