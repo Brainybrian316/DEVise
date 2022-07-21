@@ -140,6 +140,7 @@ const NavBar = () => {
               
           <Box sx={{ flexGrow: 0, }}>
             <LoginBtn  />
+            
             <SignupBtn />
             <Menu
               sx={{ mt: '45px', }}
