@@ -1,4 +1,5 @@
 import FirstName from '../../components/form/FirstName'
+import GroupInput from '../../components/form/FormInput';
 import LastName from '../../components/form/LastName';
 
 export default function Signup() {
@@ -6,6 +7,7 @@ export default function Signup() {
     <div>
       <FirstName />
       <LastName />
+      <GroupInput />
     </div>
   );
 }
