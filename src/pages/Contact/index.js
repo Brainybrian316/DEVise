@@ -17,6 +17,15 @@ export default function Contact() {
           </Box>
 
           <Box my={4}>
+            <Input
+              id="email"
+              name="email"
+              label="Email"
+              type="email"
+              fullWidth
+              autoComplete="email"
+              autoFocus
+            />
             <Typography variant="p" component="p" gutterBottom>
               Email input goes here
             </Typography>
@@ -33,14 +42,33 @@ export default function Contact() {
             Interested in this project being put into production?
           </Typography>
           <Input 
-          type="radio" 
-          name="yes" 
-          value="yes" />
-          <Typography variant="p" component="p" gutterBottom>
+          sx={{ mr: 2 }}
+          type="radio"
+          name="radio-button-demo"
+          label="Yes"
+          value="yes"
+          inputProps={{ 'aria-label': 'Yes' }}
+          />
+          <Typography
+          sx={{ mr: 2 }}
+          variant="p"
+          component="p"
+          gutterBottom>
             Yes
           </Typography>
-          <Input type="radio" name="no" value="no" />
-          <Typography variant="p" component="p" gutterBottom>
+          <Input
+          sx={{ mr: 2 }}
+          type="radio"
+          name="radio-button-demo"
+          label="No"
+          value="no"
+          inputProps={{ 'aria-label': 'No' }}
+          />
+                <Typography 
+          sx={{ mr: 2 }}
+          variant="p"
+          component="p"
+          gutterBottom>
             No
           </Typography>
         </Box>
