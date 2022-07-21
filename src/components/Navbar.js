@@ -137,12 +137,12 @@ const NavBar = () => {
               </Button>
             ))}
           </Box>
-
+              
           <Box sx={{ flexGrow: 0, }}>
-            <LoginBtn />
+            <LoginBtn  />
             <SignupBtn />
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: '45px', }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
