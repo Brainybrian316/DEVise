@@ -1,7 +1,7 @@
 import HomePage from './pages/Home';
 import './assets/global.css';
 import Navbar from './components/Navbar';
-import Signup from './pages/Signup';
+
 
 
 
@@ -10,7 +10,7 @@ function App() {
     <div>    
     <Navbar />
     <HomePage /> 
-    <Signup />
+
    
     
     </div>

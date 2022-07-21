@@ -46,8 +46,8 @@ export default function Signup() {
         }}>
       <CreateAcctBtn />
       </Box>
-      </Box>
 
+      </Box>
       </Container>
     </div>
   );
