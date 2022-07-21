@@ -11,9 +11,10 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import SignupBtn from './ui/SignupBtn';
+import LoginBtn from './ui/LoginBtn';
 
 
-const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'About Us', 'Contact', 'Sign In'];
+const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'About Us', 'Contact',];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
@@ -137,8 +138,9 @@ const NavBar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <SignupBtn/>
+          <Box sx={{ flexGrow: 0, }}>
+            <LoginBtn />
+            <SignupBtn />
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"

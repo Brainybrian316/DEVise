@@ -16,7 +16,7 @@ export default function signupBtn() {
   return (
     <ThemeProvider theme={theme}>
     <Button onClick={() => {alert('clicked');
-  }} variant="contained">Sign Up</Button>
+  }} variant="contained"  id="fancy-nav"><span>Sign Up</span></Button>
     </ThemeProvider>
   );
 }
