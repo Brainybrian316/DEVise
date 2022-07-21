@@ -16,7 +16,7 @@ export default function Signup() {
         borderRadius: '10px',
         padding: '2rem',
          }}>
-          
+
         <Typography variant="h4" sx={{
           textAlign: 'start',
           fontWeight: 'bold',
@@ -27,10 +27,25 @@ export default function Signup() {
           Create Account
         </Typography>
 
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: '2rem',
+        }}>
       <FirstName />
       <LastName />
       <GroupInput />
+      </Box>
+
+        <Box sx={{
+          display: 'flex',
+          alignItems: 'right',
+          justifyContent: 'flex-end',
+        }}>
       <CreateAcctBtn />
+      </Box>
       </Box>
 
       </Container>
