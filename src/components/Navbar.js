@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import SignupBtn from './ui/SignupBtn';
 
 
 const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'About Us', 'Contact', 'Sign In'];
@@ -137,8 +138,7 @@ const NavBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Button onClick={() => {alert('clicked');
-                }} variant="contained">Sign Up</Button>
+            <SignupBtn/>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
