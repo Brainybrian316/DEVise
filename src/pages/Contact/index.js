@@ -1,11 +1,10 @@
 
 import { Container, Box, Typography, Button, TextareaAutosize, Input, InputLabel, } from '@mui/material';
 import emailjs from '@emailjs/browser';
-import { useState } from 'react';
+
 
 
 export default function Contact(props) {
-    const [result, showResult] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -26,12 +25,9 @@ export default function Contact(props) {
         },
       );
     e.target.reset();
-    showResult(true);
+   
   };
 
-  setTimeout(() => {
-    showResult(false);
-  }, 5000);
 
 
   return (
@@ -109,11 +105,12 @@ export default function Contact(props) {
           </Typography>
           <Input 
           sx={{ mr: 2 }}
+          id="yes"
           type="radio"
           name="radio-button-demo"
-          label="Yes"
+          label="yes"
           value="yes"
-          inputProps={{ 'aria-label': 'Yes' }}
+          inputProps={{ 'aria-label': 'yes' }}
           />
           <Typography
           sx={{ mr: 2 }}
@@ -124,11 +121,12 @@ export default function Contact(props) {
           </Typography>
           <Input
           sx={{ mr: 2 }}
+          id="no"
           type="radio"
           name="radio-button-demo"
-          label="No"
+          label="no"
           value="no"
-          inputProps={{ 'aria-label': 'No' }}
+          inputProps={{ 'aria-label': 'no' }}
           />
                 <Typography 
           sx={{ mr: 2 }}
