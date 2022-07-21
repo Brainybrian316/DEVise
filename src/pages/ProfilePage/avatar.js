@@ -2,6 +2,7 @@ import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { Typography } from '@mui/material';
+import CodeIcon from '@mui/icons-material/Code';
 
 function stringToColor(string) {
   let hash = 0;
@@ -51,6 +52,7 @@ export default function Avatars() {
      }}>
       <Avatar {...stringAvatar('Brian M')} />
     </Stack>
+
     <Typography
       variant="h6"
       sx={{
@@ -67,8 +69,28 @@ export default function Avatars() {
         color: 'text.secondary',
       }}
     >
-      Software Engineer
+      Brainybrian2003
     </Typography>
+
+    <Typography
+      variant="subtitle1"
+      sx={{
+        textAlign: 'center',
+        color: 'text.main',
+        fontWeight: 'bold',
+      }}
+    >
+      <CodeIcon
+        sx={{
+          fontSize: '1rem',
+          marginRight: '0.2rem',
+          borderRadius: '100%',
+          bgcolor: 'grey.400',
+        }}
+       />
+      Full Stack Software Engineer
+    </Typography>
+    
 
   </>
   );

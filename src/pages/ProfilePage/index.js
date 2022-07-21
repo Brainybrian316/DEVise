@@ -18,7 +18,7 @@ export default function ProfilePage() {
   sx={{
     width: 500,
     height: '100vh',
-    backgroundColor: 'primary.dark',
+    backgroundColor: 'primary.light',
   }}
 >
   <Avatar />
@@ -28,7 +28,7 @@ export default function ProfilePage() {
     width: '100vw',
     height: '100vh',
     float : 'right',
-    backgroundColor: 'red',
+    backgroundColor: '#ffab91',
   }}
 />
 </Container>
