@@ -3,7 +3,7 @@ import GroupInput from '../../components/form/FormInput';
 import LastName from '../../components/form/LastName';
 import CreateAcctBtn from './CreateAcctBtn';
 import './signup.css';
-import { Container, Box } from '@mui/material';
+import { Container, Box, Typography } from '@mui/material';
 
 
 export default function Signup() {
@@ -16,7 +16,17 @@ export default function Signup() {
         borderRadius: '10px',
         padding: '2rem',
          }}>
-   <h1>Create Account</h1>
+          
+        <Typography variant="h4" sx={{
+          textAlign: 'start',
+          fontWeight: 'bold',
+          color: '#3f51b5',
+          fontSize: '2rem',
+          marginBottom: '2rem',
+        }}>
+          Create Account
+        </Typography>
+
       <FirstName />
       <LastName />
       <GroupInput />
