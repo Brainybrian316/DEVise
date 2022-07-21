@@ -3,6 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { Typography } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
+import ConnectedList from './List';
 
 function stringToColor(string) {
   let hash = 0;
@@ -90,6 +91,9 @@ export default function Avatars() {
        />
       Full Stack Software Engineer
     </Typography>
+
+    <ConnectedList/>
+
     
 
   </>
