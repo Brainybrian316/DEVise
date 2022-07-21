@@ -10,9 +10,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import SignupBtn from './ui/SignupBtn';
+import LoginBtn from './ui/LoginBtn';
 
 
-const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'About Us', 'Contact', 'Sign In'];
+const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'About Us', 'Contact',];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
@@ -135,12 +137,12 @@ const NavBar = () => {
               </Button>
             ))}
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Button onClick={() => {alert('clicked');
-                }} variant="contained">Sign Up</Button>
+              
+          <Box sx={{ flexGrow: 0, }}>
+            <LoginBtn  />
+            <SignupBtn />
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: '45px', }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{

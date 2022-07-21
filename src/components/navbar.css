@@ -13,8 +13,7 @@
   height: 50px;
 }
 
-#fancy-nav {
-  font-family:arial rgb(255, 254, 254);
+#fancy-nav span {
   background-image: 
     linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 
     background-clip: border-box;
