@@ -1,5 +1,5 @@
 
-import { Container, Box, Typography, Button, TextareaAutosize, Input, InputLabel  } from '@mui/material';
+import { Container, Box, Typography, Button, TextareaAutosize, Input, InputLabel, } from '@mui/material';
 import emailjs from '@emailjs/browser';
 
 
@@ -8,12 +8,22 @@ export default function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      process.env.REACT_APP_SERVICE_ID,
-      process.env.REACT_APP_YOUR_TEMPLATE_ID,
-      e.target,
-      process.env.REACT_APP_YOUR_PUBLIC_KEY,
-    )
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_YOUR_SERVICE_ID,
+        process.env.REACT_APP_YOUR_TEMPLATE_ID,
+        e.target,
+        process.env.REACT_APP_YOUR_PUBLIC_KEY,
+      )
+    .then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      },
+    );
+    e.target.reset();
   }
 
   return (
@@ -29,6 +39,7 @@ export default function Contact() {
           mt: 3,
         }}
       >
+        <form className="contact-form" action="" onSubmit={sendEmail}>
         <Box my={2}>
           <Typography variant="h4" component="h1" gutterBottom>
             Contact
@@ -139,6 +150,7 @@ export default function Contact() {
             Submit
           </Button>
         </Box>
+        </form>
       </Container>
   
     </>
