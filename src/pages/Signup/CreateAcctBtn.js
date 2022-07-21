@@ -3,6 +3,7 @@ import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 
 
+
 export default function CreateAcctBtn() {
   
     const theme = createTheme({
@@ -15,8 +16,11 @@ export default function CreateAcctBtn() {
       });
     return (
       <ThemeProvider theme={theme}>
-      <Button onClick={() => {alert('clicked');
+      <Button 
+      sx={{ m: 2, float: 'right', }}
+      onClick={() => {alert('clicked');
     }} variant="contained">Create Account</Button>
       </ThemeProvider>
+
     );
 }
