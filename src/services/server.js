@@ -5,11 +5,9 @@ const http = require('http');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { resolvers, typeDefs } = require('./schemas');
-// import { authMiddleware } from './utils/auth';
+const { authMiddleware } = require('../utils/auth');
 const db = require('./config/connection');
-// const { readFile } = require('fs/promises');
-// import { expressjwt } from 'express-jwt';
-// import jwt from 'jsonwebtoken';
+
 
 const PORT = process.env.PORT || 4000;
 
@@ -23,9 +21,12 @@ async function startApolloServer() {
     csrfPrevention: true,
     cache: 'bounded',
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+    context: authMiddleware
   });
 
 await server.start();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 server.applyMiddleware({ app, path: '/' });
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
