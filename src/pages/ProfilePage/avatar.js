@@ -60,6 +60,16 @@ export default function Avatars() {
     >
       Brian M
     </Typography>
+    <Typography
+      variant="subtitle2"
+      sx={{
+        textAlign: 'center',
+        color: 'text.secondary',
+      }}
+    >
+      Software Engineer
+    </Typography>
+
   </>
   );
 }
