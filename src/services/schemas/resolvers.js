@@ -3,6 +3,7 @@ const { User, DevProjects, UserProjects  } = require('../models');
 const { signToken } = require('../../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
 require("dotenv").config();
+const bcrypt = require("bcrypt");
 
 
 const resolvers = {
@@ -58,13 +59,14 @@ const resolvers = {
       if (context.user.id !== id) {
         throw new AuthenticationError('Invalid Credentials');
       }
-      console.log(context.user.id);
-      console.log(id);
-      const user = await User.findByIdAndUpdate(id, input, {
-        new: true,
-        runValidators: true
-      });
+      const user = await User.findByIdAndUpdate(
+        id, 
+        { $set: input, $set: { password: bcrypt.hashSync(input.password, 10) } },
+     { new: true, })
+    //  .select('-__v -password');
+
       return user;
+  
     },
 
   // updateUser: async (_, { user: input }, context) => {
