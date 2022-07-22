@@ -9,7 +9,7 @@ const resolvers = {
   Query: {
     me: async (_, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id })
+        const userData = await User.findOne({ _id: context.user.id })
         .select('-__v -password');
         return userData;
       }
@@ -53,19 +53,19 @@ const resolvers = {
     const token = signToken(user);
     return { token, user };
     },
-  updateUser: async (_, { input }, context) => {
+  updateUser: async (_, { user: input }, context) => {
     if (!context.user) {
       throw new AuthenticationError('You need to be logged in to update your profile');
     }
-    console.log(input);
-
     const updatedUser = await User.findByIdAndUpdate(
       { _id: context.user.id },
-      { $push: {  updateUser: input } },
+      { $push: {  user: input } },
       { new: true }
     );
-    console.log(updatedUser);
-    return updatedUser;
+    const token = signToken(updatedUser);
+
+    return { token, user: updatedUser };
+
  },
    deleteUser: async (_, { id }) => {
       return await User.findByIdAndDelete(id);
