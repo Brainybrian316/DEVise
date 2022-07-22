@@ -57,7 +57,7 @@ const resolvers = {
     if (!context.user) {
       throw new AuthenticationError('You need to be logged in to update your profile');
     }
-    const updatedUser = await User.findByIdAndUpdate(
+    let updatedUser = await User.findByIdAndUpdate(
       { _id: context.user._id },
       { $push: {  updateUser: input } },
       { new: true }
