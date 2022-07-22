@@ -85,21 +85,20 @@ const resolvers = {
     return userProject;
 
   },
-  //  createUserProjects: async (_, { input }, context) => {
-  //     if (!context.user) {
-  //       throw new AuthenticationError('Not logged in');
-  //     }
-  //     const project = UserProjects.create({ input });
-
-  //     await User.findByIdAndUpdate(context.user._id,
-  //       { $push: { userProjects: project } });
-
-  //       return project;
-  //  },
    updateUserProjects: async (_, { id, input }) => {
       return await UserProjects.findByIdAndUpdate(id, input);
    },
-   deleteUserProjects: async (_, { id }) => {
+   deleteUserProjects: async (_, { id }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('Not logged in');
+      }
+      
+      const user = await User.findById(context.user._id);
+      const project = await UserProjects.findById(id);
+      const userProjects = user.userProjects.filter(
+        project => project._id.toString() !== id.toString()
+      );
+      await User.findByIdAndUpdate(context.user._id, { userProjects });
       return await UserProjects.findByIdAndDelete(id);
    }
    
