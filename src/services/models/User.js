@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const bcrypt = require("bcrypt");
+const UserProjectsSchema =  require("./UserProjects");
 
 const userSchema = new Schema({
   firstName: {
@@ -32,6 +33,7 @@ const userSchema = new Schema({
       },
     },
   },
+  userProjects: [UserProjectsSchema.schema],
 });
 
 // Hash the password before saving

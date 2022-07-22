@@ -12,6 +12,7 @@ const userData = () => {
     username: `${firstName}${lastName}`,
     email: faker.internet.email(`${firstName}${lastName}`),
     password: faker.internet.password(8, true),
+    userProjects: [],
   });
   return user;
 };
@@ -23,9 +24,14 @@ async function seedUsers() {
   await db.collection('users').deleteMany({});
   const users = db.collection('users');
   const userSchema = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 3; i++) {
     const user = new User(userData());
     userSchema.push(user);
+  }
+  const userProjects = await db.collection('userprojects').find({}).toArray();
+  for (let i = 0; i < userSchema.length; i++) {
+    const randomUserProject = userProjects[Math.floor(Math.random() * userProjects.length)];
+    userSchema[i].userProjects.push(randomUserProject._id);
   }
   await users.insertMany(userSchema);
   const usersJson = await users.find({}).toArray();

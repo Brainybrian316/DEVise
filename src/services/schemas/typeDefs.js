@@ -17,12 +17,12 @@ const typeDefs = gql`
   type Mutation {
     createUser(input: CreateUserInput!): Auth
     login(email: String!, password: String!): Auth
-    updateUser(firstName: String, lastName: String, username: String, email: String, password: String): User
+    updateUser(input: UpdateUserInput): User
     deleteUser(id: ID!): User
     createDevProject(input: CreateDevProjectInput!): DevProjects
     updateDevProject(id: ID!, input: UpdateDevProjectInput!): DevProjects
     deleteDevProject(id: ID!): DevProjects
-    createUserProjects(input: CreateUserProjectsInput!): UserProjects
+    createUserProjects(input: CreateUserProjectsInput ): UserProjects
     updateUserProjects(id: ID!, input: UpdateUserProjectsInput!): UserProjects
     deleteUserProjects(id: ID!): UserProjects
   }
@@ -41,6 +41,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    userProjects: [UserProjects]
   }
 
   input CreateUserInput {
@@ -110,7 +111,7 @@ const typeDefs = gql`
     rating: Int
     numReviews: Int
     price: Int
-    user: String
+    user: User
   }
 
   input CreateUserProjectsInput {
@@ -125,7 +126,7 @@ const typeDefs = gql`
     rating: Int
     numReviews: Int
     price: Int
-    user: String
+    user: ID
   }
 
   input UpdateUserProjectsInput {
@@ -140,7 +141,7 @@ const typeDefs = gql`
     rating: Int
     numReviews: Int
     price: Int
-    user: String
+    user: ID
   }
 `;
 
