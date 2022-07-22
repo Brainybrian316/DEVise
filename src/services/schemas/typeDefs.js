@@ -22,7 +22,7 @@ const typeDefs = gql`
     createDevProject(input: CreateDevProjectInput!): DevProjects
     updateDevProject(id: ID!, input: UpdateDevProjectInput!): DevProjects
     deleteDevProject(id: ID!): DevProjects
-    createUserProjects(input: CreateUserProjectsInput ): UserProjects
+    createUserProjects(input: CreateUserProjectsInput!): UserProjects
     updateUserProjects(id: ID!, input: UpdateUserProjectsInput!): UserProjects
     deleteUserProjects(id: ID!): UserProjects
   }
