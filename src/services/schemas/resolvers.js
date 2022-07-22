@@ -53,8 +53,16 @@ const resolvers = {
     const token = signToken(user);
     return { token, user };
     },
-  updateUser: async (_, { id, input }) => {
-    return await User.findByIdAndUpdate(id, input);
+  updateUser: async (_, { input }, context) => {
+    if (!context.user) {
+      throw new AuthenticationError('You need to be logged in to update your profile');
+    }
+    const updatedUser = await User.findByIdAndUpdate(
+      { _id: context.user._id },
+      { $push: { UserProjects: input } },
+      { new: true }
+    );
+    return updatedUser;
  },
    deleteUser: async (_, { id }) => {
       return await User.findByIdAndDelete(id);
