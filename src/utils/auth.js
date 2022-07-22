@@ -25,9 +25,9 @@ module.exports = {
 
     return req;
   },
-  signToken: function ({ id, email, username }) {
+  signToken: function ({ _id, email, username }) {
     const payload = {
-      id,
+      _id,
       email,
       username
     };

@@ -37,7 +37,6 @@ const resolvers = {
   },
   Mutation: {
     createUser: async (_, { input }) => {
-      // rejectIf(!User); // if user is not logged in, reject
       const user = await User.create(input);
       const token = signToken(user);
       return { token, user };
@@ -55,18 +54,13 @@ const resolvers = {
     return { token, user };
     },
     // logged in user can update their own info
-    updateUser: async (_, { input }, context) => {
-      if (!context.user) {
-        throw new AuthenticationError('Invalid Credentials');
+    updateUser: async (_, args, context) => {
+      if (context.user) {
+        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
       }
-      const user = await User.findByIdAndUpdate(
-        { _id: context.user.id },
-        { $set: input },
-        { runValidators: true}
-        );
-      return user;
-    },
 
+      throw new AuthenticationError('Not logged in');
+    },
   // updateUser: async (_, { user: input }, context) => {
   //   if (!context.user) {
   //     throw new AuthenticationError('You need to be logged in to update your profile');
