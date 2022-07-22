@@ -9,12 +9,13 @@ const typeDefs = gql`
     devProject(id: ID!): DevProjects
     userProjects: [UserProjects]
     userProject(id: ID!): UserProjects
+    me: User
   }
 
   ########### 'POST', 'PUT', 'DELETE' requests ###########
 
   type Mutation {
-    createUser(input: CreateUserInput!): User
+    createUser(input: CreateUserInput!): Auth
     updateUser(id: ID!, input: UpdateUserInput!): User
     deleteUser(id: ID!): User
     createDevProject(input: CreateDevProjectInput!): DevProjects
