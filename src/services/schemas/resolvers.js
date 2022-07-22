@@ -55,18 +55,16 @@ const resolvers = {
     return { token, user };
     },
     // logged in user can update their own info
-    updateUser: async (_, { id, input }, context) => {
-      if (context.user.id !== id) {
+    updateUser: async (_, { input }, context) => {
+      if (!context.user) {
         throw new AuthenticationError('Invalid Credentials');
       }
       const user = await User.findByIdAndUpdate(
-        id, 
-        { $set: input, $set: { password: bcrypt.hashSync(input.password, 10) } },
-     { new: true, })
-    //  .select('-__v -password');
-
+        { _id: context.user.id },
+        { $set: input },
+        { runValidators: true}
+        );
       return user;
-  
     },
 
   // updateUser: async (_, { user: input }, context) => {
