@@ -54,25 +54,12 @@ const resolvers = {
     return { token, user };
     },
     // logged in user can update their own info
-    updateUser: async (_, args, context) => {
-      if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+    updateUser: async (_, { input }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('Not logged in');
       }
-
-      throw new AuthenticationError('Not logged in');
+      return await User.findByIdAndUpdate(context.user._id, input, { new: true });
     },
-  // updateUser: async (_, { user: input }, context) => {
-  //   if (!context.user) {
-  //     throw new AuthenticationError('You need to be logged in to update your profile');
-  //   }
-  //   const updatedUser = await User.findByIdAndUpdate(
-  //     { _id: context.user.id },
-  //     { $push: {  user: input } },
-  //     { new: true }
-  //   );
-  //   const token = signToken(updatedUser);
-
-  //   return { token, user: updatedUser };
    deleteUser: async (_, { id }) => {
       return await User.findByIdAndDelete(id);
    },
@@ -85,8 +72,18 @@ const resolvers = {
    deleteDevProject: async (_, { id }) => {
       return await DevProjects.findByIdAndDelete(id);
    },
-   createUserProjects: async (_, { input }) => {
-      return await UserProjects.create(input);
+   createUserProjects: async (_, { input }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('Not logged in');
+      }
+      const project = new UserProjects({ input });
+      console.log(input);
+
+      await User.findByIdAndUpdate(context.user._id,
+        { $push: { userProjects: project } });
+        console.log(project);
+
+        return project;
    },
    updateUserProjects: async (_, { id, input }) => {
       return await UserProjects.findByIdAndUpdate(id, input);
