@@ -59,7 +59,7 @@ const resolvers = {
     }
     const updatedUser = await User.findByIdAndUpdate(
       { _id: context.user._id },
-      { $push: { UserProjects: input } },
+      { $push: {  updateUser: input } },
       { new: true }
     );
     return updatedUser;
