@@ -41,6 +41,18 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
   },
+  login: async (_, { email, password }) => {
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw new AuthenticationError('Invalid Credentials');
+    }
+    const isValid = await user.isValidPassword(password);
+    if (!isValid) {
+      throw new AuthenticationError('Invalid Credentials');
+    }
+    const token = signToken(user);
+    return { token, user };
+    },
   updateUser: async (_, { id, input }) => {
     return await User.findByIdAndUpdate(id, input);
  },
