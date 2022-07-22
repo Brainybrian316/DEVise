@@ -76,15 +76,26 @@ const resolvers = {
       if (!context.user) {
         throw new AuthenticationError('Not logged in');
       }
-      const project = new UserProjects({ input });
-      console.log(input);
 
-      await User.findByIdAndUpdate(context.user._id,
-        { $push: { userProjects: project } });
-        console.log(project);
+    const project =  await UserProjects.create(input);
 
-        return project;
-   },
+    const userProject = await User.findByIdAndUpdate(context.user._id, {
+      $push: { userProjects: project }}, { new: true });
+
+    return userProject;
+
+  },
+  //  createUserProjects: async (_, { input }, context) => {
+  //     if (!context.user) {
+  //       throw new AuthenticationError('Not logged in');
+  //     }
+  //     const project = UserProjects.create({ input });
+
+  //     await User.findByIdAndUpdate(context.user._id,
+  //       { $push: { userProjects: project } });
+
+  //       return project;
+  //  },
    updateUserProjects: async (_, { id, input }) => {
       return await UserProjects.findByIdAndUpdate(id, input);
    },
