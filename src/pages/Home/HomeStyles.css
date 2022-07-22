@@ -93,10 +93,11 @@ nav .menu-btn,
   transform: translate(-22%, -50%);
 }
 .name span {
-  color: #00b7ff;
+  color: #135ef3;
 }
 .name .details {
-  color: #969696;
+  color: #333232;
+  font-size: 15px;
 }
 .name h1 {
   font-family: "Montserrat";
