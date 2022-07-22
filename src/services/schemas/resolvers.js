@@ -1,5 +1,7 @@
 
 const { User, DevProjects, UserProjects  } = require('../models');
+const { signToken } = require('../../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
 
 
 const resolvers = {
@@ -18,6 +20,9 @@ const resolvers = {
     },
     devProject: async (_, { id }) => {
       return await DevProjects.findById(id);
+    },
+    userProject: async (_, { id }) => {
+      return await UserProjects.findById(id);
     }
   },
   Mutation: {
@@ -39,6 +44,15 @@ const resolvers = {
    },
    deleteDevProject: async (_, { id }) => {
       return await DevProjects.findByIdAndDelete(id);
+   },
+   createUserProjects: async (_, { input }) => {
+      return await UserProjects.create(input);
+   },
+   updateUserProjects: async (_, { id, input }) => {
+      return await UserProjects.findByIdAndUpdate(id, input);
+   },
+   deleteUserProjects: async (_, { id }) => {
+      return await UserProjects.findByIdAndDelete(id);
    }
    
 }

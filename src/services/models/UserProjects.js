@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 const { Schema, } = mongoose;
 
 const userProjectsSchema = new Schema({
-		user: {
-			type: Schema.Types.ObjectId,
-			ref: 'User',
-		},
 		title: {
 			type: String,
 		},
@@ -24,15 +20,21 @@ const userProjectsSchema = new Schema({
 		mainImage: {
 			type: String,
 		},
-		images: {
-			type: Array,
-		  },
-		videos: {
-			type: Array,
-			},
-		tags: {
+		images: [
+			 {
+				type: String,
+			}
+		],
+		videos: [
+			{
 			type: String,
-		},
+			}
+		],
+	  tags: [
+			{
+				type: String,
+			}
+		],
 		// reviews: [reviewsSchema],
 		rating: {
 			type: Number,
@@ -46,11 +48,14 @@ const userProjectsSchema = new Schema({
 			type: Number,
 			default: 0,
 		},
+		user: {
+			type: Schema.Types.ObjectId,
+			ref: 'User',
+		},
 	},
 	{
 		timestamps: true,
-	}
-);
+	});
 
 // const reviewsSchema = new Schema({
 // 		user: {

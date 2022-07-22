@@ -20,7 +20,7 @@
 .env.production.local
 .vscode
 .history
-
+/src/services/seeds/data
 
 npm-debug.log*
 yarn-debug.log*
