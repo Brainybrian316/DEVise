@@ -3,7 +3,8 @@ import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 
 
-export default function StandardBtn() {
+
+export default function CreateAcctBtn() {
   
     const theme = createTheme({
       palette: {
@@ -15,8 +16,11 @@ export default function StandardBtn() {
       });
     return (
       <ThemeProvider theme={theme}>
-      <Button onClick={() => {alert('clicked');
-    }} variant="contained">Standard Button</Button>
+      <Button 
+      id="form-btn"
+      onClick={() => {alert('clicked');
+    }} variant="contained">Create Account</Button>
       </ThemeProvider>
+
     );
 }
