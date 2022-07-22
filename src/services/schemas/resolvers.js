@@ -53,12 +53,12 @@ const resolvers = {
     const token = signToken(user);
     return { token, user };
     },
-  updateUser: async (_, { input }, context) => {
+  updateUser: async (_, { id, input }, context) => {
     if (!context.user) {
       throw new AuthenticationError('You need to be logged in to update your profile');
     }
     let updatedUser = await User.findByIdAndUpdate(
-      { _id: context.user._id },
+      { _id: id },
       { $push: {  updateUser: input } },
       { new: true }
     );
