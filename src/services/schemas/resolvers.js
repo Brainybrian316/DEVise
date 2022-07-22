@@ -2,6 +2,7 @@
 const { User, DevProjects, UserProjects  } = require('../models');
 const { signToken } = require('../../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
+require("dotenv").config();
 
 
 const resolvers = {
@@ -36,7 +37,9 @@ const resolvers = {
   Mutation: {
     createUser: async (_, { input }) => {
       // rejectIf(!User); // if user is not logged in, reject
-      return await User.create(input);
+      const user = await User.create(input);
+      const token = signToken(user);
+      return { token, user };
   },
   updateUser: async (_, { id, input }) => {
     return await User.findByIdAndUpdate(id, input);
