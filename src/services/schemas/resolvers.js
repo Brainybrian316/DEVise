@@ -53,20 +53,32 @@ const resolvers = {
     const token = signToken(user);
     return { token, user };
     },
-  updateUser: async (_, { user: input }, context) => {
-    if (!context.user) {
-      throw new AuthenticationError('You need to be logged in to update your profile');
-    }
-    const updatedUser = await User.findByIdAndUpdate(
-      { _id: context.user.id },
-      { $push: {  user: input } },
-      { new: true }
-    );
-    const token = signToken(updatedUser);
+    // logged in user can update their own info
+    updateUser: async (_, { id, input }, context) => {
+      if (context.user.id !== id) {
+        throw new AuthenticationError('Invalid Credentials');
+      }
+      console.log(context.user.id);
+      console.log(id);
+      const user = await User.findByIdAndUpdate(id, input, {
+        new: true,
+        runValidators: true
+      });
+      return user;
+    },
 
-    return { token, user: updatedUser };
+  // updateUser: async (_, { user: input }, context) => {
+  //   if (!context.user) {
+  //     throw new AuthenticationError('You need to be logged in to update your profile');
+  //   }
+  //   const updatedUser = await User.findByIdAndUpdate(
+  //     { _id: context.user.id },
+  //     { $push: {  user: input } },
+  //     { new: true }
+  //   );
+  //   const token = signToken(updatedUser);
 
- },
+  //   return { token, user: updatedUser };
    deleteUser: async (_, { id }) => {
       return await User.findByIdAndDelete(id);
    },
