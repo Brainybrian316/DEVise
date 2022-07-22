@@ -46,7 +46,7 @@ const resolvers = {
     if (!user) {
       throw new AuthenticationError('Invalid Credentials');
     }
-    const isValid = await user.isValidPassword(password);
+    const isValid = await user.isCorrectPassword(password);
     if (!isValid) {
       throw new AuthenticationError('Invalid Credentials');
     }
