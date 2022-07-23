@@ -1,6 +1,6 @@
 const User = require("./User");
 const DevProjects = require("./DeviseProjects");
 const UserProjects = require("./UserProjects");
-const Subscriptions = require('./Subscription')
+const Subscription = require('./Subscription')
 
-module.exports = { User, DevProjects, UserProjects, Subscriptions};
+module.exports = { User, DevProjects, UserProjects, Subscription};
