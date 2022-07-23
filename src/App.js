@@ -13,6 +13,8 @@ function App() {
     <div>    
     <Navbar />
     <HomePage />
+   
+    
     </div>
     </ApolloProvider>
   );

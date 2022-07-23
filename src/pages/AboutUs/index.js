@@ -1,5 +1,5 @@
 import React from "react";
-import aboutUs from "./aboutUs.css";
+import "./aboutUs.css";
 import Avatar from "@mui/material/Avatar";
 import roboAvatars1 from "./images/roboAvatars1.png";
 import roboAvatars2 from "./images/roboAvatars2.png";
