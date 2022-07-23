@@ -58,7 +58,9 @@ const resolvers = {
       if (!context.user) {
         throw new AuthenticationError('Not logged in');
       }
-      return await User.findByIdAndUpdate(context.user._id, input, { new: true });
+       const password = await bcrypt.hash(input.password, 10);
+      return await User.findByIdAndUpdate(context.user._id, 
+        { $set: input, password: password }, { new: true });
     },
    deleteUser: async (_, { id }) => {
       return await User.findByIdAndDelete(id);
@@ -92,7 +94,7 @@ const resolvers = {
       if (!context.user) {
         throw new AuthenticationError('Not logged in');
       }
-      
+
       const user = await User.findById(context.user._id);
       const project = await UserProjects.findById(id);
       const userProjects = user.userProjects.filter(
