@@ -1,23 +1,13 @@
-import { React } from "react";
+import React from "react";
 import aboutUs from "./aboutUs.css";
-import { Navbar } from "./Navbar";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
-import {
-  roboAvatars1,
-  roboAvatars2,
-  roboAvatars3,
-  roboAvatars4,
-  roboAvatars5,
-  roboAvatars6,
-} from "./images";
 
 export default function AboutUs() {
   return (
     <>
-      <Navbar />
       <Stack direction="row" spacing={2}>
-        <Avatar alt="Remy Sharp" src={roboAvatars1} />
+        <Avatar alt="Remy Sharp" src="./images/roboAvatars1" />
         <Avatar alt="Travis Howard" src={roboAvatars2} />
         <Avatar alt="Cindy Baker" src={roboAvatars3} />
       </Stack>
