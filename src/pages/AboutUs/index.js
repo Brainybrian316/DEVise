@@ -7,9 +7,12 @@ export default function AboutUs() {
   return (
     <>
       <Stack direction="row" spacing={2}>
-        <Avatar alt="Remy Sharp" src="./images/roboAvatars1" />
-        <Avatar alt="Travis Howard" src={roboAvatars2} />
-        <Avatar alt="Cindy Baker" src={roboAvatars3} />
+        <Avatar alt="Remy Sharp" src="/assets/images/roboAvatars1.png" />
+        <Avatar alt="Travis Howard" src="/assets/images/roboAvatars2.png" />
+        <Avatar
+          alt="Cindy Baker"
+          src="assets/images/avatars/roboAvatars3.png"
+        />
       </Stack>
       <div className="container">
         <div className="banner">
