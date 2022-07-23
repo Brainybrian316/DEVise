@@ -1,3 +1,4 @@
+
 :root {
   --coloremPrimus: rgb(226, 240, 252); /*card backgrounds */
   --coloremSecundus: rgba(83, 83, 86, 0.576); /* shadows */
@@ -92,4 +93,5 @@
   border-radius: 10px;
   background-color: var(--coloremPrimus);
   box-shadow: 5px 5px 5px var(--coloremSecundus);
+
 }

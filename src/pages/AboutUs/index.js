@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./aboutUs.css";
 import Avatar from "@mui/material/Avatar";
@@ -9,6 +10,7 @@ import roboAvatars5 from "./images/roboAvatars5.png";
 import linkedinColor from "./images/linkedinColor.svg";
 import github1 from "./images/github1.svg";
 import gearBrain from "./images/gearBrain.svg";
+
 
 export default function AboutUs() {
   return (
@@ -172,6 +174,7 @@ export default function AboutUs() {
             </div>
 
             <div className="founderLinks">
+
               <a href="#">
                 <Avatar alt="LinkedIn" src={linkedinColor} />
               </a>
