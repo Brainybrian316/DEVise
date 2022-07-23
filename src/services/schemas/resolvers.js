@@ -5,7 +5,6 @@ const { AuthenticationError } = require('apollo-server-express');
 require("dotenv").config();
 const bcrypt = require("bcrypt");
 
-
 const resolvers = {
   Query: {
     me: async (_, args, context) => {
@@ -103,7 +102,6 @@ const resolvers = {
       if (!context.user) {
         throw new AuthenticationError('Not logged in');
       }
-      
       const user = await User.findById(context.user._id);
       const project = await UserProjects.findById(id);
       const userProjects = user.userProjects.filter(
