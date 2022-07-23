@@ -1,4 +1,6 @@
-import {GET_USER_QUERY,   GET_USERS_QUERY , USER_PROJECTS_FRAGMENT, GET_USER_PROJECTS_QUERY, GET_ALL_USER_PROJECTS_QUERY, GET_ME_QUERY  } from "./queries";
+
+import {GET_USER_QUERY,   GET_USERS_QUERY , USER_PROJECTS_FRAGMENT, GET_USER_PROJECTS_QUERY, GET_ALL_USER_PROJECTS_QUERY, GET_ME_QUERY, GET_DEVPROJECTS_QUERY, GET_ONE_DEVPROJECT_QUERY  } from "./queries";
+
 import { useMutation, useQuery } from "@apollo/client";
 
 export function useGetUserQuery(id) {
@@ -50,3 +52,26 @@ export function useGetMeQuery() {
     error: Boolean(error),
 }
 }
+
+export function useGetDevProjectsQuery() {
+  const { data, loading, error } = useQuery
+  (GET_DEVPROJECTS_QUERY);
+  return {
+    devProjects: data?.devProjects,
+    loading,
+    error: Boolean(error),
+}
+}
+
+export function useGetOneDevProjectQuery(id) {
+  const { data, loading, error } = useQuery
+  (GET_ONE_DEVPROJECT_QUERY, {
+    variables: { id }
+  });
+  return {
+    devProject: data?.devProject,
+    loading,
+    error: Boolean(error),
+}
+}
+

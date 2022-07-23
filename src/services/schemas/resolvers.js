@@ -1,9 +1,11 @@
 
-const { User, DevProjects, UserProjects  } = require('../models');
 const { signToken } = require('../../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
 require("dotenv").config();
 const bcrypt = require("bcrypt");
+
+const { User, DevProjects, UserProjects, Subscriptions  } = require('../models');
+
 
 const resolvers = {
   Query: {
@@ -24,6 +26,9 @@ const resolvers = {
     userProjects: async () => {
       return await UserProjects.find();
     },
+    subscriptions: async () => {
+      return await Subscriptions.find();
+    },
     user: async (_, { id }) => {
       return await User.findById(id);
     },
@@ -32,6 +37,9 @@ const resolvers = {
     },
     userProject: async (_, { id }) => {
       return await UserProjects.findById(id);
+    },
+    subscriptions: async (_, { id }) => {
+      return await Subscriptions.findById(id);
     }
   },
   Mutation: {

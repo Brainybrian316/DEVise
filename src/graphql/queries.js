@@ -99,4 +99,62 @@ export const GET_USER_PROJECTS_QUERY = gql`
   }
   `;
 
+  export const GET_ME_QUERY = gql`
+  query GetMe {
+    me {
+      _id 
+      firstName
+      lastName
+      username
+      email
+      userProjects {
+        _id
+        title
+        description
+        summary
+        contributors
+        mainImage
+        images
+        videos
+        tags
+        rating
+        numReviews
+        price
+    }
+  }
+  }
+  `;
+
+export const GET_DEVPROJECTS_QUERY = gql`
+  query GetDevProjects {
+    devProjects{
+      _id
+      title 
+      description
+      summary
+      authors
+      mainImage
+      images
+      videos
+      tags
+    }
+  }
+  `;
+
+  export const GET_ONE_DEVPROJECT_QUERY = gql`
+  query GetOneDevProject($id: ID!) {
+    devProject(id: $id) {
+      _id
+      title 
+      description
+      summary
+      authors
+      mainImage
+      images
+      videos
+      tags
+    }
+  }
+  `;
+
 
