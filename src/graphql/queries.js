@@ -125,4 +125,20 @@ export const GET_USER_PROJECTS_QUERY = gql`
   }
   `;
 
+export const GET_DEVPROJECTS_QUERY = gql`
+  query GetDevProjects {
+    devProjects{
+      _id
+      title 
+      description
+      summary
+      authors
+      mainImage
+      images
+      videos
+      tags
+    }
+  }
+  `;
+
 
