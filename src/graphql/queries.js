@@ -8,22 +8,22 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export const USER_PROJECTS_FRAGMENT = gql`
-  fragment userProjects on User {
-    _id
-    title
-    description
-    summary
-    contributors
-    mainImage
-    images
-    videos
-    tags
-    rating
-    numReviews
-    price
-  }
-`;
+//  const USER_PROJECTS_FRAGMENT = gql`
+//   fragment projects on UserProjects {
+//     _id
+//     title
+//     description
+//     summary
+//     contributors
+//     mainImage
+//     images
+//     videos
+//     tags
+//     rating
+//     numReviews
+//     price
+//   }
+// `;
 
 export const GET_USER_QUERY = gql`
   query GetUser($id: ID!) {
@@ -32,10 +32,23 @@ export const GET_USER_QUERY = gql`
       lastName
       username
       email
-
-   
+      userProjects {
+        _id
+        title
+        description
+        summary
+        contributors
+        mainImage
+        images
+        videos
+        tags
+        rating
+        numReviews
+        price
+  }
     }
   }
+
 `;
 
 export const GET_USERS_QUERY = gql`
