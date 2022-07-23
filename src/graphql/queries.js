@@ -99,4 +99,30 @@ export const GET_USER_PROJECTS_QUERY = gql`
   }
   `;
 
+  export const GET_ME_QUERY = gql`
+  query GetMe {
+    me {
+      _id 
+      firstName
+      lastName
+      username
+      email
+      userProjects {
+        _id
+        title
+        description
+        summary
+        contributors
+        mainImage
+        images
+        videos
+        tags
+        rating
+        numReviews
+        price
+    }
+  }
+  }
+  `;
+
 
