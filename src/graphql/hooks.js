@@ -10,6 +10,7 @@ export function useGetUserQuery(id) {
     loading,
     error: Boolean(error),
   }
+  
 }
 
 export function useGetUsersQuery() {
