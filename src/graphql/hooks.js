@@ -61,9 +61,11 @@ export function useGetDevProjectsQuery() {
 }
 }
 
-export function useGetOneDevProjectQuery() {
+export function useGetOneDevProjectQuery(id) {
   const { data, loading, error } = useQuery
-  (GET_ONE_DEVPROJECT_QUERY);
+  (GET_ONE_DEVPROJECT_QUERY, {
+    variables: { id }
+  });
   return {
     devProject: data?.devProject,
     loading,
