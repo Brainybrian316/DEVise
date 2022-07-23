@@ -15,14 +15,53 @@ export default function AboutUs() {
     <>
       <div className="container">
         <div className="banner">
-          <h1>About Us</h1>
+          <h1>The Who, The What, and The Why</h1>
         </div>
 
-        <div className="mission">
-          <h2>Mission</h2>
+        <div className="what">
+          <h2>The What</h2>
+          <p className="what-text">
+            DEVise was founded on a simple principle: To facilitate the genesis
+            of inspiration <br />
+            Are there other tools and platforms out there? Yes, there are. Are
+            any of them what we offer? No.
+            <br />
+            <h3>What We Are</h3>
+            Here you will find a community of developers who are passionate
+            about their craft, and who are willing to share their knowledge and
+            skills.
+            <br />
+            There is no limit to the number of people who can join the DEVise
+            community, and there is no limit to the number of projects that can
+            be created. <br />
+            Here you will find resources for inspiration, and for learning how
+            to create a project. <br />
+            You will find other projects who are looking for collaborators or
+            partners more than someone to just take up one issue on their
+            massive ToDo lists. <br />
+            If you have a project you are looking to share or develop with
+            others, you can find the resources and people here. <br />
+            <h3>What We Are Not</h3>
+            We are not facebook, although there is a strong social aspect to
+            this community we professionals, students, teachers. <br />
+            We are not GitHub, this is not a version control system or a code
+            repository. It is a collaborative open source exchange. <br />
+            We are not Fiverr, we did not start this community to become another
+            freelance job board platform. We are not a company, we are a
+            community. <br />
+          </p>
+        </div>
+        <div className="why">
+          <h2>The Why</h2>
+          <p className="why-text">
+            We founded DEVise to have an all-in-one platform for anyone who is
+            looking for inspiration, help, or looking to collaborate on another
+            project. <br />
+            Inspiration should be easier to find. <br />
+          </p>
         </div>
 
-        <h2>Meet The Founders</h2>
+        <h2>Meet The Founders (The Who)</h2>
 
         <div className="founders">
           <div className="founderCard">
