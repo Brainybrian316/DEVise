@@ -141,4 +141,19 @@ export const GET_DEVPROJECTS_QUERY = gql`
   }
   `;
 
+  export const GET_ONE_DEVPROJECT_QUERY = gql`
+  query GetOneDevProject($id: ID!) {
+    devProject(id: $id) {
+      title 
+      description
+      summary
+      authors
+      mainImage
+      images
+      videos
+      tags
+    }
+  }
+  `;
+
 
