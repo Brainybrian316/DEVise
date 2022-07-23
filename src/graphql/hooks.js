@@ -1,5 +1,6 @@
 
 import {GET_USER_QUERY,   GET_USERS_QUERY, GET_USER_PROJECTS_QUERY, GET_ALL_USER_PROJECTS_QUERY, GET_ME_QUERY, GET_DEVPROJECTS_QUERY, GET_ONE_DEVPROJECT_QUERY  } from "./queries";
+import { LOGIN_MUTATION } from "./mutations";
 
 import { useMutation, useQuery } from "@apollo/client";
 
@@ -73,5 +74,10 @@ export function useGetOneDevProjectQuery(id) {
     loading,
     error: Boolean(error),
 }
+}
+
+export function useLoginMutation() {
+  const [login, { loading, error }] = useMutation(LOGIN_MUTATION);
+  return { login, loading, error };
 }
 
