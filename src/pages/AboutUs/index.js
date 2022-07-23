@@ -2,12 +2,13 @@ import React from "react";
 import aboutUs from "./aboutUs.css";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
+import roboAvatars1 from "./images/roboAvatars1.png";
 
 export default function AboutUs() {
   return (
     <>
       <Stack direction="row" spacing={2}>
-        <Avatar alt="Remy Sharp" src="/assets/images/roboAvatars1.png" />
+        <Avatar alt="Remy Sharp" src={roboAvatars1} />
         <Avatar alt="Travis Howard" src="/assets/images/roboAvatars2.png" />
         <Avatar
           alt="Cindy Baker"
