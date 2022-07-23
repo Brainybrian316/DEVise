@@ -18,6 +18,7 @@ const typeDefs = gql`
     createUser(input: CreateUserInput!): Auth
     login(email: String!, password: String!): Auth
     updateUser(input: UpdateUserInput): User
+    updateUserPassword(input: UserPassword): User
     deleteUser(id: ID!): User
     createDevProject(input: CreateDevProjectInput!): DevProjects
     updateDevProject(id: ID!, input: UpdateDevProjectInput!): DevProjects
@@ -57,6 +58,9 @@ const typeDefs = gql`
     lastName: String
     username: String
     email: String
+  }
+
+  input UserPassword {
     password: String
   }
 
