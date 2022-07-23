@@ -9,7 +9,7 @@ const typeDefs = gql`
     devProject(id: ID!): DevProjects
     userProjects: [UserProjects]
     userProject(id: ID!): UserProjects
-    me: User
+    me: User!
   }
 
   ########### 'POST', 'PUT', 'DELETE' requests ###########
@@ -17,8 +17,8 @@ const typeDefs = gql`
   type Mutation {
     createUser(input: CreateUserInput!): Auth
     login(email: String!, password: String!): Auth
-    updateUser(input: UpdateUserInput): User
-    updateUserPassword(input: UserPassword): User
+    updateUser(input: UpdateUserInput!): User
+    updateUserPassword(input: UserPassword!): User
     deleteUser(id: ID!): User
     createDevProject(input: CreateDevProjectInput!): DevProjects
     updateDevProject(id: ID!, input: UpdateDevProjectInput!): DevProjects
@@ -37,20 +37,20 @@ const typeDefs = gql`
   ############### User schema ###############
   type User {
     _id: ID!
-    firstName: String
-    lastName: String
-    username: String
-    email: String
-    password: String
+    firstName: String!
+    lastName: String!
+    username: String!
+    email: String!
+    password: String!
     userProjects: [UserProjects]
   }
 
   input CreateUserInput {
-    firstName: String
-    lastName: String
-    username: String
-    email: String
-    password: String
+    firstName: String!
+    lastName: String!
+    username: String!
+    email: String!
+    password: String!
   }
 
   input UpdateUserInput {
@@ -63,6 +63,55 @@ const typeDefs = gql`
   input UserPassword {
     password: String
   }
+
+  ############### User Projects schema ##############
+
+  type UserProjects {
+    _id: ID!
+    title: String
+    description: String
+    summary: String
+    contributors: [String]
+    mainImage: String
+    images: [String]
+    videos: [String]
+    tags: [String]
+    rating: Int
+    numReviews: Int
+    price: Int
+    user: User
+  }
+
+  input CreateUserProjectsInput {
+    title: String!
+    description: String!
+    summary: String!
+    contributors: [String]
+    mainImage: String
+    images: [String]
+    videos: [String]
+    tags: [String]
+    rating: Int
+    numReviews: Int
+    price: Int
+    user: ID
+  }
+
+  input UpdateUserProjectsInput {
+    title: String
+    description: String
+    summary: String
+    contributors: [String]
+    mainImage: String
+    images: [String]
+    videos: [String]
+    tags: [String]
+    rating: Int
+    numReviews: Int
+    price: Int
+    user: ID
+  }
+
 
   ############### Dev Projects schema ###############
 
@@ -98,54 +147,6 @@ const typeDefs = gql`
     images: [String]
     videos: [String]
     tags: [String]
-  }
-
-  ############### User Projects schema ##############
-
-  type UserProjects {
-    _id: ID
-    title: String
-    description: String
-    summary: String
-    contributors: [String]
-    mainImage: String
-    images: [String]
-    videos: [String]
-    tags: [String]
-    rating: Int
-    numReviews: Int
-    price: Int
-    user: User
-  }
-
-  input CreateUserProjectsInput {
-    title: String
-    description: String
-    summary: String
-    contributors: [String]
-    mainImage: String
-    images: [String]
-    videos: [String]
-    tags: [String]
-    rating: Int
-    numReviews: Int
-    price: Int
-    user: ID
-  }
-
-  input UpdateUserProjectsInput {
-    title: String
-    description: String
-    summary: String
-    contributors: [String]
-    mainImage: String
-    images: [String]
-    videos: [String]
-    tags: [String]
-    rating: Int
-    numReviews: Int
-    price: Int
-    user: ID
   }
 `;
 
