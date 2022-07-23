@@ -44,7 +44,7 @@ async function seedUserProjects() {
   await db.collection('userprojects').deleteMany({});
   const userprojects = db.collection('userprojects');
   const userProjectSchema = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 3; i++) {
     const Project = new UserProjects(userProjectData());
     userProjectSchema.push(Project);
   }
