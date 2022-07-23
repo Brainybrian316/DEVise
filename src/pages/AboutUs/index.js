@@ -22,9 +22,9 @@ export default function AboutUs() {
           <h2>Mission</h2>
         </div>
 
-        <div className="founders">
-          <h2>Meet The Founders</h2>
+        <h2>Meet The Founders</h2>
 
+        <div className="founders">
           <div className="founderCard">
             <div className="FounderName">
               <h3>Founder 1</h3>
@@ -34,7 +34,7 @@ export default function AboutUs() {
               <Avatar
                 alt="Remy Sharp"
                 src={roboAvatars1}
-                sx={{ width: 56, height: 56 }}
+                sx={{ width: 150, height: 150 }}
               />
             </div>
 
@@ -64,7 +64,7 @@ export default function AboutUs() {
               <Avatar
                 alt="Remy Sharp"
                 src={roboAvatars2}
-                sx={{ width: 56, height: 56 }}
+                sx={{ width: 150, height: 150 }}
               />
             </div>
 
@@ -94,7 +94,7 @@ export default function AboutUs() {
               <Avatar
                 alt="Remy Sharp"
                 src={roboAvatars3}
-                sx={{ width: 56, height: 56 }}
+                sx={{ width: 150, height: 150 }}
               />
             </div>
 
@@ -124,7 +124,7 @@ export default function AboutUs() {
               <Avatar
                 alt="Remy Sharp"
                 src={roboAvatars4}
-                sx={{ width: 56, height: 56 }}
+                sx={{ width: 150, height: 150 }}
               />
             </div>
 
@@ -154,7 +154,7 @@ export default function AboutUs() {
               <Avatar
                 alt="Remy Sharp"
                 src={roboAvatars5}
-                sx={{ width: 56, height: 56 }}
+                sx={{ width: 150, height: 150 }}
               />
             </div>
 
@@ -177,31 +177,66 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="footer">
-        <div className="imageAttributation">
-          <a href="https://iconscout.com/icons/linkedin" target="_blank">
-            Linkedin Icon
-          </a>{" "}
-          by{" "}
-          <a
-            href="https://iconscout.com/contributors/jagathish"
-            target="_blank"
-          >
-            Jagathish Saravanan
-          </a>
-          <a href="https://iconscout.com/icons/github" target="_blank">
-            Github Icon
-          </a>{" "}
-          by{" "}
-          <a href="https://iconscout.com/contributors/icon-mafia">Icon Mafia</a>{" "}
-          on <a href="https://iconscout.com">IconScout</a>
-          <a href="https://iconscout.com/icons/man" target="_blank">
-            Man Icon
-          </a>{" "}
-          by{" "}
-          <a href="https://iconscout.com/contributors/chamedesign">
-            Chamestudio
-          </a>{" "}
-          on <a href="https://iconscout.com">IconScout</a>
+        <div className="imageAttribution">
+          <div className="attributionTile">
+            <a
+              href="https://iconscout.com/icons/linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Linkedin Icon
+            </a>
+            by:
+            <a
+              href="https://iconscout.com/contributors/jagathish"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Jagathish Saravanan
+            </a>
+          </div>
+          <div className="attributionTile">
+            <a
+              href="https://iconscout.com/icons/github"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github Icon
+            </a>
+            by:
+            <a href="https://iconscout.com/contributors/icon-mafia">
+              Icon Mafia
+            </a>{" "}
+            on{" "}
+            <a
+              href="https://iconscout.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              IconScout
+            </a>
+          </div>
+          <div className="attributionTile">
+            <a
+              href="https://iconscout.com/icons/man"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Man Icon
+            </a>
+            by:
+            <a href="https://iconscout.com/contributors/chamedesign">
+              Chamestudio
+            </a>
+            on
+            <a
+              href="https://iconscout.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              IconScout
+            </a>
+          </div>
         </div>
       </div>
     </>
