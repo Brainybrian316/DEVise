@@ -64,8 +64,7 @@ export const GET_USERS_QUERY = gql`
 
 export const GET_USER_PROJECTS_QUERY = gql` 
   query GetUserProjects($id: ID!) {
-    userProjects(id: $id) {
-      _id
+    userProject(id: $id) {
       title 
       description
       summary

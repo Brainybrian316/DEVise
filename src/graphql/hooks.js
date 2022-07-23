@@ -26,7 +26,7 @@ export function useGetUserProjectsQuery(id) {
     variables: { id }
   });
   return {
-    userProjects: data?.userProjects,
+    userProject: data?.userProject,
     loading,
     error: Boolean(error),
   }
