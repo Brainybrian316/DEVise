@@ -31,12 +31,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"cd services && nodemon server\"",
+    "start": "concurrently \"react-scripts start\" \" nodemon ./src/services/server.js\"",
     "develop": "nodemon ./src/services/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "semantic-ui-css-patch",
     "seeds": "node ./src/services/seeds/index.js"
   },
   "eslintConfig": {
@@ -59,6 +58,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.3.0",
+    "mongoose-seed": "^0.6.0",
     "nodemon": "^2.0.19",
     "react-scripts": "^5.0.1"
   }
