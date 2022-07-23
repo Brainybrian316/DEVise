@@ -1,4 +1,4 @@
-import {GET_USER_QUERY,   GET_USERS_QUERY , USER_PROJECTS_FRAGMENT  } from "./queries";
+import {GET_USER_QUERY,   GET_USERS_QUERY , USER_PROJECTS_FRAGMENT, GET_USER_PROJECTS_QUERY  } from "./queries";
 import { useMutation, useQuery } from "@apollo/client";
 
 export function useGetUserQuery(id) {
@@ -10,7 +10,6 @@ export function useGetUserQuery(id) {
     loading,
     error: Boolean(error),
   }
-  
 }
 
 export function useGetUsersQuery() {
@@ -20,4 +19,16 @@ export function useGetUsersQuery() {
     loading,
     error: Boolean(error),
   }
+}
+
+export function useGetUserProjectsQuery(id) {
+  const { data, loading, error } = useQuery(GET_USER_PROJECTS_QUERY, {
+    variables: { id }
+  });
+  return {
+    userProjects: data?.userProjects,
+    loading,
+    error: Boolean(error),
+  }
+
 }
