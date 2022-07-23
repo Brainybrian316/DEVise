@@ -1,5 +1,6 @@
 
 const  { ApolloServerPluginDrainHttpServer } = require('apollo-server-core');
+const { InMemoryCache } = require('@apollo/client');
 const express = require('express');
 const http = require('http');
 const { ApolloServer } = require('apollo-server-express');
@@ -20,7 +21,7 @@ async function startApolloServer() {
     typeDefs,
     resolvers,
     csrfPrevention: true,
-    cache: 'bounded',
+    cache: new InMemoryCache(),
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
     context: authMiddleware
   });
