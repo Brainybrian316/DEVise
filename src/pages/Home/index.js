@@ -6,7 +6,13 @@ import Contact from "./Contact";
 import aboutImage from "../../assets/images/about.png";
 import aboutImage2 from "../../assets/images/download.png";
 
+
+
 export default function Home() {
+
+  
+
+
   return (
     <>
       <Header />
@@ -17,3 +23,6 @@ export default function Home() {
     </>
   );
 }
+
+    
+      
