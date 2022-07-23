@@ -6,7 +6,7 @@ import featureImage3 from "../../assets/images/feature_3.png";
 
 function Feature() {
   return (
-    <div id="features">
+    <div id="features" className="back-color">
       <div className="a-container">
         <FeatureBox image={featureImage1} title="DEVISE CARD 1"/>
         <FeatureBox image={featureImage2} title="DEVISE CARD 2"/>

@@ -26,6 +26,10 @@ input {
 .logo img {
   width: 90px;
 }
+
+.back-color{
+  background-color: #ffffff;
+}
 #main {
   width: 100%;
   height: 768px;
@@ -145,10 +149,10 @@ nav .menu-btn,
   margin-bottom: -80px;
 }
 #about {
-  margin-top: 100px;
+  margin-top: 0px;
   width: 100%;
   height: 120vh;
-  background-color: #f3fdff;
+  background-color: #ffffff;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -431,16 +435,18 @@ nav .menu-btn,
 }
 
 @media (max-width: 970px) {
+
   .main {
     background-image: none !important;
   }
+ 
   .name {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
   .about-image {
-    display: none;
+    display:inline-block
   }
   .cv-btn {
     margin-left: 27%;
@@ -463,7 +469,7 @@ nav .menu-btn,
     width: 100%;
   }
   #features {
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
   }
   #presentaion {
     display: none;

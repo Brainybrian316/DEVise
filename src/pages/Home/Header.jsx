@@ -4,7 +4,7 @@ import "./HomeStyles.css";
 
 function Header() {
   return (
-    <div id="main">
+    <div id="main" className="back-color">
     
       <div className="name">
         <h1>

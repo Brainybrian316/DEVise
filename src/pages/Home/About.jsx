@@ -2,7 +2,7 @@ import React from "react";
 
 function About(props) {
   return (
-    <div id="about">
+    <div id="about" className="back-color">
       <div className="about-image">
         <img src={props.image} alt="about" />
       </div>
