@@ -1,0 +1,95 @@
+:root {
+  --coloremPrimus: rgb(226, 240, 252); /*card backgrounds */
+  --coloremSecundus: rgba(83, 83, 86, 0.576); /* shadows */
+}
+
+/* Parent Component level css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+/* Banner/Hero */
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  width: 100%;
+  font-size: x-large;
+}
+
+/* Founders Section */
+
+.founderCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  margin: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--coloremPrimus);
+  box-shadow: 5px 5px 5px var(--coloremSecundus);
+}
+
+.founders {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.founderLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+.founderImg {
+  margin: 20px;
+}
+
+/* attribution section */
+
+.imageAttribution {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.attributionTile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 20px;
+  padding: 10px;
+  width: 175px;
+  border-radius: 10px;
+  background-color: var(--coloremPrimus);
+  box-shadow: 5px 5px 5px var(--coloremSecundus);
+}
