@@ -9,13 +9,16 @@ const typeDefs = gql`
     devProject(id: ID!): DevProjects
     userProjects: [UserProjects]
     userProject(id: ID!): UserProjects
+    me: User
   }
 
   ########### 'POST', 'PUT', 'DELETE' requests ###########
 
   type Mutation {
-    createUser(input: CreateUserInput!): User
-    updateUser(id: ID!, input: UpdateUserInput!): User
+    createUser(input: CreateUserInput!): Auth
+    login(email: String!, password: String!): Auth
+    updateUser(input: UpdateUserInput): User
+    updateUserPassword(input: UserPassword): User
     deleteUser(id: ID!): User
     createDevProject(input: CreateDevProjectInput!): DevProjects
     updateDevProject(id: ID!, input: UpdateDevProjectInput!): DevProjects
@@ -39,6 +42,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    userProjects: [UserProjects]
   }
 
   input CreateUserInput {
@@ -54,6 +58,9 @@ const typeDefs = gql`
     lastName: String
     username: String
     email: String
+  }
+
+  input UserPassword {
     password: String
   }
 
@@ -108,7 +115,7 @@ const typeDefs = gql`
     rating: Int
     numReviews: Int
     price: Int
-    user: String
+    user: User
   }
 
   input CreateUserProjectsInput {
@@ -123,7 +130,7 @@ const typeDefs = gql`
     rating: Int
     numReviews: Int
     price: Int
-    user: String
+    user: ID
   }
 
   input UpdateUserProjectsInput {
@@ -138,7 +145,7 @@ const typeDefs = gql`
     rating: Int
     numReviews: Int
     price: Int
-    user: String
+    user: ID
   }
 `;
 

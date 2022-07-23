@@ -2,10 +2,19 @@
 const { User, DevProjects, UserProjects  } = require('../models');
 const { signToken } = require('../../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
-
+require("dotenv").config();
+const bcrypt = require("bcrypt");
 
 const resolvers = {
   Query: {
+    me: async (_, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id })
+        .select('-__v -password');
+        return userData;
+      }
+      throw new AuthenticationError('Invalid Credentials');
+    },
     users: async () =>  {
       return await User.find();
     },
@@ -27,12 +36,40 @@ const resolvers = {
   },
   Mutation: {
     createUser: async (_, { input }) => {
-      // rejectIf(!User); // if user is not logged in, reject
-      return await User.create(input);
+      const user = await User.create(input);
+      const token = signToken(user);
+      return { token, user };
   },
-  updateUser: async (_, { id, input }) => {
-    return await User.findByIdAndUpdate(id, input);
- },
+  login: async (_, { email, password }) => {
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw new AuthenticationError('Invalid Credentials');
+    }
+    const isValid = await user.isCorrectPassword(password);
+    if (!isValid) {
+      throw new AuthenticationError('Invalid Credentials');
+    }
+    const token = signToken(user);
+    return { token, user };
+    },
+    // logged in user can update their own info
+    updateUser: async (_, { input }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('Not logged in');
+      }
+      const userUpdate = await User.findByIdAndUpdate(context.user._id, input, { new: true })
+      return userUpdate;
+    },
+    updateUserPassword: async (_, { input }, context) => {
+        if (!context.user) {
+          throw new AuthenticationError('Not logged in');
+        }
+         const password = await bcrypt.hash(input.password, 10);
+        const userPW = await User.findByIdAndUpdate(context.user._id, 
+         { $set: input, password: password }, { new: true })
+         .select('-__v -password');
+        return userPW;
+      },
    deleteUser: async (_, { id }) => {
       return await User.findByIdAndDelete(id);
    },
@@ -45,13 +82,32 @@ const resolvers = {
    deleteDevProject: async (_, { id }) => {
       return await DevProjects.findByIdAndDelete(id);
    },
-   createUserProjects: async (_, { input }) => {
-      return await UserProjects.create(input);
-   },
+   createUserProjects: async (_, { input }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('Not logged in');
+      }
+
+    const project =  await UserProjects.create(input);
+
+    const userProject = await User.findByIdAndUpdate(context.user._id, {
+      $push: { userProjects: project }}, { new: true });
+
+    return userProject;
+
+  },
    updateUserProjects: async (_, { id, input }) => {
       return await UserProjects.findByIdAndUpdate(id, input);
    },
-   deleteUserProjects: async (_, { id }) => {
+   deleteUserProjects: async (_, { id }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('Not logged in');
+      }
+      const user = await User.findById(context.user._id);
+      const project = await UserProjects.findById(id);
+      const userProjects = user.userProjects.filter(
+        project => project._id.toString() !== id.toString()
+      );
+      await User.findByIdAndUpdate(context.user._id, { userProjects });
       return await UserProjects.findByIdAndDelete(id);
    }
    
