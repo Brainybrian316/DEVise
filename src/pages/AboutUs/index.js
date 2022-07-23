@@ -15,7 +15,7 @@ export default function AboutUs() {
     <>
       <div className="container">
         <div className="banner">
-          <h1>The Who, The What, and The Why</h1>
+          <h1>The What, The Why, and The Who</h1>
         </div>
 
         <div className="what">
