@@ -10,7 +10,7 @@ export const client = new ApolloClient({
 
 export const USER_PROJECTS_FRAGMENT = gql`
   fragment userProjects on User {
-    id
+    _id
     title
     description
     summary
@@ -28,13 +28,12 @@ export const USER_PROJECTS_FRAGMENT = gql`
 export const GET_USER_QUERY = gql`
   query GetUser($id: ID!) {
     user(id: $id) {
-      id
       firstName
       lastName
       username
       email
-      password
-      ${USER_PROJECTS_FRAGMENT}
+
+   
     }
   }
 `;
@@ -42,12 +41,10 @@ export const GET_USER_QUERY = gql`
 export const GET_USERS_QUERY = gql`
   query GetUsers {
     users {
-      id
       firstName
       lastName
       username
       email
-      password
     }
   }
 `;

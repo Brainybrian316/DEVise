@@ -8,11 +8,8 @@ import aboutImage2 from "../../assets/images/download.png";
 
 
 
+
 export default function Home() {
-
-  
-
-
   return (
     <>
       <Header />
