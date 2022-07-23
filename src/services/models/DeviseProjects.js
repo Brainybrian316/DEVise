@@ -5,14 +5,20 @@ const deviseProjectsSchema = new Schema({
   //title of the project.
   title: {
     type: String,
+    required: true,
+    trim: true,
   },
   //description is the detailed description of the project, displayed on the project page.
   description: {
     type: String,
+    required: true,
+    trim: true,
   },
   //summary is the SHORT description of the project - this should be displayed on the rendered card.
   summary: {
     type: String,
+    required: true,
+    trim: true,
   },
   //for now the authors are DEVise. Eventually it will include all contributors to a template similar to an nom package.
   authors: [

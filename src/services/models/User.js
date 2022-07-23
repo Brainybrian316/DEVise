@@ -18,6 +18,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
     trim: true,
+    unique: true,
   },
   email: {
     type: String,
@@ -34,6 +35,9 @@ const userSchema = new Schema({
     },
   },
   userProjects: [UserProjectsSchema.schema],
+},
+{
+  timestamps: true,
 });
 
 // Hash the password before saving
