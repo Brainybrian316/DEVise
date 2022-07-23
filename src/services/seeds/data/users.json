@@ -1,0 +1,82 @@
+[
+  {
+    "_id": "62dc105cce7974b6147846b5",
+    "firstName": "Holden",
+    "lastName": "O'Keefe",
+    "username": "HoldenO'Keefe",
+    "email": "HoldenOKeefe.Jacobson@gmail.com",
+    "password": "nuhereci"
+  },
+  {
+    "_id": "62dc105cce7974b6147846b7",
+    "firstName": "Lance",
+    "lastName": "Will",
+    "username": "LanceWill",
+    "email": "LanceWill25@hotmail.com",
+    "password": "birudesi"
+  },
+  {
+    "_id": "62dc105cce7974b6147846b9",
+    "firstName": "Hassan",
+    "lastName": "Baumbach",
+    "username": "HassanBaumbach",
+    "email": "HassanBaumbach.Runolfsson@hotmail.com",
+    "password": "zulakihe"
+  },
+  {
+    "_id": "62dc105cce7974b6147846bb",
+    "firstName": "Chance",
+    "lastName": "Harris",
+    "username": "ChanceHarris",
+    "email": "ChanceHarris_Prohaska67@hotmail.com",
+    "password": "bibaqewo"
+  },
+  {
+    "_id": "62dc105cce7974b6147846bd",
+    "firstName": "Donnie",
+    "lastName": "Boehm",
+    "username": "DonnieBoehm",
+    "email": "DonnieBoehm_Pouros89@yahoo.com",
+    "password": "fuseyazo"
+  },
+  {
+    "_id": "62dc105cce7974b6147846bf",
+    "firstName": "Joey",
+    "lastName": "Berge",
+    "username": "JoeyBerge",
+    "email": "JoeyBerge.Schmidt@yahoo.com",
+    "password": "wamiwoyu"
+  },
+  {
+    "_id": "62dc105cce7974b6147846c1",
+    "firstName": "Milo",
+    "lastName": "Bogisich",
+    "username": "MiloBogisich",
+    "email": "MiloBogisich30@yahoo.com",
+    "password": "dewociko"
+  },
+  {
+    "_id": "62dc105cce7974b6147846c3",
+    "firstName": "Lauriane",
+    "lastName": "Greenfelder",
+    "username": "LaurianeGreenfelder",
+    "email": "LaurianeGreenfelder52@yahoo.com",
+    "password": "guzosapo"
+  },
+  {
+    "_id": "62dc105cce7974b6147846c5",
+    "firstName": "Emmie",
+    "lastName": "Considine",
+    "username": "EmmieConsidine",
+    "email": "EmmieConsidine15@hotmail.com",
+    "password": "fecariti"
+  },
+  {
+    "_id": "62dc105cce7974b6147846c7",
+    "firstName": "Lysanne",
+    "lastName": "Bradtke",
+    "username": "LysanneBradtke",
+    "email": "LysanneBradtke.OKon@hotmail.com",
+    "password": "sosewoga"
+  }
+]
