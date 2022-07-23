@@ -3,8 +3,8 @@ import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 
 
-export default function loginBtn() {
-
+export default function loginBtn(props) {
+  const { setPage } = props;
   const theme = createTheme({
     palette: {
       primary: {
@@ -17,7 +17,7 @@ export default function loginBtn() {
     <ThemeProvider theme={theme}>
     <Button 
     sx={{ mr: 1, }}
-    onClick={() => {alert('clicked');
+    onClick={() => {setPage('login');
   }} variant="contained">Login</Button>
     </ThemeProvider>
   );
