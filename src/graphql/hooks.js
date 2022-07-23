@@ -30,5 +30,13 @@ export function useGetUserProjectsQuery(id) {
     loading,
     error: Boolean(error),
   }
+}
 
+export function useGetAllUserProjectsQuery() {
+  const { data, loading, error } = useQuery(GET_ALL_USER_PROJECTS_QUERY);
+  return {
+    userProjects: data?.userProjects,
+    loading,
+    error: Boolean(error),
+  }
 }
