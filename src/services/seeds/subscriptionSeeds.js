@@ -33,8 +33,8 @@ async function seedSubscription() {
   const client = new MongoClient('mongodb://localhost:27017/devise', { useNewUrlParser: true });
   await client.connect();
   const db = client.db();
-  await db.collection('subscription').deleteMany({});
-  const subscription = db.collection('subscription');
+  await db.collection('subscriptions').deleteMany({});
+  const subscription = db.collection('subscriptions');
   const subscriptionSchema = [];
   for (let i = 0; i < data.length; i++) {
     const Sub = new Subscriptions(data[i])

@@ -26,7 +26,7 @@ const resolvers = {
     userProjects: async () => {
       return await UserProjects.find();
     },
-    subscriptions: async () => {
+    subs: async () => {
       return await Subscriptions.find();
     },
     user: async (_, { id }) => {
@@ -38,7 +38,7 @@ const resolvers = {
     userProject: async (_, { id }) => {
       return await UserProjects.findById(id);
     },
-    subscriptions: async (_, { id }) => {
+    sub: async (_, { id }) => {
       return await Subscriptions.findById(id);
     }
   },

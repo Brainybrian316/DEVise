@@ -11,8 +11,8 @@ const typeDefs = gql`
     userProjects: [UserProjects]
     userProject(id: ID!): UserProjects
     me: User!
-    subscriptions: [Subscriptions]
-    subscription(id: ID!): [Subscriptions]
+    subs: [Subscriptions]
+    sub(id: ID!): Subscriptions
   }
 
   ########### 'POST', 'PUT', 'DELETE' requests ###########
@@ -154,14 +154,14 @@ const typeDefs = gql`
 
 ############### Subscriptions schema ###############
 
-type Subscriptions {
-  _id: ID!
-  tier: String
-  name: String
-  perks: [String]
-  price: Float
-  users: [String]
-}
-`;
+  type Subscriptions {
+    _id: ID
+    tier: String!
+    name: String!
+    perks: [String]
+    price: Float!
+    users: [User]
+  }
+  `;
 
 module.exports = typeDefs;

@@ -32,6 +32,6 @@ const subscriptionSchema = new Schema ({
 
 })
 
-const Subscriptions = mongoose.model('subscription', subscriptionSchema);
+const Subscriptions = mongoose.model('Subscriptions', subscriptionSchema);
 
 module.exports = Subscriptions
