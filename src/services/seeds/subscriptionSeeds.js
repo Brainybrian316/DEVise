@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const fs = require('fs');
-const {Subscription} = require('../models/index.js');
+const {Subscriptions,} = require('../models/index.js');
 
 
 const data = [
@@ -37,8 +37,8 @@ async function seedSubscription() {
   const subscription = db.collection('subscription');
   const subscriptionSchema = [];
   for (let i = 0; i < data.length; i++) {
-    const Subscriptions = new Subscription(data[i])
-    subscriptionSchema.push(Subscriptions);
+    const Sub = new Subscriptions(data[i])
+    subscriptionSchema.push(Sub);
   }
   await subscription.insertMany(subscriptionSchema)
 
