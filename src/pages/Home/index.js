@@ -11,11 +11,11 @@ import aboutImage2 from "../../assets/images/download.png";
 
 export default function Home() {
 
- 
+ const { loading, error, userProjects } = useGetAllUserProjectsQuery();
 
 
-  // if (loading) return <p>...Loading</p>
-  // if (error) return <p>Something went wrong</p>
+  if (loading) return <p>...Loading</p>
+  if (error) return <p>Something went wrong</p>
 
   return (
     <>
