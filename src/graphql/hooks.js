@@ -1,4 +1,4 @@
-import {GET_USER_QUERY,   GET_USERS_QUERY , USER_PROJECTS_FRAGMENT, GET_USER_PROJECTS_QUERY  } from "./queries";
+import {GET_USER_QUERY,   GET_USERS_QUERY , USER_PROJECTS_FRAGMENT, GET_USER_PROJECTS_QUERY, GET_ALL_USER_PROJECTS_QUERY  } from "./queries";
 import { useMutation, useQuery } from "@apollo/client";
 
 export function useGetUserQuery(id) {

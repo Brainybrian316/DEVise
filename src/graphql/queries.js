@@ -80,4 +80,23 @@ export const GET_USER_PROJECTS_QUERY = gql`
   }
   `;
 
+  export const GET_ALL_USER_PROJECTS_QUERY = gql`
+  query GetAllUserProjects {
+    userProjects {
+      _id
+      title
+      description
+      summary
+      contributors
+      mainImage
+      images
+      videos
+      tags
+      rating
+      numReviews
+      price
+    }
+  }
+  `;
+
 
