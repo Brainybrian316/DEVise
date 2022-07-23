@@ -44,7 +44,7 @@ async function seedSubscription() {
 
   const subs = await subscription.find({}).toArray();
   const subscriptionJson = JSON.stringify(subs, null, 2);
-  fs.writeFileSync('./src/services/seeds/data/subcriptions.json', subscriptionJson);
+  fs.writeFileSync('./src/services/seeds/data/subscriptions.json', subscriptionJson);
 
   await client.close();
 }
