@@ -1,7 +1,7 @@
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 
 
-const GRAPH_URL = 'http://localhost:9000/graphql';
+const GRAPH_URL = 'http://localhost:4000/graphql';
 
 export const client = new ApolloClient({
   uri: GRAPH_URL,
@@ -51,4 +51,5 @@ export const GET_USERS_QUERY = gql`
     }
   }
 `;
+
 
