@@ -127,7 +127,7 @@ export default function IdeaBin() {
                   display: "flex",
                   alignContent: "center",
                   justifyContent: "center",
-                  minHeight: "45vh",
+                  minHeight: "50vh",
                 }}
               >
                 <Carousel
@@ -143,8 +143,8 @@ export default function IdeaBin() {
                     style: {
                       backgroundColor: "orange",
                       borderRadius: "5px",
-                      height: "25px",
-                      width: "25px",
+                      height: "5vw",
+                      width: "5vw",
                       opacity: "90%",
                     },
                   }}
@@ -155,6 +155,24 @@ export default function IdeaBin() {
                       top: "unset",
                     },
                   }}
+                  indicatorContainerProps={{
+                    style: {
+                        marginTop: '50px', 
+                        textAlign: 'center' 
+                    }
+            
+                }}
+                indicatorIconButtonProps={{
+                  style: {
+                      padding: '2px',   
+                      color: 'purple'      
+                  }
+              }}
+              activeIndicatorIconButtonProps={{
+                style: {
+                    backgroundColor: 'orange' 
+                }
+            }}
                   NextIcon={
                     <ArrowRightSharp sx={{ color: "secondary.dark" }} />
                   }
@@ -180,12 +198,13 @@ export default function IdeaBin() {
                 </Carousel>
               </Card>
             </Grid>
-            <Grid item xs="auto" sx={{}}>
+            <Grid item xs="auto">
               <Card
                 variant="outlined"
                 sx={{
                   boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
                   minHeight: "50vh",
+                  mr: '20px'
                 }}
               >
                 <Typography
@@ -217,8 +236,36 @@ export default function IdeaBin() {
             </Grid>
           </Grid>
         </Box>
-        <Box>
-          <Card></Card>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center'
+        }}>
+          <Card sx={{
+            boxShadow: '2px, 2px, rgba(0, 0, 0, 0.5)',
+            minWidth: '80vw'
+          }}>
+            <Grid
+            container
+            spacing={2}
+            alignItems="center"
+            justifyContent="space-evenly"
+            width="75vw"
+            height="auto"
+            flexWrap={"nowrap"}
+            margin="10px"
+          >
+             <Grid item xs="auto">
+          <Typography>
+            Hello World
+          </Typography>
+             </Grid>
+             <Grid item xs="auto">
+          <Typography>
+            More stuff
+          </Typography>
+            </Grid> 
+            </Grid>
+          </Card>
         </Box>
       </Container>
     </>
