@@ -45,6 +45,7 @@ export const LOGOUT_MUTATION = gql`
  `;
 
 
+
 // export const UPDATE_USER_MUTATION = gql`
 //   mutation UpdateUser($firstName: String!, $lastName: String!, $username: String!, $email: String!) {
 //     updateUser(firstName: $firstName, lastName: $lastName, username: $username, email: $email) {
