@@ -13,15 +13,15 @@ import IdeaBin from './pages/IdeaBin'
 function App() {
 
   return (
-    // <ApolloProvider client={client}>
-    // <Navbar />
-    // <Login />
-    // <HomePage />
-    // <Signup />
-    // <About/>
-    // </ApolloProvider>
-
+    <ApolloProvider client={client}>
+    {/* <Navbar />
+    <Login />
+    <HomePage />
+    <Signup />
+    <About/> */}
     <IdeaBin />
+    </ApolloProvider>
+
   );
 }
 

@@ -65,7 +65,7 @@ export default function IdeaBin() {
             alignContent: "flex-start",
             mx: "auto",
             mt: "2vh",
-            boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
+            boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
           }}
         >
           <Grid
@@ -124,7 +124,7 @@ export default function IdeaBin() {
               <Card
                 variant="outlined"
                 sx={{
-                  boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
+                  boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
                   display: "flex",
                   alignContent: "center",
                   justifyContent: "center",
@@ -210,7 +210,7 @@ export default function IdeaBin() {
               <Card
                 variant="outlined"
                 sx={{
-                  boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
+                  boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
                   height: "55vh",
                   maxWidth: '38vw',
                   mr: '20px'
