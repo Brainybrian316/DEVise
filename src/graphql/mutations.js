@@ -59,3 +59,23 @@ export const  UPDATE_USER_MUTATION = gql`
   }
   ${USER_DETAIL_FRAGMENT}
 `;
+
+export const UPDATE_USER_PASSWORD_MUTATION = gql`
+  mutation UpdateUserPassword($input: UserPassword!) {
+    updateUserPassword(input: $input) {
+      ...UserDetail
+    }
+  }
+  ${USER_DETAIL_FRAGMENT}
+`;
+
+export const DELETE_USER_MUTATION = gql`
+  mutation DeleteUser($id: ID!) {
+    deleteUser(id: $id) {
+      ...UserDetail
+    }
+  }
+  ${USER_DETAIL_FRAGMENT}
+`;
+
+
