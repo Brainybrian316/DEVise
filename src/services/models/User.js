@@ -34,7 +34,12 @@ const userSchema = new Schema({
       },
     },
   },
-  userProjects: [UserProjectsSchema.schema],
+  userProjects: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: "UserProjects",
+  }
+],
 },
 {
   timestamps: true,
