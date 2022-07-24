@@ -52,13 +52,13 @@ export default function IdeaBin(){
       >
         <Card variant="outline"
           sx={{
-            width: "30vw",
+            width: "50vw",
             height: "auto",
             backgroundColor: "primary.light",
             diplay: "flex",
             flexDirection: "row",
             flexWrap: "wrap",
-            justifyContent: "flex-start",
+            justifyContent: "center",
             alignItem: "stretch",
             alignContent: "flex-start",
             mx: "auto",
@@ -70,7 +70,7 @@ export default function IdeaBin(){
             container
             spacing={2}
             alignItems="center"
-            justify="center"
+            justifyContent="center"
             width="45vw"
           >
             <Grid item xs="auto">
@@ -78,7 +78,7 @@ export default function IdeaBin(){
                 sx={{
                   height: "28px",
                   width: "28px",
-                  m: "5px 5px 0 10px",
+                  m: "5px 5px 5px 5px",
                 }}
               >
                 E
@@ -87,8 +87,8 @@ export default function IdeaBin(){
             <Grid item xs="auto">
               <Typography
                 sx={{
-                  width: "30vw",
-                  align: "center",
+                  maxWidth: "30vw",
+                  textAlign: "center",
                   mh: '0'
                 }}
               >
@@ -96,6 +96,8 @@ export default function IdeaBin(){
                 <Typography
                   sx={{
                     fontSize: "15px",
+                    maxWidth: '30vw',
+                    textAlign: 'center'
                   }}
                 >
                   By: Creator
