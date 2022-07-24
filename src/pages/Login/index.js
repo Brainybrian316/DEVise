@@ -1,6 +1,4 @@
 import Button from '@mui/material/Button';
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@mui/material/styles';
 import { useLoginMutation } from '../../hooks/Mutations';
 import { useState } from 'react';
 import { Container, Box, Typography } from '@mui/material';
@@ -74,7 +72,10 @@ export default function Login() {
                 bgcolor: '#DEDEDE',
                 borderRadius: '10px',
               }}
-              id="email" aria-describedby="my-helper-text" />
+              id="email" 
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              aria-describedby="my-helper-text" />
               <FormHelperText id="my-helper-text">youremail@yourdomain.com</FormHelperText>
             </FormControl>
 
@@ -89,7 +90,10 @@ export default function Login() {
                 bgcolor: '#DEDEDE',
                 borderRadius: '10px',
               }}
-              id="password" aria-describedby="my-helper-text" />
+              id="password" 
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              aria-describedby="my-helper-text" />
               <FormHelperText id="my-helper-text">8 characters and at least one number</FormHelperText>
             </FormControl>
             
@@ -123,30 +127,4 @@ export default function Login() {
       </Container>
     </div>
   );
-}
-
-{
-  /* <ThemeProvider theme={inputTheme}>
-<FormGroup>
-
-<InputLabel htmlFor="email">Email address:</InputLabel>
-<Input id="email" 
-value={email}
-onChange={(e) => setEmail(e.target.value)}
-type="email"
-required
-aria-describedby="my-helper-text" />
-<FormHelperText id="my-helper-text">youremail@yourdomain.com</FormHelperText>
-
-<InputLabel htmlFor="password">Password:</InputLabel>
-<Input id="password" 
-value={password}
-onChange={(e) => setPassword(e.target.value)}
-type="password"
-required
-aria-describedby="my-helper-text" />
-<FormHelperText id="my-helper-text">At least 8 characters and one number</FormHelperText>
-
-</FormGroup>
-</ThemeProvider> */
 }
