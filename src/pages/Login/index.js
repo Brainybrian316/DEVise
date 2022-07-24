@@ -26,7 +26,6 @@ export default function Login() {
     }
   }
 
-
   return (
     <div>
       <Container maxWidth="sm">
@@ -67,15 +66,12 @@ export default function Login() {
                   <label htmlFor="exampleInputPassword1">Password</label>
                   <input onChange={(e) => setPassword(e.target.value)}
                   type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-                  </div>
-
-                  
+                  </div>          
               </form>
               </div>
       </GroupInput>
       </Box>
               
-
           <Box sx={{
             display: 'flex',
             alignItems: 'right',
@@ -89,7 +85,6 @@ export default function Login() {
           </CreateLoginBtn> 
           </Box>
           
-
       </Box>
       </Container>
     </div>
