@@ -112,21 +112,21 @@ const HelperText = styled((props) => {
   font-size: 0.875rem;
 `;
 
-export default function GroupInput() {
+export default function CreateAcctInput() {
   return (
     <div>
       <FormControlUnstyled defaultValue="" required>
+        <Label>First Name</Label>
+        <Input />
+        <HelperText />
+      </FormControlUnstyled>
+      <FormControlUnstyled defaultValue="" required>
+        <Label>Last Name</Label>
+        <Input />
+        <HelperText />
+      </FormControlUnstyled>
+      <FormControlUnstyled defaultValue="" required>
         <Label>Username</Label>
-        <Input />
-        <HelperText />
-      </FormControlUnstyled>
-      <FormControlUnstyled defaultValue="" required>
-        <Label>Email</Label>
-        <Input />
-        <HelperText />
-      </FormControlUnstyled>
-      <FormControlUnstyled defaultValue="" required>
-        <Label>Password</Label>
         <Input />
         <HelperText />
       </FormControlUnstyled>
