@@ -1,6 +1,7 @@
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 
 
+
 const GRAPH_URL = 'http://localhost:4000/graphql';
 
 export const client = new ApolloClient({
@@ -8,22 +9,6 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-//  const USER_PROJECTS_FRAGMENT = gql`
-//   fragment projects on UserProjects {
-//     _id
-//     title
-//     description
-//     summary
-//     contributors
-//     mainImage
-//     images
-//     videos
-//     tags
-//     rating
-//     numReviews
-//     price
-//   }
-// `;
 
 export const GET_USER_QUERY = gql`
   query GetUser($id: ID!) {

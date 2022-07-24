@@ -1,4 +1,5 @@
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+import { USER_DETAIL_FRAGMENT} from './fragments';
 
 const GRAPH_URL = 'http://localhost:4000/graphql';
 
@@ -39,13 +40,22 @@ export const CREATE_USER_MUTATION = gql`
   }
 `;
 
-export const UPDATE_USER_MUTATION = gql`
-  mutation UpdateUser($firstName: String!, $lastName: String!, $username: String!, $email: String!) {
-    updateUser(firstName: $firstName, lastName: $lastName, username: $username, email: $email) {
-      firstName
-      lastName
-      username
-      email
+// export const UPDATE_USER_MUTATION = gql`
+//   mutation UpdateUser($firstName: String!, $lastName: String!, $username: String!, $email: String!) {
+//     updateUser(firstName: $firstName, lastName: $lastName, username: $username, email: $email) {
+//       firstName
+//       lastName
+//       username
+//       email
+//     }
+//   }
+// `;
+
+export const  UPDATE_USER_MUTATION = gql`
+  mutation UpdateUser($input: UpdateUserInput!) {
+    updateUser(input: $input) {
+      ...UserDetail
     }
   }
+  ${USER_DETAIL_FRAGMENT}
 `;
