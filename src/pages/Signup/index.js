@@ -1,9 +1,9 @@
-import FirstName from '../../components/form/FirstName'
-import GroupInput from '../../components/form/FormInput';
-import LastName from '../../components/form/LastName';
+
+import GroupInput from '../../components/form/GroupInput';
 import CreateAcctBtn from './CreateAcctBtn';
 import './signup.css';
 import { Container, Box, Typography } from '@mui/material';
+import CreateAcctInput from '../../components/form/CreateInput';
 
 
 export default function Signup() {
@@ -34,8 +34,7 @@ export default function Signup() {
           justifyContent: 'center',
           marginBottom: '2rem',
         }}>
-      <FirstName />
-      <LastName />
+      <CreateAcctInput/>
       <GroupInput />
       </Box>
 

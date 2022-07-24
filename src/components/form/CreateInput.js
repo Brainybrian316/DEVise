@@ -1,3 +1,5 @@
+
+
 import * as React from 'react';
 import FormControlUnstyled, {
   useFormControlUnstyledContext,
@@ -110,11 +112,21 @@ const HelperText = styled((props) => {
   font-size: 0.875rem;
 `;
 
-export default function FirstName() {
+export default function CreateAcctInput() {
   return (
     <div>
       <FormControlUnstyled defaultValue="" required>
         <Label>First Name</Label>
+        <Input />
+        <HelperText />
+      </FormControlUnstyled>
+      <FormControlUnstyled defaultValue="" required>
+        <Label>Last Name</Label>
+        <Input />
+        <HelperText />
+      </FormControlUnstyled>
+      <FormControlUnstyled defaultValue="" required>
+        <Label>Username</Label>
         <Input />
         <HelperText />
       </FormControlUnstyled>

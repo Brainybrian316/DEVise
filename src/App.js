@@ -5,23 +5,22 @@ import './assets/global.css';
 import Navbar from './components/Navbar';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './graphql/queries';
+import About from './pages/AboutUs';
+import Signup from './pages/Signup';
 import Login from './pages/Login';
-import {useRoutes} from 'hookrouter';
 
-
-const routes = {
-  '/': () => <HomePage />,
-  '/about': () => <About />
-}
 
 function App() {
-  const routeResult = useRoutes(routes);
-  
+
   return (
     <ApolloProvider client={client}>
-      <Navbar />
-      { routeResult }
+    <Navbar />
+    <Login/>
+    <HomePage />
+    <About/>
+    <Signup/>
     </ApolloProvider>
+
   );
 }
 
