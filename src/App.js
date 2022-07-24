@@ -1,13 +1,12 @@
 
 import HomePage from './pages/Home';
-import About from './pages/Home/About';
 import './assets/global.css';
 import Navbar from './components/Navbar';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './graphql/queries';
-import About from './pages/AboutUs';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import About from './pages/AboutUs';
 
 
 function App() {
