@@ -10,7 +10,7 @@ export const USER_DETAIL_FRAGMENT = gql`
   }
 `;
 
- const USER_PROJECTS_FRAGMENT = gql`
+ export const USER_PROJECTS_FRAGMENT = gql`
   fragment projects on UserProjects {
     _id
     title

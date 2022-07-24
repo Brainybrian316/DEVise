@@ -1,5 +1,5 @@
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
-import { USER_DETAIL_FRAGMENT} from './fragments';
+import { USER_DETAIL_FRAGMENT, USER_PROJECTS_FRAGMENT} from './fragments';
 
 const GRAPH_URL = 'http://localhost:4000/graphql';
 
@@ -78,4 +78,11 @@ export const DELETE_USER_MUTATION = gql`
   ${USER_DETAIL_FRAGMENT}
 `;
 
-
+export const CREATE_USER_PROJECT_MUTATION = gql`
+  mutation CreateUserProject($input: CreateUserProjectInput!) {
+    createUserProjects(input: $input) {
+      ...projects
+    }
+    ${USER_PROJECTS_FRAGMENT}
+  }
+`;
