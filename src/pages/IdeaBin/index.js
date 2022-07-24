@@ -108,7 +108,7 @@ export default function IdeaBin() {
             </Grid>
           </Grid>
         </Card>
-        <Box>
+  
           <Grid
             container
             spacing={2}
@@ -128,13 +128,19 @@ export default function IdeaBin() {
                   alignContent: "center",
                   justifyContent: "center",
                   minHeight: "50vh",
+                  m: '5px'
                 }}
               >
                 <Carousel
                   sx={{
-                    minHeight: "40vh",
-                    minWidth: "40vw",
+                    height: "50vh",
+                    width: "50vw",
                     m: "10px",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    textAlign: 'center',
+                    justifyContent: 'center'
+
                   }}
                   index={activeChild}
                   autoPlay={false}
@@ -158,7 +164,7 @@ export default function IdeaBin() {
                   indicatorContainerProps={{
                     style: {
                         marginTop: '50px', 
-                        textAlign: 'center' 
+                        textAlign: 'center', 
                     }
             
                 }}
@@ -235,7 +241,6 @@ export default function IdeaBin() {
               </Card>
             </Grid>
           </Grid>
-        </Box>
         <Box sx={{
           display: 'flex',
           justifyContent: 'center'
