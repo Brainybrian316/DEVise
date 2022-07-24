@@ -25,7 +25,7 @@ export default function Signup() {
     try {
       const userCreated = await createUser({
         variables: {
-          data: {
+          input: {
           firstName,
           lastName,
           username,
