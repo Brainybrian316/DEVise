@@ -10,15 +10,43 @@ import {
   Typography,
 } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
-// import { useCreateUserMutation } from '../../hooks/Mutations';
+import { useCreateUserMutation } from '../../hooks/Mutations';
 
 export default function Signup() {
+  const {createUser} = useCreateUserMutation();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [createUser, { loading, error }] = useCreateUserMutation();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const userCreated = await createUser({
+        variables: {
+          firstName,
+          lastName,
+          username,
+          email,
+          password,
+        },
+      });
+      if (userCreated) {
+        alert('You are logged in');
+        console.log(userCreated);
+      }
+    }
+    catch (error) {
+      alert('invalid email or password');
+      console.log(error);
+    }
+  }
+
+  
+
+
+
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -193,7 +221,7 @@ export default function Signup() {
               <Button
                 id="form-btn"
                 variant="contained"
-                //  onClick={() => { handleSubmit() }}
+                onClick={handleSubmit}
               >
                 Create Account
               </Button>

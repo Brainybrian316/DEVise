@@ -6,6 +6,7 @@ import { ApolloProvider } from '@apollo/client';
 import { client } from './graphql/queries';
 import Login from './pages/Login';
 import About from './pages/AboutUs';
+import Signup from './pages/Signup';
 
 
 function App() {
