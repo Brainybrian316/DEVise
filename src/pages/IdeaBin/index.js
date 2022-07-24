@@ -72,14 +72,14 @@ export default function IdeaBin() {
             container
             spacing={2}
             alignItems="center"
-            justifyContent="center"
+            justifyContent="space-evenly"
             width="45vw"
           >
             <Grid item xs="auto">
               <Avatar
                 sx={{
-                  height: "35px",
-                  width: "35px",
+                  height: "5vw",
+                  width: "5vw",
                   m: "5px 5px 5px 5px",
                 }}
               >
@@ -92,6 +92,7 @@ export default function IdeaBin() {
                   maxWidth: "30vw",
                   textAlign: "center",
                   mh: "0",
+                  fontSize:'35px'
                 }}
               >
                 Project Title
@@ -114,7 +115,7 @@ export default function IdeaBin() {
             spacing={2}
             alignItems="center"
             justifyContent="space-evenly"
-            width="95vw"
+            width="80vw"
             height="auto"
             flexWrap={"nowrap"}
             margin="10px"
@@ -127,14 +128,15 @@ export default function IdeaBin() {
                   display: "flex",
                   alignContent: "center",
                   justifyContent: "center",
-                  minHeight: "50vh",
-                  m: '5px'
+                  height: "55vh",
+                  maxWidth: '38vw',
+                  m: '3vw'
                 }}
               >
                 <Carousel
                   sx={{
-                    height: "50vh",
-                    width: "50vw",
+                    height: "45vh",
+                    width: "45vw",
                     m: "10px",
                     display: 'flex',
                     flexDirection: 'column',
@@ -149,8 +151,8 @@ export default function IdeaBin() {
                     style: {
                       backgroundColor: "orange",
                       borderRadius: "5px",
-                      height: "5vw",
-                      width: "5vw",
+                      height: "4vw",
+                      width: "4vw",
                       opacity: "90%",
                     },
                   }}
@@ -209,7 +211,8 @@ export default function IdeaBin() {
                 variant="outlined"
                 sx={{
                   boxShadow: "2px 2px rgba(0, 0, 0, 0.5)",
-                  minHeight: "50vh",
+                  height: "55vh",
+                  maxWidth: '38vw',
                   mr: '20px'
                 }}
               >
@@ -217,7 +220,7 @@ export default function IdeaBin() {
                   sx={{
                     maxWidth: "40vw",
                     textAlign: "center",
-                    fontSize: "auto",
+                    fontSize: "30px",
                   }}
                 >
                   Summary
@@ -225,9 +228,10 @@ export default function IdeaBin() {
                 <Typography
                   sx={{
                     display: "flex",
-                    maxWidth: "40vw",
+                    maxWidth: "45vw",
                     maxHeight: "40vh",
-                    fontSize: "10px",
+                    fontSize: "15px",
+                    m: '5px'
                   }}
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -247,15 +251,14 @@ export default function IdeaBin() {
         }}>
           <Card sx={{
             boxShadow: '2px, 2px, rgba(0, 0, 0, 0.5)',
-            minWidth: '90vw',
-            ml: '3vw'
+            width: '90vw',
           }}>
             <Grid
             container
             spacing={2}
             alignItems="center"
             justifyContent="space-evenly"
-            width="80vw"
+            width="90vw"
             height="auto"
             flexWrap={"nowrap"}
             margin="10px"
