@@ -1,4 +1,4 @@
-import { useLoginMutation } from '../../graphql/hooks';
+import { useLoginMutation } from '../../hooks/Mutations';
 import { useState } from 'react';
 
 export default function Login() {

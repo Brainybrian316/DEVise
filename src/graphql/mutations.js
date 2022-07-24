@@ -7,7 +7,6 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 // login 
 export const LOGIN_MUTATION = gql`
   mutation Login($email: String!, $password: String!) {
