@@ -4,9 +4,9 @@ import './assets/global.css';
 import Navbar from './components/Navbar';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './graphql/queries';
-
 import Login from './pages/Login';
 import About from './pages/AboutUs';
+import Signup from './pages/Signup';
 
 
 function App() {
@@ -14,11 +14,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <Navbar />
-    <Login />
-    <HomePage />
-
-    <About/>
+    <Signup />
+    {/* <HomePage /> */}
+    {/* <About/>
+    <Login /> */}
     </ApolloProvider>
+
 
   );
 }
