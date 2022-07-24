@@ -17,7 +17,7 @@ export default function loginBtn(props) {
     <ThemeProvider theme={theme}>
     <Button 
     sx={{ mr: 1, }}
-    onClick={() => {setPage('login');
+    onClick={() => {setPage('');
   }} variant="contained">Login</Button>
     </ThemeProvider>
   );

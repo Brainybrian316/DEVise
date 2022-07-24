@@ -1,5 +1,6 @@
 
 import HomePage from './pages/Home';
+import About from './pages/Home/About';
 import './assets/global.css';
 import Navbar from './components/Navbar';
 import { ApolloProvider } from '@apollo/client';
