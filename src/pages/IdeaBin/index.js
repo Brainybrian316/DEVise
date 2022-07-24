@@ -242,14 +242,15 @@ export default function IdeaBin() {
         }}>
           <Card sx={{
             boxShadow: '2px, 2px, rgba(0, 0, 0, 0.5)',
-            minWidth: '80vw'
+            minWidth: '90vw',
+            ml: '3vw'
           }}>
             <Grid
             container
             spacing={2}
             alignItems="center"
             justifyContent="space-evenly"
-            width="75vw"
+            width="80vw"
             height="auto"
             flexWrap={"nowrap"}
             margin="10px"
