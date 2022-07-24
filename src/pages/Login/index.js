@@ -22,11 +22,10 @@ export default function Login() {
     }
   }
 
-
   return (
     <>
 
-      <h1>Home</h1>
+      <h1>LOGIN</h1>
 
       {/* LOGIN form  */}
 <div className="login-form">

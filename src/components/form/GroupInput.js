@@ -116,11 +116,6 @@ export default function GroupInput() {
   return (
     <div>
       <FormControlUnstyled defaultValue="" required>
-        <Label>Username</Label>
-        <Input />
-        <HelperText />
-      </FormControlUnstyled>
-      <FormControlUnstyled defaultValue="" required>
         <Label>Email</Label>
         <Input />
         <HelperText />
