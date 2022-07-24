@@ -6,6 +6,7 @@ import { ApolloProvider } from '@apollo/client';
 import { client } from './graphql/queries';
 import About from './pages/AboutUs';
 import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <Navbar />
+    <Login/>
     <HomePage />
     <About/>
     <Signup/>
