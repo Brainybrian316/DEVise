@@ -1,9 +1,11 @@
+import Button from '@mui/material/Button';
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import { useLoginMutation } from '../../hooks/Mutations';
 import { useState } from 'react';
-import GroupInput from '../../components/form/GroupInput';
-import CreateLoginBtn from './CreateLoginBtn';
-import './login.css';
 import { Container, Box, Typography } from '@mui/material';
+import {  FormGroup, InputLabel, Input, FormHelperText } from '@mui/material';
+
 
 export default function Login() {
 
@@ -25,6 +27,22 @@ export default function Login() {
       console.log(error);
     }
   }
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#3f51b5',
+      },
+    }
+    });
+
+    const inputTheme = createTheme({
+      palette: {
+        primary: 
+        {
+          main: '#FFFFFF',
+        },
+      }
+      });
 
   return (
     <div>
@@ -47,6 +65,7 @@ export default function Login() {
         </Typography>
 
           {/* LOGIN form  */}
+
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
@@ -54,22 +73,30 @@ export default function Login() {
             justifyContent: 'center',
             marginBottom: '2rem',
           }}>
-      <GroupInput>
-      <div className="login-form">
-              <form>
-                <div className="form-group">
-                  <label htmlFor="exampleInputEmail1">Email address</label>
-                  <input  onChange={(e) => setEmail(e.target.value)}
-                  type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-              </div>
-              <div className="form-group">
-                  <label htmlFor="exampleInputPassword1">Password</label>
-                  <input onChange={(e) => setPassword(e.target.value)}
-                  type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-                  </div>          
-              </form>
-              </div>
-      </GroupInput>
+             <ThemeProvider theme={inputTheme}>
+            <FormGroup>
+
+  <InputLabel htmlFor="email">Email address:</InputLabel>
+  <Input id="email" 
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  type="email"
+  required
+  aria-describedby="my-helper-text" />
+  <FormHelperText id="my-helper-text">youremail@yourdomain.com</FormHelperText>
+
+  <InputLabel htmlFor="password">Password:</InputLabel>
+  <Input id="password" 
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  type="password"
+  required
+  aria-describedby="my-helper-text" />
+  <FormHelperText id="my-helper-text">At least 8 characters and one number</FormHelperText>
+
+</FormGroup>
+</ThemeProvider>
+
       </Box>
               
           <Box sx={{
@@ -77,12 +104,12 @@ export default function Login() {
             alignItems: 'right',
             justifyContent: 'flex-end',
           }}>
-          <CreateLoginBtn>
-          <button type="submit" className="btn btn-primary"
-                  onClick={handleSubmit}>
-                    Submit
-                    </button>
-          </CreateLoginBtn> 
+        <ThemeProvider theme={theme}>
+      <Button 
+      id="form-btn"
+      onClick={handleSubmit}>Log In</Button>
+      </ThemeProvider>
+
           </Box>
           
       </Box>
