@@ -14,11 +14,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <Navbar />
-    <Login />
-    <HomePage />
     <Signup />
+    <HomePage />
     <About/>
+    <Login />
     </ApolloProvider>
+
 
   );
 }

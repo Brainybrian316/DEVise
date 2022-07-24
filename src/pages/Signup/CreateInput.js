@@ -7,6 +7,10 @@ import FormControlUnstyled, {
 import InputUnstyled, { inputUnstyledClasses } from '@mui/base/InputUnstyled';
 import { styled } from '@mui/system';
 import clsx from 'clsx';
+// import { useCreateUserMutation } from '../../hooks/Mutations';
+// import { useState } from 'react';
+// import { Input, InputLabel, FormHelperText } from '@mui/material';
+
 
 
 const blue = {
@@ -113,11 +117,14 @@ const HelperText = styled((props) => {
 `;
 
 export default function CreateAcctInput() {
+
   return (
     <div>
-      <FormControlUnstyled defaultValue="" required>
+ <FormControlUnstyled defaultValue="" required>
         <Label>First Name</Label>
-        <Input />
+        <Input
+
+         />
         <HelperText />
       </FormControlUnstyled>
       <FormControlUnstyled defaultValue="" required>
@@ -130,6 +137,19 @@ export default function CreateAcctInput() {
         <Input />
         <HelperText />
       </FormControlUnstyled>
+      <FormControlUnstyled defaultValue="" required>
+        <Label>Email</Label>
+        <Input />
+        <HelperText />
+      </FormControlUnstyled>
+      <FormControlUnstyled defaultValue="" required>
+        <Label>Password</Label>
+        <Input />
+        <HelperText />
+      </FormControlUnstyled>
+      
+        
     </div>
   );
 }
+
