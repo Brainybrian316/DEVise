@@ -1,6 +1,6 @@
 
 import { LOGIN_MUTATION, LOGOUT_MUTATION, CREATE_USER_MUTATION, UPDATE_USER_MUTATION, UPDATE_USER_PASSWORD_MUTATION,
-DELETE_USER_MUTATION } from "../graphql/mutations";
+DELETE_USER_MUTATION, CREATE_USER_PROJECT_MUTATION, UPDATE_USER_PROJECT_MUTATION, DELETE_USER_PROJECT_MUTATION } from "../graphql/mutations";
 import { useMutation } from "@apollo/client";
 
 
@@ -31,4 +31,15 @@ export function useDeleteUserMutation() {
   const [DeleteUser, { loading, error}] = useMutation(DELETE_USER_MUTATION);
 }
 
+export function useCreateUserProjectMutation() {
+  const [CreateUserProject, { loading, error }] = useMutation(CREATE_USER_PROJECT_MUTATION);
+}
+
+export function useUpdateUserProjectMutation() {
+  const [UpdateUserProject, { loading, error }] = useMutation(UPDATE_USER_PROJECT_MUTATION);
+}
+
+export function useDeleteUserProjectMutation() {
+  const [DeleteUserProject, { loading, error }] = useMutation(DELETE_USER_PROJECT_MUTATION);
+}
 

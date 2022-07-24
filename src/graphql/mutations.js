@@ -86,3 +86,22 @@ export const CREATE_USER_PROJECT_MUTATION = gql`
     ${USER_PROJECTS_FRAGMENT}
   }
 `;
+
+export const UPDATE_USER_PROJECT_MUTATION = gql`
+  mutation UpdateUserProject($id: ID!) {
+    updateUserProjects(id: $id) {
+      ...projects
+  }
+  ${USER_PROJECTS_FRAGMENT}
+  }
+`;  
+
+export const DELETE_USER_PROJECT_MUTATION = gql`
+  mutation DeleteUserProject($id: ID!) {
+    deleteUserProjects(id: $id) {
+      ...projects
+  }
+  ${USER_PROJECTS_FRAGMENT}
+  }
+`;
+
