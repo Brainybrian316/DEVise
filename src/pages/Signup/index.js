@@ -10,6 +10,7 @@ import {
   Typography,
 } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
+<<<<<<< HEAD
 import { useCreateUserMutation } from '../../hooks/Mutations';
 
 <<<<<<< HEAD
@@ -239,60 +240,203 @@ import { ThemeProvider } from '@mui/material/styles';
         </Box>
 =======
 export default function Signup() {
+=======
+// import { useCreateUserMutation } from '../../hooks/Mutations';
+
+export default function Signup() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // const [createUser, { loading, error }] = useCreateUserMutation();
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const { data } = await createUser({
+  //     variables: {
+  //       firstName,
+  //       lastName,
+  //       username,
+  //       email,
+  //       password,
+  //     },
+  //   });
+  //   console.log(data);
+  // }
+>>>>>>> 05b7946 (create acct form and inputs)
 
   const theme = createTheme({
     palette: {
       primary: {
         main: '#3f51b5',
       },
-      
-    }
-    });
+    },
+  });
+
   return (
     <div>
       <Container maxWidth="sm">
-      <Box sx={{ 
-        bgcolor: '#cfe8fc', 
-        height: 'auto',
-        borderRadius: '10px',
-        padding: '2rem',
-         }}>
+        <Box
+          sx={{
+            bgcolor: '#cfe8fc',
+            height: 'auto',
+            borderRadius: '10px',
+            padding: '2rem',
+          }}
+        >
+          <Typography
+            variant="h4"
+            sx={{
+              textAlign: 'start',
+              fontWeight: 'bold',
+              color: '#3f51b5',
+              fontSize: '2rem',
+              marginBottom: '1rem',
+            }}
+          >
+            Create Account
+          </Typography>
 
-        <Typography variant="h4" sx={{
-          textAlign: 'start',
-          fontWeight: 'bold',
-          color: '#3f51b5',
-          fontSize: '2rem',
-          marginBottom: '2rem',
-        }}>
-          Create Account
-        </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+            }}
+          >
+            <FormControl
+              sx={{
+                width: '45%',
+                marginRight: '1rem',
+                marginBottom: '1rem',
+              }}
+            >
+              <InputLabel htmlFor="firstName">First Name</InputLabel>
+              <Input
+                sx={{
+                  borderRadius: '10px',
+                  fontWeight: 'bold',
+                  color: '#3f51b5',
+                  backgroundColor: '#D8D8D8',
+                }}
+                id="firstName"
+                type="text"
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+            </FormControl>
 
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginBottom: '2rem',
-        }}>
-      <CreateAcctInput/>
-      </Box>
+            <FormControl
+              sx={{
+                width: '45%',
+              }}
+            >
+              <InputLabel htmlFor="lastName">Last Name</InputLabel>
+              <Input
+                sx={{
+                  borderRadius: '10px',
+                  fontWeight: 'bold',
+                  color: '#3f51b5',
+                  backgroundColor: '#D8D8D8',
+                }}
+                id="lastName"
+                type="text"
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </FormControl>
+          </Box>
 
-        <Box sx={{
-          display: 'flex',
-          alignItems: 'right',
-          justifyContent: 'flex-end',
-        }}>
-      <ThemeProvider theme={theme}>
-      <Button 
-      id="form-btn"
-      onClick={() => {alert('clicked');
-    }} variant="contained">Create Account</Button>
-      </ThemeProvider>
-      </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+            }}
+          >
+            <FormControl
+              sx={{
+                width: '100%',
+                marginBottom: '1rem',
+              }}
+            >
+              <InputLabel htmlFor="username">Username</InputLabel>
+              <Input
+                sx={{
+                  borderRadius: '10px',
+                  fontWeight: 'bold',
+                  color: '#3f51b5',
+                  backgroundColor: '#D8D8D8',
+                }}
+                id="username"
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </FormControl>
+          </Box>
 
+          <FormControl
+            sx={{
+              width: '100%',
+              marginBottom: '1rem',
+            }}
+          >
+            <InputLabel htmlFor="email">Email</InputLabel>
+            <Input
+              sx={{
+                borderRadius: '10px',
+                fontWeight: 'bold',
+                color: '#3f51b5',
+                backgroundColor: '#D8D8D8',
+              }}
+              id="email"
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </FormControl>
+
+          <FormControl
+            sx={{
+              width: '100%',
+            }}
+          >
+            <InputLabel htmlFor="password">Password</InputLabel>
+            <Input
+              sx={{
+                borderRadius: '10px',
+                fontWeight: 'bold',
+                color: '#3f51b5',
+                backgroundColor: '#D8D8D8',
+              }}
+              id="password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </FormControl>
+
+<<<<<<< HEAD
       </Box>
 >>>>>>> 7c822fd (working on createing user)
+=======
+          <Box
+            sx={{
+              paddingTop: '2em',
+              display: 'flex',
+              alignItems: 'right',
+              justifyContent: 'flex-end',
+            }}
+          >
+            <ThemeProvider theme={theme}>
+              <Button
+                id="form-btn"
+                variant="contained"
+                //  onClick={() => { handleSubmit() }}
+              >
+                Create Account
+              </Button>
+            </ThemeProvider>
+          </Box>
+        </Box>
+>>>>>>> 05b7946 (create acct form and inputs)
       </Container>
     </div>
   );
