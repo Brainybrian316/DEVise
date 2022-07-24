@@ -14,6 +14,7 @@ export default function Login() {
     const userLoggedIn = await login({ variables: { email, password } });
     if(userLoggedIn) {
       alert('You are logged in');
+      console.log(userLoggedIn);
     }
     } catch (error) {
       alert('invalid email or password');
