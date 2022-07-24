@@ -3,8 +3,6 @@ import { LOGIN_MUTATION, LOGOUT_MUTATION, CREATE_USER_MUTATION, UPDATE_USER_MUTA
 DELETE_USER_MUTATION, CREATE_USER_PROJECT_MUTATION, UPDATE_USER_PROJECT_MUTATION, DELETE_USER_PROJECT_MUTATION } from "../graphql/mutations";
 import { useMutation } from "@apollo/client";
 
-
-
 export function useLoginMutation() {
   const [login, { loading, error }] = useMutation(LOGIN_MUTATION);
   return { login, loading, error };
