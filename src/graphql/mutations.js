@@ -34,7 +34,11 @@ export const CREATE_USER_MUTATION = gql`
     createUser(input: $input) {
       token
       user {
-        ...UserDetail
+        firstName
+        lastName
+        username
+        email
+        password
       }
     }
   }
