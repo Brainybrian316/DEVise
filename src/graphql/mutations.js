@@ -29,22 +29,20 @@ export const LOGOUT_MUTATION = gql`
   }
 `;
 
-export const CREATE_USER_MUTATION = gql`
-  mutation CreateUser($input: CreateUserInput!) {
-    createUser(input: $input) {
+
+ export const CREATE_USER_MUTATION = gql`
+   mutation CreateUser($input: CreateUserInput!) {
+     createUser(input: $input) {
       token
       user {
-        firstName
-        lastName
-        username
-        email
-        password
-      }
-    }
-  }
-  ${USER_DETAIL_FRAGMENT}
-`;
-
+       firstName
+       lastName
+       username
+       email
+     }
+     }
+   }
+ `;
 
 
 // export const UPDATE_USER_MUTATION = gql`
@@ -115,13 +113,3 @@ export const DELETE_USER_PROJECT_MUTATION = gql`
 
 
 
- // export const CREATE_USER_MUTATION = gql`
- //   mutation CreateUser($firstName: String!, $lastName: String!, $username: String!, $email: String!, $password: String!) {
- //     createUser(firstName: $firstName, lastName: $lastName, username: $username, email: $email, password: $password) {
- //       firstName
- //       lastName
- //       username
- //       email
- //     }
- //   }
- // `;

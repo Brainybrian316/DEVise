@@ -25,12 +25,14 @@ export default function Signup() {
     try {
       const userCreated = await createUser({
         variables: {
+          data: {
           firstName,
           lastName,
           username,
           email,
           password,
         },
+      },
       });
       if (userCreated) {
         alert('You are logged in');
@@ -38,7 +40,7 @@ export default function Signup() {
       }
     }
     catch (error) {
-      alert('invalid email or password');
+      alert('Something went wrong');
       console.log(error);
     }
   }
