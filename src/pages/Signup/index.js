@@ -1,6 +1,5 @@
-import FirstName from '../../components/form/FirstName'
+
 import GroupInput from '../../components/form/GroupInput';
-import LastName from '../../components/form/LastName';
 import CreateAcctBtn from './CreateAcctBtn';
 import './signup.css';
 import { Container, Box, Typography } from '@mui/material';
