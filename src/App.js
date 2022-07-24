@@ -15,9 +15,9 @@ function App() {
     <ApolloProvider client={client}>
     <Navbar />
     <Signup />
-    <HomePage />
-    <About/>
-    <Login />
+    {/* <HomePage /> */}
+    {/* <About/>
+    <Login /> */}
     </ApolloProvider>
 
 
