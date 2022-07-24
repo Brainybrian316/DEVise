@@ -1,16 +1,19 @@
 
-const { User, DevProjects, UserProjects  } = require('../models');
 const { signToken } = require('../../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
 require("dotenv").config();
 const bcrypt = require("bcrypt");
+
+const { User, DevProjects, UserProjects, Subscriptions } = require('../models');
+
 
 const resolvers = {
   Query: {
     me: async (_, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
-        .select('-__v -password');
+        .select('-__v -password')
+        .populate('userProjects');
         return userData;
       }
       throw new AuthenticationError('Invalid Credentials');
@@ -24,6 +27,9 @@ const resolvers = {
     userProjects: async () => {
       return await UserProjects.find();
     },
+    subs: async () => {
+      return await Subscriptions.find();
+    },
     user: async (_, { id }) => {
       return await User.findById(id);
     },
@@ -32,6 +38,9 @@ const resolvers = {
     },
     userProject: async (_, { id }) => {
       return await UserProjects.findById(id);
+    },
+    sub: async (_, { id }) => {
+      return await Subscriptions.findById(id);
     }
   },
   Mutation: {
