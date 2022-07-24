@@ -124,7 +124,7 @@ export default function IdeaBin(){
                   alignContent: 'center',
                   justifyContent:'center',
                   minHeight: '45vh',
-                  minWidth: '45vw'
+                  
                 }}>
         <Carousel
         sx={{
@@ -149,7 +149,8 @@ export default function IdeaBin(){
               maxHeight: '40vh',
               maxWidth: '40vw',
               ml: 'auto',
-              mr: 'auto'
+              mr: 'auto',
+              justifyContent: 'center'
             }}
             src={i}
           />
