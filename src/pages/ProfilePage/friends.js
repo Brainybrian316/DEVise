@@ -28,8 +28,7 @@ const Demo = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
 }));
 
-export default function InteractiveList() {
-
+export default function FriendsList() {
 
   return (
     <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
