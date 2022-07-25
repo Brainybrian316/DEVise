@@ -45,6 +45,14 @@ export default function NavBar() {
             alt="DEVise logo"
             src='https://i.postimg.cc/ThFt1dmY/DEVise-D-Logo-Ver1-0.png'
         />
+
+          <Link to="/"
+            style={{
+                textDecoration: 'none',
+                color: 'inherit',
+                fontWeight: 'bold',
+              }}
+          >
           <Typography
             variant="h6"
             noWrap
@@ -62,6 +70,9 @@ export default function NavBar() {
           >
             DEVISE
           </Typography>
+          </Link>
+
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -98,6 +109,7 @@ export default function NavBar() {
               ))}
             </Menu>
           </Box>
+
           <Box
             id="logo"
             component="img"
@@ -109,7 +121,7 @@ export default function NavBar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -123,6 +135,7 @@ export default function NavBar() {
           >
             DEVISE
           </Typography>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
