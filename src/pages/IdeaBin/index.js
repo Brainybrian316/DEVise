@@ -1,7 +1,7 @@
 import { Card, Grid, Avatar, Container, Box, Typography, Button } from "@mui/material";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Carousel from "react-material-ui-carousel";
-import { ArrowRightSharp, ArrowLeftSharp, Save, Stars} from "@mui/icons-material";
+import { ArrowRightSharp, ArrowLeftSharp, Save, Stars, HeartSharp} from "@mui/icons-material";
 import DownloadIcon from '@mui/icons-material/Download'
 
 export default function IdeaBin() {
@@ -46,7 +46,7 @@ export default function IdeaBin() {
     <>
       <Container
         sx={{
-          backgroundColor: "secondary",
+          background: "secondary",
           height: "100vh",
           width: "100vw",
         }}
@@ -56,7 +56,7 @@ export default function IdeaBin() {
           sx={{
             width: "50vw",
             height: "auto",
-            backgroundColor: "primary.light",
+            backgroundColor: "#00b7ff",
             diplay: "flex",
             flexDirection: "row",
             flexWrap: "wrap",
@@ -109,13 +109,16 @@ export default function IdeaBin() {
             </Grid>
           </Grid>
         </Card>
-
+<Box sx={{
+  display: 'flex',
+  justifyContent: 'center'
+}}>
         <Grid
           container
           spacing={2}
           alignItems="center"
           justifyContent="space-evenly"
-          width="80vw"
+          width="85vw"
           height="auto"
           flexWrap={"nowrap"}
           margin="2px"
@@ -210,7 +213,7 @@ export default function IdeaBin() {
               variant="outlined"
               sx={{
                 boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
-                height: "55vh",
+                maxHeight: "55vh",
                 maxWidth: "40vw"
               }}
             >
@@ -242,7 +245,7 @@ export default function IdeaBin() {
               </Typography>
               <Grid
                 container
-                spacing={1}
+                spacing={3}
                 alignItems="center"
                 justifyContent="space-evenly"
                 maxWidth="35vw"
@@ -279,11 +282,27 @@ export default function IdeaBin() {
                   >
                     Download <DownloadIcon />
                   </Button>
-                </Grid>
+                  </Grid>
+                  <Grid item xs="auto">
+                  <Card sx={{
+                    background: 'pink',
+                    padding: '4px',
+                    display: 'flex',
+                    flex: 'nowrap',
+                    alignContent: 'center',
+                    justifyContent: 'space-around'
+                  }}>
+                  Likes   <Stars sx={{
+                    fontSize: 'medium'
+                  }} />   4
+                  </Card>
+                  </Grid>
+      
               </Grid>
             </Card>
           </Grid>
         </Grid>
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -292,9 +311,9 @@ export default function IdeaBin() {
         >
           <Grid
             container
-            spacing={2}
+            spacing={3}
             alignItems="center"
-            justifyContent="space-between"
+            justifyContent="center"
             width="90vw"
             height="auto"
             flexWrap={"nowrap"}
@@ -305,7 +324,7 @@ export default function IdeaBin() {
                 sx={{
                   boxShadow: "4px, 4px, rgba(0, 0, 0, 0.25)",
                   maxHeight: "15vh",
-                  maxWidth: '30vw'
+                width: '30vw'
                 }}
               >
                 <Typography sx={{
@@ -323,17 +342,7 @@ export default function IdeaBin() {
                 </Typography>
               </Card>
             </Grid>
-            <Grid item xs="auto">
-              <Card
-                sx={{
-                  boxShadow: "4px, 4px, rgba(0, 0, 0, 0.25)",
-                  maxWidth: "30vw",
-                  maxHeight: "15vh",
-                }}
-              >
-                More stuff
-              </Card>
-            </Grid>
+           
           </Grid>
         </Box>
       </Container>
