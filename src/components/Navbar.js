@@ -12,6 +12,9 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import SignupBtn from './ui/SignupBtn';
 import LoginBtn from './ui/LoginBtn';
+import { Link } from 'react-router-dom';
+
+// *************variables*****************
 const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'About Us', 'Contact',];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
