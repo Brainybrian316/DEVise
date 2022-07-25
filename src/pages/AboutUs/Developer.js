@@ -24,9 +24,15 @@ export default function Developers() {
               marginBottom: '50px',
             }}
           >
-            <Card style={{ display: 'flex' }} key={index}>
+            <Card
+              style={{
+                display: 'flex',
+                textAlign: 'center',
+              }}
+              key={index}
+            >
               <Box>
-                <CardContent sx={{ flex: '1 0 auto' }}>
+                <CardContent sx={{}}>
                   <Typography component="div" variant="h5">
                     Software Engineer
                   </Typography>
@@ -60,7 +66,6 @@ export default function Developers() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
-                  alignItems: 'center',
                 }}
               >
                 <Typography variant="subtitle2">{dev.bio}</Typography>
