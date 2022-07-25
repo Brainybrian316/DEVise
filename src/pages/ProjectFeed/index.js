@@ -10,6 +10,7 @@ import Chip from '@mui/material/Chip';
 
 import Container from './Container';
 import SearchBox from './SearchBox';
+import FeaturedArticle from './FeaturedArticle';
 
 
 const ProjectFeed = () => {
@@ -100,6 +101,9 @@ const ProjectFeed = () => {
           }}
         >
           <SearchBox />
+        </Container>
+        <Container>
+          <FeaturedArticle />
         </Container>
       </Box>
       
