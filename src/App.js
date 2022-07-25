@@ -11,6 +11,7 @@ import Membership from "./pages/Membership";
 import { Routes, Route } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Profile from "./pages/ProfilePage";
+import {FooterContainer} from "./pages/Footer/footerContainer"
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/membership" element={<Membership />} />
       </Routes>
+      <FooterContainer/>
     </ApolloProvider>
   );
 }

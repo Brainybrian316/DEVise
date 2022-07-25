@@ -48,8 +48,8 @@ export default function AboutUs() {
           inspiration, help, or looking to collaborate on another project. <br />
           Inspiration should be easier to find. <br />
         </Typography>
-        <Developers />
       </Container>
+      <Developers />
     </>
   );
 }
