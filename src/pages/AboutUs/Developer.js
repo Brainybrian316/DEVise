@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { GitHub, LinkedIn, Email } from '@mui/icons-material';
+import { GitHub, LinkedIn, Web } from '@mui/icons-material';
 import { devList } from './devDB';
 import { Container } from '@mui/material';
 
@@ -56,7 +56,7 @@ export default function Developers() {
                     />
                   </IconButton>
                   <IconButton>
-                    <Email href={dev.email} />
+                    <Web href={dev.portfolio} />
                   </IconButton>
                 </Box>
               </Box>
