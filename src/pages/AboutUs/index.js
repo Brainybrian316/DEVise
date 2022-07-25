@@ -20,9 +20,13 @@ export default function AboutUs() {
           Are there other tools and platforms out there? Yes, there are. Are any of them what we
           offer? No.
         </Typography>
+        </Container>
 
-        <Typography variant="h6">What We Are</Typography>
-        <Typography variant="body1">
+      <Container style={{backgroundColor: '#f5f5f5',}}
+      >
+        <Typography
+         variant="h6">What We Are</Typography>
+        <Typography style={{align: 'left',}} variant="body1">
           Here you will find a community of developers who are passionate about their craft, and who
           are willing to share their knowledge and skills.
           <br />
@@ -34,7 +38,12 @@ export default function AboutUs() {
           someone to just take up one issue on their massive ToDo lists. <br />
           If you have a project you are looking to share or develop with others, you can find the
           resources and people here. <br />
-          <p>What We Are Not</p>
+          </Typography>
+          <Typography
+           variant="h6">
+            What We Are Not
+           </Typography>
+           <Typography>
           We are not facebook, although there is a strong social aspect to this community we
           professionals, students, teachers. <br />
           We are not GitHub, this is not a version control system or a code repository. It is a
@@ -42,7 +51,8 @@ export default function AboutUs() {
           We are not Fiverr, we did not start this community to become another freelance job board
           platform. We are not a company, we are a community. <br />
         </Typography>
-        <Typography variant="h6">Why We Are</Typography>
+        <Typography 
+        variant="h6">Why We Are</Typography>
         <Typography variant="body1">
           We founded DEVise to have an all-in-one platform for anyone who is looking for
           inspiration, help, or looking to collaborate on another project. <br />
