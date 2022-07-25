@@ -1,8 +1,8 @@
-import { Card, Grid, Avatar, Container, Box, Typography } from "@mui/material";
+import { Card, Grid, Avatar, Container, Box, Typography, Button } from "@mui/material";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Carousel from "react-material-ui-carousel";
-import { ArrowRightSharp, ArrowLeftSharp } from "@mui/icons-material";
-import { fontSize } from "@mui/system";
+import { ArrowRightSharp, ArrowLeftSharp, Save, Stars} from "@mui/icons-material";
+import DownloadIcon from '@mui/icons-material/Download'
 
 export default function IdeaBin() {
   // State to programmatically set active child
@@ -11,7 +11,7 @@ export default function IdeaBin() {
   // Basically items = [1, 2, 3, 4]
   const items = useMemo(
     () => [
-      "https://picsum.photos/300",
+      "https://picsum.photos/400",
       "https://picsum.photos/305",
       "https://picsum.photos/301",
       "https://picsum.photos/299",
@@ -92,7 +92,7 @@ export default function IdeaBin() {
                   maxWidth: "30vw",
                   textAlign: "center",
                   mh: "0",
-                  fontSize:'35px'
+                  fontSize: "35px",
                 }}
               >
                 Project Title
@@ -109,172 +109,232 @@ export default function IdeaBin() {
             </Grid>
           </Grid>
         </Card>
-  
+
+        <Grid
+          container
+          spacing={2}
+          alignItems="center"
+          justifyContent="space-evenly"
+          width="80vw"
+          height="auto"
+          flexWrap={"nowrap"}
+          margin="2px"
+
+        >
+          <Grid item xs="auto">
+            <Card
+              variant="outlined"
+              sx={{
+                boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
+                display: "flex",
+                alignContent: "center",
+                justifyContent: "center",
+                height: "55vh",
+                maxWidth: "40vw",
+                m: "3vw",
+              }}
+            >
+              <Carousel
+                sx={{
+                  height: "40vh",
+                  width: "40vw",
+                  mt: "5vw",
+                  ml: "1vw",
+                  mr: "1vw",
+                  mb: "1vw",
+                  display: "flex",
+                  flexDirection: "column",
+                  textAlign: "center",
+                  justifyContent: "center",
+                }}
+                index={activeChild}
+                autoPlay={false}
+                fullHeightHover={false}
+                navButtonsProps={{
+                  style: {
+                    backgroundColor: "orange",
+                    borderRadius: "5px",
+                    height: "4vw",
+                    width: "4vw",
+                    opacity: "90%",
+                  },
+                }}
+                navButtonsWrapperProps={{
+                  // Move the buttons to the bottom. Unsetting top here to override default style.
+                  style: {
+                    bottom: "0",
+                    top: "unset",
+                  },
+                }}
+                indicatorContainerProps={{
+                  style: {
+                    textAlign: "center",
+                  },
+                }}
+                indicatorIconButtonProps={{
+                  style: {
+                    padding: "2px",
+                    color: "purple",
+                  },
+                }}
+                activeIndicatorIconButtonProps={{
+                  style: {
+                    backgroundColor: "orange",
+                  },
+                }}
+                NextIcon={<ArrowRightSharp sx={{ color: "secondary.dark" }} />}
+                PrevIcon={<ArrowLeftSharp sx={{ color: "secondary.dark" }} />}
+              >
+                {items.map((i) => {
+                  return (
+                    <Box
+                      component="img"
+                      sx={{
+                        height: "auto",
+                        width: "auto",
+                        maxHeight: "40vh",
+                        maxWidth: "40vw",
+                        ml: "auto",
+                        mr: "auto",
+                        justifyContent: "center",
+                      }}
+                      src={i}
+                    />
+                  );
+                })}
+              </Carousel>
+            </Card>
+          </Grid>
+          <Grid item xs="auto">
+            <Card
+              variant="outlined"
+              sx={{
+                boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
+                height: "55vh",
+                maxWidth: "40vw"
+              }}
+            >
+              <Typography
+                sx={{
+                  maxWidth: "40vw",
+                  textAlign: "center",
+                  fontSize: "25px",
+                }}
+              >
+                Description
+              </Typography>
+              <Typography
+                sx={{
+                  display: "flex",
+                  maxWidth: "45vw",
+                  maxHeight: "40vh",
+                  fontSize: "13px",
+                  m: "5px",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                a vehicula magna. Donec rhoncus arcu sit amet condimentum
+                tristique. In non est mollis, eleifend felis sit amet, mollis
+                ex. In hac habitasse platea dictumst. Morbi tempus quis velit
+                vitae hendrerit. Morbi laoreet metus eu lacus ornare, nec
+                ullamcorper mi vehicula. Suspendisse nec pharetra ex, vitae
+                dictum lorem.
+              </Typography>
+              <Grid
+                container
+                spacing={1}
+                alignItems="center"
+                justifyContent="space-evenly"
+                maxWidth="35vw"
+                height="auto"
+                margin= "15px"
+                
+              >
+                <Grid item xs="auto">
+                  <Button
+                  variant='contained'
+                  sx= {{
+                    maxWidth: '10vw'
+                  }}
+                  >
+                    Save <Save />
+                  </Button>
+                </Grid>
+                <Grid item xs="auto">
+                  <Button
+                  variant='contained'
+                  sx= {{
+                    maxWidth: '10vw'
+                  }}
+                  >
+                    Like <Stars />
+                  </Button>
+                </Grid>
+                <Grid item xs="auto">
+                  <Button
+                  variant='contained'
+                  sx= {{
+                    maxWidth: '15vw'
+                  }}
+                  >
+                    Download <DownloadIcon />
+                  </Button>
+                </Grid>
+              </Grid>
+            </Card>
+          </Grid>
+        </Grid>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <Grid
             container
             spacing={2}
             alignItems="center"
-            justifyContent="space-evenly"
-            width="80vw"
-            height="auto"
-            flexWrap={"nowrap"}
-            margin="10px"
-          >
-            <Grid item xs="auto">
-              <Card
-                variant="outlined"
-                sx={{
-                  boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
-                  display: "flex",
-                  alignContent: "center",
-                  justifyContent: "center",
-                  height: "55vh",
-                  maxWidth: '38vw',
-                  m: '3vw'
-                }}
-              >
-                <Carousel
-                  sx={{
-                    height: "45vh",
-                    width: "45vw",
-                    m: "10px",
-                    display: 'flex',
-                    flexDirection: 'column',
-                    textAlign: 'center',
-                    justifyContent: 'center'
-
-                  }}
-                  index={activeChild}
-                  autoPlay={false}
-                  fullHeightHover={false}
-                  navButtonsProps={{
-                    style: {
-                      backgroundColor: "orange",
-                      borderRadius: "5px",
-                      height: "4vw",
-                      width: "4vw",
-                      opacity: "90%",
-                    },
-                  }}
-                  navButtonsWrapperProps={{
-                    // Move the buttons to the bottom. Unsetting top here to override default style.
-                    style: {
-                      bottom: "0",
-                      top: "unset",
-                    },
-                  }}
-                  indicatorContainerProps={{
-                    style: {
-                        marginTop: '50px', 
-                        textAlign: 'center', 
-                    }
-            
-                }}
-                indicatorIconButtonProps={{
-                  style: {
-                      padding: '2px',   
-                      color: 'purple'      
-                  }
-              }}
-              activeIndicatorIconButtonProps={{
-                style: {
-                    backgroundColor: 'orange' 
-                }
-            }}
-                  NextIcon={
-                    <ArrowRightSharp sx={{ color: "secondary.dark" }} />
-                  }
-                  PrevIcon={<ArrowLeftSharp sx={{ color: "secondary.dark" }} />}
-                >
-                  {items.map((i) => {
-                    return (
-                      <Box
-                        component="img"
-                        sx={{
-                          height: "auto",
-                          width: "auto",
-                          maxHeight: "40vh",
-                          maxWidth: "40vw",
-                          ml: "auto",
-                          mr: "auto",
-                          justifyContent: "center",
-                        }}
-                        src={i}
-                      />
-                    );
-                  })}
-                </Carousel>
-              </Card>
-            </Grid>
-            <Grid item xs="auto">
-              <Card
-                variant="outlined"
-                sx={{
-                  boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
-                  height: "55vh",
-                  maxWidth: '38vw',
-                  mr: '20px'
-                }}
-              >
-                <Typography
-                  sx={{
-                    maxWidth: "40vw",
-                    textAlign: "center",
-                    fontSize: "30px",
-                  }}
-                >
-                  Summary
-                </Typography>
-                <Typography
-                  sx={{
-                    display: "flex",
-                    maxWidth: "45vw",
-                    maxHeight: "40vh",
-                    fontSize: "15px",
-                    m: '5px'
-                  }}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris a vehicula magna. Donec rhoncus arcu sit amet
-                  condimentum tristique. In non est mollis, eleifend felis sit
-                  amet, mollis ex. In hac habitasse platea dictumst. Morbi
-                  tempus quis velit vitae hendrerit. Morbi laoreet metus eu
-                  lacus ornare, nec ullamcorper mi vehicula. Suspendisse nec
-                  pharetra ex, vitae dictum lorem.
-                </Typography>
-              </Card>
-            </Grid>
-          </Grid>
-        <Box sx={{
-          display: 'flex',
-          justifyContent: 'center'
-        }}>
-          <Card sx={{
-            boxShadow: '2px, 2px, rgba(0, 0, 0, 0.5)',
-            width: '90vw',
-          }}>
-            <Grid
-            container
-            spacing={2}
-            alignItems="center"
-            justifyContent="space-evenly"
+            justifyContent="space-between"
             width="90vw"
             height="auto"
             flexWrap={"nowrap"}
             margin="10px"
           >
-             <Grid item xs="auto">
-          <Typography>
-            Hello World
-          </Typography>
-             </Grid>
-             <Grid item xs="auto">
-          <Typography>
-            More stuff
-          </Typography>
-            </Grid> 
+            <Grid item xs="auto">
+              <Card
+                sx={{
+                  boxShadow: "4px, 4px, rgba(0, 0, 0, 0.25)",
+                  maxHeight: "15vh",
+                  maxWidth: '30vw'
+                }}
+              >
+                <Typography sx={{
+                  fontSize: '20px',
+                  fontStyle: 'bold'
+                }}>
+                  About the Author:
+                </Typography>
+                <Typography sx={{
+                  fontSize: '12px'
+                }}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                a vehicula magna. Donec rhoncus arcu sit amet condimentum
+                tristique.
+                </Typography>
+              </Card>
             </Grid>
-          </Card>
+            <Grid item xs="auto">
+              <Card
+                sx={{
+                  boxShadow: "4px, 4px, rgba(0, 0, 0, 0.25)",
+                  maxWidth: "30vw",
+                  maxHeight: "15vh",
+                }}
+              >
+                More stuff
+              </Card>
+            </Grid>
+          </Grid>
         </Box>
       </Container>
     </>
