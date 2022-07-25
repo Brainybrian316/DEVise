@@ -146,7 +146,7 @@ export default function NavBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-               <Link style={{textDecoration: "none", color: "black"}}
+               <Link style={{textDecoration: "none", color: "white"}}
                to={`/${page}`}>
                 {page}
                 </Link>
