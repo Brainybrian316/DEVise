@@ -12,7 +12,10 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import SignupBtn from './ui/SignupBtn';
 import LoginBtn from './ui/LoginBtn';
-const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'About Us', 'Contact',];
+import { Link } from 'react-router-dom';
+
+// *************variables*****************
+const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'About', 'Contact',];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -42,6 +45,14 @@ export default function NavBar() {
             alt="DEVise logo"
             src='https://i.postimg.cc/ThFt1dmY/DEVise-D-Logo-Ver1-0.png'
         />
+
+          {/* <Link to="/"
+            style={{
+                textDecoration: 'none',
+                color: 'inherit',
+                fontWeight: 'bold',
+              }}
+          > */}
           <Typography
             variant="h6"
             noWrap
@@ -59,6 +70,9 @@ export default function NavBar() {
           >
             DEVISE
           </Typography>
+          {/* </Link> */}
+
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -90,11 +104,15 @@ export default function NavBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">
+                  <Link style={{textDecoration: "none", color: "black"}}
+                     to={`/${page}`}>{page}</Link>
+                    </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
+
           <Box
             id="logo"
             component="img"
@@ -106,7 +124,7 @@ export default function NavBar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -120,6 +138,7 @@ export default function NavBar() {
           >
             DEVISE
           </Typography>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -127,7 +146,10 @@ export default function NavBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
+               <Link style={{textDecoration: "none", color: "white"}}
+               to={`/${page}`}>
                 {page}
+                </Link>
               </Button>
             ))}
           </Box>

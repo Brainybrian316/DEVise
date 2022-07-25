@@ -7,6 +7,9 @@ import { client } from './graphql/queries';
 import Login from './pages/Login';
 import About from './pages/AboutUs';
 import Signup from './pages/Signup';
+import { Routes, Route,  } from 'react-router-dom';
+import Contact from './pages/Contact';
+import Profile from './pages/ProfilePage';
 
 
 function App() {
@@ -14,10 +17,14 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <Navbar />
-    <Signup />
-    {/* <HomePage /> */}
-    {/* <About/>
-    <Login /> */}
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
     </ApolloProvider>
 
 
