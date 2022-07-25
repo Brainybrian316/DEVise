@@ -1,7 +1,7 @@
 import { Card, Grid, Avatar, Container, Box, Typography, Button } from "@mui/material";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Carousel from "react-material-ui-carousel";
-import { ArrowRightSharp, ArrowLeftSharp, Save, Stars, HeartSharp} from "@mui/icons-material";
+import { ArrowRightSharp, ArrowLeftSharp, Save, Stars} from "@mui/icons-material";
 import DownloadIcon from '@mui/icons-material/Download'
 
 export default function IdeaBin() {
