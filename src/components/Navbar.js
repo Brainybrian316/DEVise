@@ -46,13 +46,13 @@ export default function NavBar() {
             src='https://i.postimg.cc/ThFt1dmY/DEVise-D-Logo-Ver1-0.png'
         />
 
-          <Link to="/"
+          {/* <Link to="/"
             style={{
                 textDecoration: 'none',
                 color: 'inherit',
                 fontWeight: 'bold',
               }}
-          >
+          > */}
           <Typography
             variant="h6"
             noWrap
@@ -70,7 +70,7 @@ export default function NavBar() {
           >
             DEVISE
           </Typography>
-          </Link>
+          {/* </Link> */}
 
           
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

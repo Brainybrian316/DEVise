@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 export default function loginBtn(props) {
-  const { setPage } = props;
   const theme = createTheme({
     palette: {
       primary: {
@@ -18,7 +17,6 @@ export default function loginBtn(props) {
     <ThemeProvider theme={theme}>
     <Button 
     sx={{ mr: 1, }}
-    onClick={() => setPage('login')}
        variant="contained">Login</Button>
     </ThemeProvider>
     </Link>
