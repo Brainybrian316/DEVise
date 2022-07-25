@@ -6,7 +6,7 @@ box-sizing:border-box;
 margin:0;
 padding:0;
 position:relative;
-background: #ff9c00;
+background: grey;
 font-family: 'Nunito', sans-serif;
 
 

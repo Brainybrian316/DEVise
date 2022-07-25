@@ -19,7 +19,7 @@ export default function Home() {
       <About image={aboutImage} title="Blah Blah Blah" button="Add a post" />
       <About image={aboutImage2} title="Blah Blah Blah" button="Add a post" />
       <Contact/>
-      <FooterContainer/>
+     <FooterContainer/> 
    
     </>
   );
