@@ -1,62 +1,35 @@
 [
   {
-    "_id": "62dc637ccf6b8b047473ebd1",
-    "firstName": "Mustafa",
-    "lastName": "Blanda",
-    "username": "MustafaBlanda",
-    "email": "MustafaBlanda.Fahey@yahoo.com",
-    "password": "mixotevo",
+    "_id": "62dead85e0e61360fe3f34d1",
+    "firstName": "Foster",
+    "lastName": "Mertz",
+    "username": "FosterMertz",
+    "email": "FosterMertz_Runolfsson@gmail.com",
+    "password": "lugeleju",
     "userProjects": [
-      {
-        "contributors": [],
-        "images": [],
-        "videos": [],
-        "tags": [],
-        "rating": 0,
-        "numReviews": 0,
-        "price": 0,
-        "_id": "62dc605a2e1e28173ad438cb"
-      }
+      "62dc105cce7974b6147846e5"
     ]
   },
   {
-    "_id": "62dc637ccf6b8b047473ebd3",
-    "firstName": "Beverly",
-    "lastName": "Pouros",
-    "username": "BeverlyPouros",
-    "email": "BeverlyPouros.Boyer50@hotmail.com",
-    "password": "demehoru",
+    "_id": "62dead85e0e61360fe3f34d3",
+    "firstName": "Lionel",
+    "lastName": "Kulas",
+    "username": "LionelKulas",
+    "email": "LionelKulas_Dooley@yahoo.com",
+    "password": "bocuwoma",
     "userProjects": [
-      {
-        "contributors": [],
-        "images": [],
-        "videos": [],
-        "tags": [],
-        "rating": 0,
-        "numReviews": 0,
-        "price": 0,
-        "_id": "62dc605a2e1e28173ad438cd"
-      }
+      "62dc105cce7974b6147846df"
     ]
   },
   {
-    "_id": "62dc637ccf6b8b047473ebd5",
-    "firstName": "Valentine",
-    "lastName": "Hoeger",
-    "username": "ValentineHoeger",
-    "email": "ValentineHoeger31@yahoo.com",
-    "password": "qayuyeye",
+    "_id": "62dead85e0e61360fe3f34d5",
+    "firstName": "Leda",
+    "lastName": "Dare",
+    "username": "LedaDare",
+    "email": "LedaDare_Schuster16@gmail.com",
+    "password": "panojale",
     "userProjects": [
-      {
-        "contributors": [],
-        "images": [],
-        "videos": [],
-        "tags": [],
-        "rating": 0,
-        "numReviews": 0,
-        "price": 0,
-        "_id": "62dc605a2e1e28173ad438c9"
-      }
+      "62dc105cce7974b6147846ef"
     ]
   }
 ]

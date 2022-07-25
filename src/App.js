@@ -16,18 +16,18 @@ import IdeaBin from './pages/IdeaBin'
 function App() {
 
   return (
-    // <ApolloProvider client={client}>
-    // <Navbar />
-    // <Routes>
-    //   <Route path="/" element={<HomePage />} />
-    //   <Route path="/login" element={<Login />} />
-    //   <Route path="/signup" element={<Signup />} />
-    //   <Route path="/profile" element={<Profile />} />
-    //   <Route path="/about" element={<About />} />
-    //   <Route path="/contact" element={<Contact />} />
-    // </Routes>
-    // </ApolloProvider>
-    <IdeaBin />
+    <ApolloProvider client={client}>
+    {/* <Navbar />
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes> */}
+       <IdeaBin />
+    </ApolloProvider>
 
   );
 }
