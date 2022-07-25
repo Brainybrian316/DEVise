@@ -15,7 +15,7 @@ import LoginBtn from './ui/LoginBtn';
 import { Link } from 'react-router-dom';
 
 // *************variables*****************
-const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'About Us', 'Contact',];
+const pages = ['Projects', 'Idea Bin', 'Dashboard', 'Profile', 'about', 'Contact',];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -104,7 +104,10 @@ export default function NavBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">
+                  <Link style={{textDecoration: "none", color: "black"}}
+                     to={`/${page}`}>{page}</Link>
+                    </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -143,7 +146,10 @@ export default function NavBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
+               <Link style={{textDecoration: "none", color: "black"}}
+               to={`/${page}`}>
                 {page}
+                </Link>
               </Button>
             ))}
           </Box>
