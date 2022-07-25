@@ -28,7 +28,7 @@ export default function AboutUs() {
             Are there other tools and platforms out there? Yes, there are. Are
             any of them what we offer? No.
             <br />
-            <h3>What We Are</h3>
+            <p>What We Are</p>
             Here you will find a community of developers who are passionate
             about their craft, and who are willing to share their knowledge and
             skills.
@@ -43,7 +43,7 @@ export default function AboutUs() {
             massive ToDo lists. <br />
             If you have a project you are looking to share or develop with
             others, you can find the resources and people here. <br />
-            <h3>What We Are Not</h3>
+            <p>What We Are Not</p>
             We are not facebook, although there is a strong social aspect to
             this community we professionals, students, teachers. <br />
             We are not GitHub, this is not a version control system or a code
