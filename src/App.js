@@ -10,14 +10,13 @@ import Signup from './pages/Signup';
 import { Routes, Route,  } from 'react-router-dom';
 import Contact from './pages/Contact';
 import Profile from './pages/ProfilePage';
-import IdeaBin from './pages/IdeaBin'
 
 
 function App() {
 
   return (
     <ApolloProvider client={client}>
-    {/* <Navbar />
+    <Navbar />
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<Login />} />
@@ -25,8 +24,7 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
-    </Routes> */}
-       <IdeaBin />
+    </Routes>
     </ApolloProvider>
 
   );

@@ -1,23 +1,33 @@
-import { Card, Grid, Avatar, Container, Box, Typography, Button } from "@mui/material";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { Card, Grid, Avatar, Container, Box, Typography, Button, CardMedia } from "@mui/material";
+import React, { useCallback, useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { ArrowRightSharp, ArrowLeftSharp, Save, Stars} from "@mui/icons-material";
 import DownloadIcon from '@mui/icons-material/Download'
+import { useGetOneDevProjectQuery } from "../../hooks/Queries";
+import './title.css'
+import { bgcolor } from "@mui/system";
 
-export default function IdeaBinPage() {
+export default function IdeaBin() {
   // State to programmatically set active child
   const [activeChild, setActiveChild] = useState(0);
+  const [items, setItems] = useState([])
+  const [getDevProject, setDevProject] = useState({})
+  const [authors, setAuthors] = useState([])
+  const [videos, setVideos] = useState([])
+  
+ const {devProject} = useGetOneDevProjectQuery('62dec549ceb5842aeaeeac32')
+
+ useEffect(() => {
+   if(devProject) {
+     setItems(devProject.images)
+     setAuthors(devProject.authors)
+     setVideos(devProject.videos)
+     setDevProject(devProject)
+   } 
+ })
 
   // Basically items = [1, 2, 3, 4]
-  const items = useMemo(
-    () => [
-      "https://picsum.photos/400",
-      "https://picsum.photos/305",
-      "https://picsum.photos/301",
-      "https://picsum.photos/299",
-    ],
-    []
-  );
+ 
 
   // The Keypress Event Handler
   const changeChild = useCallback(
@@ -42,7 +52,11 @@ export default function IdeaBinPage() {
     };
   });
 
+ 
+
+
   return (
+
     <>
       <Container
         sx={{
@@ -76,36 +90,41 @@ export default function IdeaBinPage() {
             width="45vw"
           >
             <Grid item xs="auto">
-              <Avatar
+              {authors.map((author) => (<Avatar key={author} className='avatar'
                 sx={{
                   height: "5vw",
                   width: "5vw",
                   m: "5px 5px 5px 5px",
+                  textShadow: '.1em .1em 0 hsl(200 50% 30%)',
+                  bgcolor: '#d084df',
+                  fontSize: '2vw'
                 }}
               >
-                E
-              </Avatar>
+                {author.charAt(1)}
+              </Avatar>))}
             </Grid>
             <Grid item xs="auto">
-              <Typography
+              <Typography className="title"
                 sx={{
-                  maxWidth: "30vw",
+                  maxWidth: "40vw",
                   textAlign: "center",
                   mh: "0",
-                  fontSize: "35px",
+                  fontSize: "2.5vw",
                 }}
               >
-                Project Title
+               {getDevProject.title}
+                </Typography>
                 <Typography
                   sx={{
-                    fontSize: "15px",
+                    fontSize: "1.5vw",
                     maxWidth: "30vw",
                     textAlign: "center",
+                    textShadow: '.1em .1em 0 hsl(200 50% 30%)',
+                    color: 'white'
                   }}
                 >
-                  By: Creator
+                By:  {authors.map((author) => `${author} `)}
                 </Typography>
-              </Typography>
             </Grid>
           </Grid>
         </Card>
@@ -132,14 +151,16 @@ export default function IdeaBinPage() {
                 display: "flex",
                 alignContent: "center",
                 justifyContent: "center",
-                height: "55vh",
-                maxWidth: "40vw",
+                maxHeight: "60vh",
+                minHeight: '45vh',
+                width: "40vw",
                 m: "3vw",
+                background: 'linear-gradient(90deg, #b9deed, #efefef)'
               }}
             >
               <Carousel
                 sx={{
-                  height: "40vh",
+                  maxHeight: "40vh",
                   width: "40vw",
                   mt: "5vw",
                   ml: "1vw",
@@ -148,18 +169,19 @@ export default function IdeaBinPage() {
                   display: "flex",
                   flexDirection: "column",
                   textAlign: "center",
-                  justifyContent: "center",
+                  justifyContent: "flex-start",
                 }}
                 index={activeChild}
                 autoPlay={false}
                 fullHeightHover={false}
                 navButtonsProps={{
                   style: {
-                    backgroundColor: "orange",
+                    backgroundColor: "#eb9999",
                     borderRadius: "5px",
-                    height: "4vw",
+                    height: "2vw",
                     width: "4vw",
                     opacity: "90%",
+                    borderRadius: '10px'
                   },
                 }}
                 navButtonsWrapperProps={{
@@ -182,7 +204,7 @@ export default function IdeaBinPage() {
                 }}
                 activeIndicatorIconButtonProps={{
                   style: {
-                    backgroundColor: "orange",
+                    backgroundColor: "#eb9999",
                   },
                 }}
                 NextIcon={<ArrowRightSharp sx={{ color: "secondary.dark" }} />}
@@ -193,13 +215,12 @@ export default function IdeaBinPage() {
                     <Box
                       component="img"
                       sx={{
-                        height: "auto",
-                        width: "auto",
                         maxHeight: "40vh",
                         maxWidth: "40vw",
                         ml: "auto",
                         mr: "auto",
                         justifyContent: "center",
+                        pb: '25px'
                       }}
                       src={i}
                     />
@@ -209,12 +230,97 @@ export default function IdeaBinPage() {
             </Card>
           </Grid>
           <Grid item xs="auto">
-            <Card
+          <Card
+              variant="outlined"
+              sx={{
+                boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
+                display: "flex",
+                alignContent: "center",
+                justifyContent: "center",
+                maxHeight: "40vh",
+                minHeight: '30vh',
+                width: "35vw",
+                m: "3vw",
+              }}
+            >
+              <Carousel
+                sx={{
+                  maxHeight: "40vh",
+                  width: "30vw",
+                  mt: "5vw",
+                  ml: "1vw",
+                  mr: "1vw",
+                  mb: "1vw",
+                  display: "flex",
+                  flexDirection: "column",
+                  textAlign: "center",
+                  justifyContent: "flex-start",
+                }}
+                index={activeChild}
+                autoPlay={false}
+                fullHeightHover={false}
+                navButtonsProps={{
+                  style: {
+                    backgroundColor: "#eb9999",
+                    borderRadius: "5px",
+                    height: "2vw",
+                    width: "4vw",
+                    opacity: "90%",
+                    borderRadius: '10px'
+                  },
+                }}
+                navButtonsWrapperProps={{
+                  // Move the buttons to the bottom. Unsetting top here to override default style.
+                  style: {
+                    bottom: "0",
+                    top: "unset",
+                  },
+                }}
+                indicatorContainerProps={{
+                  style: {
+                    textAlign: "center",
+                  },
+                }}
+                indicatorIconButtonProps={{
+                  style: {
+                    padding: "2px",
+                    color: "purple",
+                  },
+                }}
+                activeIndicatorIconButtonProps={{
+                  style: {
+                    backgroundColor: "#eb9999",
+                  },
+                }}
+                NextIcon={<ArrowRightSharp sx={{ color: "secondary.dark" }} />}
+                PrevIcon={<ArrowLeftSharp sx={{ color: "secondary.dark" }} />}
+              >
+                {videos.map((i) => {
+                  return (
+                    <CardMedia
+                      component="video"
+                      autoPlay
+                      sx={{
+                        maxHeight: "30vh",
+                        maxWidth: "30vw",
+                        ml: "auto",
+                        mr: "auto",
+                        justifyContent: "center",
+                        pb: '25px'
+                      }}
+                      src={"i"}
+                    />
+                  );
+                })}
+              </Carousel>
+              </Card>
+            <Card className='description'
               variant="outlined"
               sx={{
                 boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
                 maxHeight: "55vh",
-                maxWidth: "40vw"
+                maxWidth: "40vw",
+                background: 'linear-gradient(90deg, #cfecd0, #ffc5ca)'
               }}
             >
               <Typography
@@ -222,6 +328,7 @@ export default function IdeaBinPage() {
                   maxWidth: "40vw",
                   textAlign: "center",
                   fontSize: "25px",
+  
                 }}
               >
                 Description
@@ -233,15 +340,10 @@ export default function IdeaBinPage() {
                   maxHeight: "40vh",
                   fontSize: "13px",
                   m: "5px",
+  
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                a vehicula magna. Donec rhoncus arcu sit amet condimentum
-                tristique. In non est mollis, eleifend felis sit amet, mollis
-                ex. In hac habitasse platea dictumst. Morbi tempus quis velit
-                vitae hendrerit. Morbi laoreet metus eu lacus ornare, nec
-                ullamcorper mi vehicula. Suspendisse nec pharetra ex, vitae
-                dictum lorem.
+                {getDevProject.description}
               </Typography>
               <Grid
                 container
@@ -285,67 +387,28 @@ export default function IdeaBinPage() {
                   </Grid>
                   <Grid item xs="auto">
                   <Card sx={{
-                    background: 'pink',
-                    padding: '4px',
+                    height: '35px',
+                    width: '100px',
+                    background: 'purple',
+                    padding: '4px'
+                  }}><Typography sx={{
                     display: 'flex',
-                    flex: 'nowrap',
-                    alignContent: 'center',
-                    justifyContent: 'space-around'
-                  }}>
-                  Likes   <Stars sx={{
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    color: 'white'
+                  }}>Likes   <Stars sx={{
                     fontSize: 'medium'
-                  }} />   4
+                  }} />   4</Typography>
                   </Card>
                   </Grid>
       
               </Grid>
             </Card>
+            
           </Grid>
         </Grid>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Grid
-            container
-            spacing={3}
-            alignItems="center"
-            justifyContent="center"
-            width="90vw"
-            height="auto"
-            flexWrap={"nowrap"}
-            margin="10px"
-          >
-            <Grid item xs="auto">
-              <Card
-                sx={{
-                  boxShadow: "4px, 4px, rgba(0, 0, 0, 0.25)",
-                  maxHeight: "15vh",
-                width: '30vw'
-                }}
-              >
-                <Typography sx={{
-                  fontSize: '20px',
-                  fontStyle: 'bold'
-                }}>
-                  About the Author:
-                </Typography>
-                <Typography sx={{
-                  fontSize: '12px',
-                  padding: '10px'
-                }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                a vehicula magna. Donec rhoncus arcu sit amet condimentum
-                tristique.
-                </Typography>
-              </Card>
-            </Grid>
-           
-          </Grid>
-        </Box>
+        
       </Container>
     </>
   );
