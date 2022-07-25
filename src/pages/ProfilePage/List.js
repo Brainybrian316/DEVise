@@ -23,7 +23,11 @@ export default function ConnectedList() {
 
   return (
     <List
-      sx={{ width: '100%', maxWidth: 360, 
+      sx={{ 
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        width: '100%', maxWidth: 360, 
     }}
       component="nav"
       aria-labelledby="nested-list-subheader"

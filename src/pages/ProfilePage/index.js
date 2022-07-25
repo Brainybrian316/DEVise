@@ -1,6 +1,7 @@
 
 import {Box, Container} from '@mui/material/';
 import Avatar from './avatar';
+import List from './List';
 
 export default function ProfilePage() {
   return (
@@ -22,6 +23,7 @@ export default function ProfilePage() {
   }}
 >
   <Avatar />
+  <List />
   </Box>
 <Box
   sx={{
@@ -30,7 +32,9 @@ export default function ProfilePage() {
     float : 'right',
     backgroundColor: '#ffab91',
   }}
-/>
+>
+
+</Box>
 </Container>
 </>
   );

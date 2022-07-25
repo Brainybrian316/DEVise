@@ -91,11 +91,6 @@ export default function Avatars() {
        />
       Full Stack Software Engineer
     </Typography>
-
-    <ConnectedList/>
-
-    
-
   </>
   );
 }
