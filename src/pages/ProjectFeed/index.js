@@ -11,6 +11,7 @@ import Chip from '@mui/material/Chip';
 import Container from './Container';
 import SearchBox from './SearchBox';
 import FeaturedArticle from './FeaturedArticle';
+import LastStories from './LastStories';
 
 
 const ProjectFeed = () => {
@@ -104,6 +105,9 @@ const ProjectFeed = () => {
         </Container>
         <Container>
           <FeaturedArticle />
+        </Container>
+        <Container paddingTop={'0 !important'}>
+          <LastStories />
         </Container>
       </Box>
       
