@@ -1,12 +1,14 @@
 
 import {Box, Container} from '@mui/material/';
-import Avatar from './avatar';
+import ProfileCard from './profileCard';
+import Friends from './friends';
 
 export default function ProfilePage() {
   return (
     <>
   <Container
     maxWidth="100%"
+    maxHeight="100%"
      sx = {{
       margin: '0',
       padding: '0',
@@ -21,7 +23,8 @@ export default function ProfilePage() {
     backgroundColor: 'primary.light',
   }}
 >
-  <Avatar />
+  <ProfileCard />
+  <Friends />
   </Box>
 <Box
   sx={{
@@ -30,7 +33,9 @@ export default function ProfilePage() {
     float : 'right',
     backgroundColor: '#ffab91',
   }}
-/>
+>
+
+</Box>
 </Container>
 </>
   );
