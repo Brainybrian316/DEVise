@@ -29,8 +29,6 @@ export const LOGOUT_MUTATION = gql`
   }
 `;
 
-<<<<<<< HEAD
-
  export const CREATE_USER_MUTATION = gql`
    mutation CreateUser($input: CreateUserInput!) {
      createUser(input: $input) {
@@ -44,23 +42,6 @@ export const LOGOUT_MUTATION = gql`
      }
    }
  `;
-
-
-
-=======
-export const CREATE_USER_MUTATION = gql`
-  mutation CreateUser($input: CreateUserInput!) {
-    createUser(input: $input) {
-      token
-      user {
-        ...UserDetail
-      }
-    }
-  }
-  ${USER_DETAIL_FRAGMENT}
-`;
->>>>>>> 05b7946 (create acct form and inputs)
-
 
 
 // export const UPDATE_USER_MUTATION = gql`
@@ -129,18 +110,3 @@ export const DELETE_USER_PROJECT_MUTATION = gql`
 `;
 
 
-
-
-<<<<<<< HEAD
-=======
- // export const CREATE_USER_MUTATION = gql`
- //   mutation CreateUser($firstName: String!, $lastName: String!, $username: String!, $email: String!, $password: String!) {
- //     createUser(firstName: $firstName, lastName: $lastName, username: $username, email: $email, password: $password) {
- //       firstName
- //       lastName
- //       username
- //       email
- //     }
- //   }
- // `;
->>>>>>> 05b7946 (create acct form and inputs)

@@ -1,3 +1,4 @@
+
 import HomePage from "./pages/Home";
 import "./assets/global.css";
 import Navbar from "./components/Navbar";
@@ -10,6 +11,8 @@ import Membership from "./pages/Membership";
 import { Routes, Route } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Profile from "./pages/ProfilePage";
+
+
 
 function App() {
   return (
