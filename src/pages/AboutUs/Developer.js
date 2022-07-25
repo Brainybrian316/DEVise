@@ -12,15 +12,26 @@ import { devList } from './devDB';
 
 export default function Developers() {
 
-
   return (
     <>
+
     
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'space-evenly',
+          alignContent: 'space-between'
+
+        }}
+      >
 {devList.map((dev, index) => (
-<Card sx={{ display: 'flex' }}
+<Card 
+style={{ display: 'flex'}}
   key={index}
 >
-<Box sx={{ display: 'flex', flexDirection: 'column' }}>
+<Box>
   <CardContent sx={{ flex: '1 0 auto' }}>
     <Typography component="div" variant="h5">
       Software Engineer
@@ -73,6 +84,7 @@ alignItems: 'center',
 </Box>
 </Card>
 ))}
+      </Box>
   
     </>
   );
