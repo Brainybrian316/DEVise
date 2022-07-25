@@ -12,9 +12,9 @@ export default function Developers() {
   return (
     <>
       {devList.map((dev, index) => (
-        <Container sx={{ width: '100%' }}>
+        <Container style={{ width: '100%' }}>
           <Box
-            sx={{
+            style={{
               display: 'flex',
               flexDirection: 'row',
               flexWrap: 'wrap',
