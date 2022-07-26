@@ -9,11 +9,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 import Pagination from '@mui/material/Pagination';
 
 const mock = [
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img16.jpg',
+    image: 'https://assets.maccarianagency.com/backgrounds/img2.jpg',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     title: 'Lorem ipsum dolor sit amet,',
     author: {
@@ -23,7 +25,7 @@ const mock = [
     date: '04 Aug',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img18.jpg',
+    image: 'https://assets.maccarianagency.com/backgrounds/img3.jpg',
     description: 'Excepteur sint occaecat cupidatat non proident',
     title: 'Consectetur adipiscing elit',
     author: {
@@ -33,7 +35,17 @@ const mock = [
     date: '12 Sep',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img17.jpg',
+    image: 'https://assets.maccarianagency.com/backgrounds/img4.jpg',
+    description: 'Eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+    title: 'Labore et dolore magna aliqua',
+    author: {
+      name: 'Chary Smith',
+      avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
+    },
+    date: '22 Nov',
+  },
+  {
+    image: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
     description:
       'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
     title: 'Eiusmod tempor incididunt',
@@ -43,7 +55,7 @@ const mock = [
     },
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img13.jpg',
+    image: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
     description: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
     title: 'Sed ut perspiciatis',
     author: {
@@ -53,7 +65,7 @@ const mock = [
     date: '02 Aug',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img14.jpg',
+    image: 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
     description:
       'Qui blanditiis praesentium voluptatum deleniti atque corrupti',
     title: 'Unde omnis iste natus',
@@ -70,35 +82,78 @@ const PopularProjects = () => {
   return (
     <Box>
       <Box
-        display={'flex'}
-        justifyContent={'space-between'}
-        alignItems={{ xs: 'flex-start', sm: 'center' }}
-        flexDirection={{ xs: 'column', sm: 'row' }}
+        padding={2}
+        width={1}
+        component={Card}
+        boxShadow={4}
         marginBottom={4}
       >
-        <Box>
-          <Typography fontWeight={700} variant={'h6'} gutterBottom>
-            Popular articles
-          </Typography>
-          <Typography color={'text.secondary'}>
-            Here’s what we’ve been up to recently.
-          </Typography>
-        </Box>
-        <Box display="flex" marginTop={{ xs: 2, md: 0 }}>
-          <Box
-            component={Button}
-            variant="outlined"
-            color="primary"
-            size="large"
-            marginLeft={2}
-          >
-            View all
+        <form noValidate autoComplete="off">
+          <Box display="flex" alignItems={'center'}>
+            <Box width={1} marginRight={1}>
+              <TextField
+                sx={{
+                  height: 54,
+                  '& .MuiOutlinedInput-notchedOutline': {
+                    border: '0 !important',
+                  },
+                }}
+                variant="outlined"
+                color="primary"
+                size="medium"
+                placeholder="Search an article"
+                fullWidth
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Box
+                        component={'svg'}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        width={24}
+                        height={24}
+                        color={'primary.main'}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
+                      </Box>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Box>
+            <Box display={{ xs: 'none', sm: 'block' }} marginRight={2}>
+              <Typography
+                color={'text.secondary'}
+                variant={'subtitle2'}
+                sx={{ whiteSpace: 'nowrap' }}
+              >
+                123 Results
+              </Typography>
+            </Box>
+            <Box>
+              <Button
+                sx={{ height: 54, minWidth: 100, whiteSpace: 'nowrap' }}
+                variant="contained"
+                color="primary"
+                size="medium"
+                fullWidth
+              >
+                Search
+              </Button>
+            </Box>
           </Box>
-        </Box>
+        </form>
       </Box>
       <Grid container spacing={4}>
         {mock.map((item, i) => (
-          <Grid item xs={12} sm={i === 0 ? 12 : 6} md={i < 2 ? 6 : 4} key={i}>
+          <Grid item xs={12} sm={6} md={4} key={i}>
             <Box
               component={'a'}
               href={''}
@@ -189,6 +244,34 @@ const PopularProjects = () => {
             </Box>
           </Grid>
         ))}
+        <Grid item container justifyContent={'center'} xs={12}>
+          <Button
+            fullWidth
+            variant={'outlined'}
+            size={'large'}
+            sx={{ height: 54, maxWidth: 400, justifyContent: 'space-between' }}
+            endIcon={
+              <Box
+                component={'svg'}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                width={24}
+                height={24}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </Box>
+            }
+          >
+            Load more
+          </Button>
+        </Grid>
       </Grid>
     </Box>
   );
