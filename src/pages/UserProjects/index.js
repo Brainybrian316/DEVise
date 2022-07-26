@@ -25,19 +25,11 @@ export default function UserProjects() {
       <Box sx={{ display: 'flex', justifyContent: 'flex-start'  }}>
         <Typography variant='h6'>
           {userProject.title}
-          <IconButton
-          sx={{ ml: 3 }}
-          >
-          <BookmarkAdd />
-        </IconButton>
-        <IconButton sx={{ color: 'red'}}>
-          <FavoriteIcon />
-        </IconButton>
         </Typography>
       </Box>
 
-      <Typography level="body2">
-        {userProject.summary}
+      <Typography variant='body1'>
+        {/* {userProject.user.firstName} */}
       </Typography>
 
       <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
@@ -46,21 +38,36 @@ export default function UserProjects() {
           alt=""
         />
       </AspectRatio>
-      <Box sx={{ display: 'flex' }}>
+      <Typography level="body2">
+        {userProject.summary}
+      </Typography>
+      <Box sx={{ display: 'flex', pt: 2 }}>
         <div>
           <Typography level="body3">Total price:  {userProject.price}
           </Typography>
         </div>
-   
-          <Button
+      </Box>
+
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+
+      <Button
           variant="contained"
-          sx={{ ml: 'auto', mr: 2, mb: 2
+          sx={{ ml: 'auto', mr: 33, mb: 2, mt: 2
          }}
         >
           VIEW
         </Button>
-      </Box>
+      <IconButton
+          sx={{ ml: 3 }}
+          >
+          <BookmarkAdd />
+        </IconButton>
+        <IconButton sx={{ color: 'red'}}>
+          <FavoriteIcon />
+        </IconButton>
+        </Box>
     </Card>
+
     ))}
     </Box>
     
