@@ -15,8 +15,8 @@ import LoginBtn from './ui/LoginBtn';
 import { Link } from 'react-router-dom';
 
 // *************variables*****************
-const pages = ['IdeaBin', 'UserProjects', 'membership', 'Profile', 'About', 'Contact',];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['IdeaBin', 'UserProjects', 'membership', 'About', 'Contact',];
+const settings = ['Profile', 'Logout'];
 
 
 export default function NavBar() {
@@ -153,6 +153,34 @@ export default function NavBar() {
               </Button>
             ))}
           </Box>
+
+            {localStorage.getItem('token') ? (
+                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+    <Button
+      onClick={handleCloseNavMenu}
+      sx={{ my: 2, color: 'white', display: 'block' }}
+    >
+      <Link style={{textDecoration: "none", color: "white"}}
+      to="/Profile">
+        Profile
+      </Link>
+    </Button>
+    <Button
+      onClick={handleCloseNavMenu}
+      sx={{ my: 2, color: 'white', display: 'block' }}
+    >
+      <Link style={{textDecoration: "none", color: "white"}}
+      onClick= {() => {
+        localStorage.removeItem('token');
+        window.location.href = '/';
+      }
+      }
+      to="/Logout">
+        Logout
+      </Link>
+    </Button>
+  </Box>
+            ) : (
           <Box sx={{ flexGrow: 0, }}>
             <LoginBtn  />
             <SignupBtn />
@@ -179,8 +207,61 @@ export default function NavBar() {
               ))}
             </Menu>
           </Box>
+            )}
+
+
+              
+
+
+
+          
+      
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
+
+// {localStorage.getItem('token') ? (
+//   <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+//     <Button
+//       onClick={handleCloseNavMenu}
+//       sx={{ my: 2, color: 'white', display: 'block' }}
+//     >
+//       <Link style={{textDecoration: "none", color: "white"}}
+//       to="/Profile">
+//         Profile
+//       </Link>
+//     </Button>
+//     <Button
+//       onClick={handleCloseNavMenu}
+//       sx={{ my: 2, color: 'white', display: 'block' }}
+//     >
+//       <Link style={{textDecoration: "none", color: "white"}}
+//       to="/Logout">
+//         Logout
+//       </Link>
+//     </Button>
+//   </Box>
+// ) : (
+//   <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+//     <Button
+//       onClick={handleCloseNavMenu}
+//       sx={{ my: 2, color: 'white', display: 'block' }}
+//     >
+//       <Link style={{textDecoration: "none", color: "white"}}
+//       to="/Signup">
+//         Signup
+//       </Link>
+//     </Button>
+//     <Button
+//       onClick={handleCloseNavMenu}
+//       sx={{ my: 2, color: 'white', display: 'block' }}
+//     >
+//       <Link style={{textDecoration: "none", color: "white"}}
+//       to="/Login">
+//         Login
+//       </Link>
+//     </Button>
+//   </Box>
+// )}

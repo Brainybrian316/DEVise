@@ -14,7 +14,8 @@ export default function Login() {
     try {
       const userLoggedIn = await login({ variables: { email, password } });
       if (userLoggedIn) {
-        alert('You are logged in');
+        localStorage.setItem('token', userLoggedIn.data.login.token);
+        window.location.href = 'profile';
         console.log(userLoggedIn);
       }
     } catch (error) {
@@ -102,6 +103,7 @@ export default function Login() {
            
           </Box>
 
+    
           <Box
             sx={{
               display: 'flex',
@@ -120,7 +122,7 @@ export default function Login() {
                 color: '#47E9DD',
               },
              }}
-             onClick={handleSubmit}
+            onClick={handleSubmit}
             >
                 Log In
               </Button>
