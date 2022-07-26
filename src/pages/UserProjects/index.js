@@ -1,31 +1,44 @@
 import * as React from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
-import { Button, Typography } from '@mui/material';
-import Box from '@mui/joy/Box';
+import { Button, Typography, Box, Card, IconButton } from '@mui/material';
 
-import Card from '@mui/joy/Card';
-import IconButton from '@mui/joy/IconButton';
-
-import BookmarkAdd from '@mui/icons-material/BookmarkAddOutlined';
+import BookmarkAdd from '@mui/icons-material/BookmarkAdd';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function UserProjects() {
   return (
-    <Card variant="outlined" sx={{ minWidth: '320px' }}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-        <Typography level="h2" fontSize="md" sx={{ alignSelf: 'flex-start' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        m: 2,
+        p: 2,
+      }}
+    >
+
+    <Card sx={{ minWidth: '320px' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'flex-start'  }}>
+        <Typography variant='h6'>
           Yosemite National Park
+          <IconButton
+          sx={{ ml: 3 }}
+          >
+          <BookmarkAdd />
+        </IconButton>
+        <IconButton sx={{ color: 'red'}}>
+          <FavoriteIcon />
+        </IconButton>
         </Typography>
-        <Typography level="body2">April 24 to May 02, 2021</Typography>
       </Box>
-      <IconButton
-        aria-label="bookmark Bahamas Islands"
-        variant="plain"
-        color="neutral"
-        size="sm"
-        sx={{ position: 'absolute', top: '0.5rem', right: '0.5rem' }}
-      >
-        <BookmarkAdd />
-      </IconButton>
+
+      
+   
+
+      
+
+
+
+      <Typography level="body2">April 24 to May 02, 2021</Typography>
+    
 
       <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
         <img
@@ -35,21 +48,18 @@ export default function UserProjects() {
       </AspectRatio>
       <Box sx={{ display: 'flex' }}>
         <div>
-          <Typography level="body3">Total price:</Typography>
-          <Typography fontSize="lg" fontWeight="lg">
-            $2900
-          </Typography>
+          <Typography level="body3">Total price: $1,000</Typography>
         </div>
-        <Button
-          variant="solid"
-          size="sm"
-          color="primary"
-          aria-label="Explore Bahamas Islands"
-          sx={{ ml: 'auto', fontWeight: 600 }}
+   
+          <Button
+          variant="contained"
+          sx={{ ml: 'auto', mr: 2, mb: 2
+         }}
         >
-          Explore
+          VIEW
         </Button>
       </Box>
     </Card>
+    </Box>
   );
 }
