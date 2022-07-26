@@ -13,6 +13,7 @@ import Profile from "./pages/ProfilePage";
 
 import {FooterContainer} from "./pages/Footer/footerContainer"
 import IdeaBin from "./pages/IdeaBin";
+import UserProjects from "./pages/UserProjects";
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/membership" element={<Membership />} />
         <Route path="/ideaBin" element={<IdeaBin />} />
+        <Route path="/userProjects" element={<UserProjects />} />
       </Routes>
       <FooterContainer />
     </ApolloProvider>
