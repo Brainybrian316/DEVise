@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+
 const AlertSubscription = () => {
   return (
     <Box>
@@ -14,15 +15,7 @@ const AlertSubscription = () => {
           align={'center'}
           gutterBottom
         >
-          Get our stories delivered
-        </Typography>
-        <Typography
-          variant={'h6'}
-          component={'p'}
-          color={'text.secondary'}
-          align={'center'}
-        >
-          From us to your inbox weekly.
+          Subscribe for the latest project alerts
         </Typography>
       </Box>
       <Box maxWidth={600} margin={'0 auto'}>

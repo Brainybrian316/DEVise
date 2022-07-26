@@ -9,71 +9,70 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import Pagination from '@mui/material/Pagination';
+
 
 const mock = [
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img2.jpg',
+    image: 'https://insights.dice.com/wp-content/uploads/2020/05/shutterstock_1571829487.jpg',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     title: 'Lorem ipsum dolor sit amet,',
     author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img4.jpg',
+      name: 'John Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
-    date: '04 Aug',
+    date: 'Aug 12',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img3.jpg',
+    image: 'https://www.digitalartsonline.co.uk/cmsdata/features/3674451/lifestyle_working_from_home_10.jpg',
     description: 'Excepteur sint occaecat cupidatat non proident',
     title: 'Consectetur adipiscing elit',
     author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img5.jpg',
+      name: 'Jane Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
-    date: '12 Sep',
+    date: 'Sep 19',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img4.jpg',
+    image: 'https://www.velocityconsultancy.com/wp-content/uploads/2021/08/web-development.jpg',
     description: 'Eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     title: 'Labore et dolore magna aliqua',
     author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
+      name: 'John Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
-    date: '22 Nov',
+    date: 'Jan 14',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
+    image: 'https://www.robertsharpassociates.com/assets/images/uploads/web1.jpeg',
     description:
       'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
     title: 'Eiusmod tempor incididunt',
     author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
+      name: 'Jane Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
+    date: 'Mar 12',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
+    image: 'https://lform.com/cms/resources/media/2021/01/custom-web-design-development.jpg',
     description: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
     title: 'Sed ut perspiciatis',
     author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img2.jpg',
+      name: 'John Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
-    date: '02 Aug',
+    date: 'Oct 17',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
+    image: 'https://w10.naukri.com/mailers/2022/naukri-learning/what-is/What-is-web-development.jpg',
     description:
       'Qui blanditiis praesentium voluptatum deleniti atque corrupti',
     title: 'Unde omnis iste natus',
     author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img3.jpg',
+      name: 'Jane Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
-    date: '05 Mar',
+    date: 'Feb 06',
   },
 ];
 
@@ -90,10 +89,10 @@ const PopularProjects = () => {
       >
         <Box>
           <Typography fontWeight={700} variant={'h6'} gutterBottom>
-            Popular articles
+            Popular Projects
           </Typography>
           <Typography color={'text.secondary'}>
-            Here’s what we’ve been up to recently.
+            Find what you're looking for here!
           </Typography>
         </Box>
         <Box display="flex" marginTop={{ xs: 2, md: 0 }}>

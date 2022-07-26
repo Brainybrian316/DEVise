@@ -11,26 +11,26 @@ import Avatar from '@mui/material/Avatar';
 
 const mock = [
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img2.jpg',
+    image: 'https://www.ishir.com/wp-content/uploads/2021/06/Custom-dimensions-670x450-px-Custom-dimensions.jpeg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     title: 'Lorem ipsum dolor sit amet,',
     author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img4.jpg',
+      name: 'Jane Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
-    date: '04 Aug',
+    date: 'June 20',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img3.jpg',
+    image: 'https://www.zibtek.com/blog/content/images/2020/04/image-4.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     title: 'Consectetur adipiscing elit',
     author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img5.jpg',
+      name: 'John Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
-    date: '12 Sep',
+    date: 'June 29',
   },
 ];
 
@@ -47,10 +47,10 @@ const PromotedProjects = () => {
       >
         <Box>
           <Typography fontWeight={700} variant={'h6'} gutterBottom>
-            Case studies
+            Promoted Projects
           </Typography>
           <Typography color={'text.secondary'}>
-            In-depth looks at our work.
+            Check out these interesting finds from our best creators!
           </Typography>
         </Box>
         <Box display="flex" marginTop={{ xs: 2, md: 0 }}>
