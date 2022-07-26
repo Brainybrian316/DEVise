@@ -29,7 +29,6 @@ export const LOGOUT_MUTATION = gql`
   }
 `;
 
-
  export const CREATE_USER_MUTATION = gql`
    mutation CreateUser($input: CreateUserInput!) {
      createUser(input: $input) {
@@ -43,7 +42,6 @@ export const LOGOUT_MUTATION = gql`
      }
    }
  `;
-
 
 
 // export const UPDATE_USER_MUTATION = gql`
@@ -110,7 +108,5 @@ export const DELETE_USER_PROJECT_MUTATION = gql`
   ${USER_PROJECTS_FRAGMENT}
   }
 `;
-
-
 
 
