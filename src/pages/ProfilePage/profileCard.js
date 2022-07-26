@@ -35,7 +35,7 @@ export default function ProfileCard() {
   };
 
   return (
-    <Card sx={{ maxWidth: 500 }}  >
+    <Card >
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
