@@ -35,7 +35,8 @@ export default function Signup() {
       },
       });
       if (userCreated) {
-        alert('You are logged in');
+        localStorage.setItem('token', userCreated.data.createUser.token);
+        window.location.href = 'profile';
         console.log(userCreated);
       }
     }
