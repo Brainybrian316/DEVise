@@ -70,7 +70,9 @@ export default function Signup() {
 
   return (
     <div>
-      <Container maxWidth="sm">
+      <Container maxWidth="sm"
+        sx={{ m: 2,  ml: 'auto', mr: 'auto', p: 2 }}
+      >
         <Box
           sx={{
             bgcolor: '#cfe8fc',
