@@ -15,7 +15,7 @@ import LoginBtn from './ui/LoginBtn';
 import { Link } from 'react-router-dom';
 
 // *************variables*****************
-const pages = ['Projects', 'UserProjects', 'Dashboard', 'membership', 'Profile', 'About', 'Contact',];
+const pages = ['IdeaBin', 'UserProjects', 'Dashboard', 'membership', 'Profile', 'About', 'Contact',];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
