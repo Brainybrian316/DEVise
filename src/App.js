@@ -1,4 +1,3 @@
-
 import HomePage from "./pages/Home";
 import "./assets/global.css";
 import Navbar from "./components/Navbar";
@@ -11,8 +10,10 @@ import Membership from "./pages/Membership";
 import { Routes, Route } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Profile from "./pages/ProfilePage";
+
 import {FooterContainer} from "./pages/Footer/footerContainer"
 import IdeaBin from "./pages/IdeaBin";
+
 
 
 function App() {
@@ -27,11 +28,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/membership" element={<Membership />} />
-        <Route path="/ideaSum" element={<IdeaBin/>} />
+        <Route path="/ideaBin" element={<IdeaBin />} />
       </Routes>
-      <FooterContainer/>
+      <FooterContainer />
     </ApolloProvider>
-
   );
 }
 
