@@ -44,7 +44,7 @@ export default function IdeaBin() {
 
   // The Keypress Event Handler
   const changeChild = useCallback(
-    (e: KeyboardEvent) => {
+    (e: KeyboardEvent.key) => {
       if (e.key === "ArrowLeft") {
         // If supposed previous child is < 0 set it to last child
         setActiveChild((a) => (a - 1 < 0 ? items.length - 1 : a - 1));
