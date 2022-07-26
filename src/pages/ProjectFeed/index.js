@@ -17,7 +17,7 @@ const ProjectFeed = () => {
     const theme = useTheme();
     return (
         <Box>
-        <Box
+            <Box
             position={'relative'}
             sx={{
             backgroundImage:
@@ -40,7 +40,7 @@ const ProjectFeed = () => {
                 opacity: 0.6,
             },
             }}
-        >
+            >
             <Container
             zIndex={3}
             position={'relative'}
@@ -76,21 +76,7 @@ const ProjectFeed = () => {
                 </Box>
             </Box>
             </Container>
-            <Box
-            component={'svg'}
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            viewBox="0 0 1920 100.1"
-            width={1}
-            maxHeight={120}
-            bottom={0}
-            position={'absolute'}
-            zIndex={2}
-            >
 
-            </Box>
             <Container
             sx={{
                 marginTop: '-5rem',
@@ -102,43 +88,31 @@ const ProjectFeed = () => {
             <SearchBox />
             </Container>
             </Box>
+
             <Container>
             <FeaturedArticle />
             </Container>
+
             <Container paddingTop={'0 !important'}>
             <LastStories />
             </Container>
+
             <Container paddingTop={'0 !important'}>
             <CaseStudies />
             </Container>
+
             <Box paddingBottom={{ xs: 2, sm: 3, md: 4 }}>
             <Container paddingTop={'0 !important'}>
-                <PopularArticles />
+            <PopularArticles />
             </Container>
             </Box>
-            <Box
-            component={'svg'}
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            viewBox="0 0 1920 100.1"
-            sx={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                transform: 'translateY(50%)',
-                zIndex: 2,
-                width: 1,
-            }}
-            >
 
-            </Box>
+
+
             <Container>
             <Newsletter />
-        </Container>
-      </Box>
+            </Container>         
+        </Box>
       
       
 
