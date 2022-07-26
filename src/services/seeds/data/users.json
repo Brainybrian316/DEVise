@@ -1,62 +1,35 @@
 [
   {
-    "_id": "62dc637ccf6b8b047473ebd1",
-    "firstName": "Mustafa",
-    "lastName": "Blanda",
-    "username": "MustafaBlanda",
-    "email": "MustafaBlanda.Fahey@yahoo.com",
-    "password": "mixotevo",
+    "_id": "62dec549ceb5842aeaeeac2c",
+    "firstName": "Helene",
+    "lastName": "Wiegand",
+    "username": "HeleneWiegand",
+    "email": "HeleneWiegand.Lynch19@hotmail.com",
+    "password": "cuzesaze",
     "userProjects": [
-      {
-        "contributors": [],
-        "images": [],
-        "videos": [],
-        "tags": [],
-        "rating": 0,
-        "numReviews": 0,
-        "price": 0,
-        "_id": "62dc605a2e1e28173ad438cb"
-      }
+      "62dead85e0e61360fe3f34df"
     ]
   },
   {
-    "_id": "62dc637ccf6b8b047473ebd3",
-    "firstName": "Beverly",
-    "lastName": "Pouros",
-    "username": "BeverlyPouros",
-    "email": "BeverlyPouros.Boyer50@hotmail.com",
-    "password": "demehoru",
+    "_id": "62dec549ceb5842aeaeeac2e",
+    "firstName": "Courtney",
+    "lastName": "Kreiger",
+    "username": "CourtneyKreiger",
+    "email": "CourtneyKreiger28@yahoo.com",
+    "password": "hanalava",
     "userProjects": [
-      {
-        "contributors": [],
-        "images": [],
-        "videos": [],
-        "tags": [],
-        "rating": 0,
-        "numReviews": 0,
-        "price": 0,
-        "_id": "62dc605a2e1e28173ad438cd"
-      }
+      "62dead85e0e61360fe3f34dd"
     ]
   },
   {
-    "_id": "62dc637ccf6b8b047473ebd5",
-    "firstName": "Valentine",
-    "lastName": "Hoeger",
-    "username": "ValentineHoeger",
-    "email": "ValentineHoeger31@yahoo.com",
-    "password": "qayuyeye",
+    "_id": "62dec549ceb5842aeaeeac30",
+    "firstName": "Jaunita",
+    "lastName": "Fritsch",
+    "username": "JaunitaFritsch",
+    "email": "JaunitaFritsch.Fritsch56@hotmail.com",
+    "password": "siwoyavo",
     "userProjects": [
-      {
-        "contributors": [],
-        "images": [],
-        "videos": [],
-        "tags": [],
-        "rating": 0,
-        "numReviews": 0,
-        "price": 0,
-        "_id": "62dc605a2e1e28173ad438c9"
-      }
+      "62dead85e0e61360fe3f34e1"
     ]
   }
 ]

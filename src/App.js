@@ -30,6 +30,7 @@ function App() {
       </Routes>
       <FooterContainer/>
     </ApolloProvider>
+
   );
 }
 
