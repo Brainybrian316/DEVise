@@ -35,7 +35,7 @@ export default function DevProjects() {
 
       <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
         <img
-          src="https://source.unsplash.com/random/300"
+          src={devProject.mainImage}
           alt=""
         />
       </AspectRatio>
@@ -44,7 +44,7 @@ export default function DevProjects() {
       </Typography>
       <Box sx={{ display: 'flex', pt: 2 }}>
         <div>
-          <Typography level="body3">Tags:  {devProject.tags}
+          <Typography level="body3">Created By:  {devProject.authors}
           </Typography>
         </div>
       </Box>
