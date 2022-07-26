@@ -35,8 +35,8 @@ export default function UserProjects() {
 
       <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
         <img
-          src="https://source.unsplash.com/random/300"
-          alt=""
+          src={userProject.mainImage}
+          alt={userProject.title}
         />
       </AspectRatio>
       <Typography level="body2">

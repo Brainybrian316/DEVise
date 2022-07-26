@@ -36,7 +36,7 @@ export default function DevProjects() {
       <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
         <img
           src={devProject.mainImage}
-          alt=""
+          alt={devProject.title}
         />
       </AspectRatio>
       <Typography level="body2">
