@@ -3,13 +3,13 @@ import AspectRatio from '@mui/joy/AspectRatio';
 import { Button, Typography, Box, Card, IconButton } from '@mui/material';
 import BookmarkAdd from '@mui/icons-material/BookmarkAdd';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useGetDevProjectsQuery } from '../../hooks/Queries';
+import { useGetAllUserProjectsQuery } from '../../hooks/Queries';
+import { Container } from '@mui/system';
 
 
+export default function UserProjects() {
 
-export default function DevProjects() {
-
-  const { devProjects, loading, error } = useGetDevProjectsQuery();
+  const { userProjects, loading, error } = useGetAllUserProjectsQuery();
 
   if (loading) return <p>Loading...</p>;
 
@@ -21,11 +21,11 @@ export default function DevProjects() {
 
   return (
     <Box sx={{ display: 'flex', m: 2,  p: 2, justifyContent: 'space-evenly', flexWrap: 'wrap', flexDirection: 'row'   }}>
-    {devProjects.map(devProject => (
-    <Card   key={devProject.id}sx={{ minWidth: '450px', maxWidth: '300px', m:2}}>
+    {userProjects.map(userProject => (
+    <Card   key={userProject.id}sx={{ minWidth: '450px', maxWidth: '300px', m:2}}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-start'  }}>
         <Typography variant='h6'>
-          {devProject.title}
+          {userProject.title}
         </Typography>
       </Box>
 
@@ -35,16 +35,16 @@ export default function DevProjects() {
 
       <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
         <img
-          src={devProject.mainImage}
-          alt={devProject.title}
+          src={userProject.mainImage}
+          alt={userProject.title}
         />
       </AspectRatio>
       <Typography level="body2">
-        {devProject.summary}
+        {userProject.summary}
       </Typography>
       <Box sx={{ display: 'flex', pt: 2 }}>
         <div>
-          <Typography level="body3">Created By:  {devProject.authors}
+          <Typography level="body3">Total price:  {userProject.price}
           </Typography>
         </div>
       </Box>
@@ -53,10 +53,10 @@ export default function DevProjects() {
 
       <Button
           variant="contained"
-          sx={{ ml: 'auto', mr: 25, mb: 2, mt: 2
+          sx={{ ml: 'auto', mr: 33, mb: 2, mt: 2
          }}
         >
-          Learn  More
+          VIEW
         </Button>
       <IconButton
           sx={{ ml: 3 }}

@@ -12,6 +12,9 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { GitHub, Email, LinkedIn } from '@mui/icons-material';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
+import { useGetUserQuery } from '../../hooks/Queries';
+
+
 
 
 
@@ -30,11 +33,20 @@ const ExpandMore = styled((props) => {
 export default function ProfileCard() {
   const [expanded, setExpanded] = React.useState(false);
 
+  const { user, loading, error } = useGetUserQuery('62e00c4f20fc6c75f60f55e6');
+
+  if (loading) return <p>Loading...</p>;
+
+  if (error) return <p>Error: {error.message}</p>;
+
+  console.log(user);
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
+    <>
     <Card >
       <CardHeader
         avatar={
@@ -47,7 +59,7 @@ export default function ProfileCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Brian M"
+        title={user.firstName + ' ' + user.lastName}
         subheader="Full-Stack Developer"
       />
   
@@ -77,5 +89,6 @@ export default function ProfileCard() {
         </IconButton>
       </CardActions>
     </Card>
+    </>
   );
 }

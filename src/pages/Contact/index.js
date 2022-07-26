@@ -41,6 +41,7 @@ export default function Contact(props) {
           borderRadius: '10px',
           mx: 'auto',
           mt: 3,
+          mb: 4,
         }}
       >
          <form className="contact-form" action="" onSubmit={sendEmail}>

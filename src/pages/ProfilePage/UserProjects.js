@@ -7,14 +7,23 @@ import Typography from '@mui/joy/Typography';
 import IconButton from '@mui/joy/IconButton';
 import Link from '@mui/joy/Link';
 import Favorite from '@mui/icons-material/Favorite';
-
 import { color, Container } from '@mui/system';
 
 import { CreateNewFolder } from '@mui/icons-material';
 import CardCover from '@mui/joy/CardCover';
+import { useGetUserQuery } from '../../hooks/Queries';
 
 
 export default function MultipleInteractionCard() {
+  const { user, loading, error } = useGetUserQuery('62e00c4f20fc6c75f60f55e6');
+
+  if (loading) return <p>Loading...</p>;
+
+  if (error) return <p>Error: {error.message}</p>;
+
+  console.log(user);
+
+
   return (
     <Container maxWidth="lg">
       <Box 
@@ -23,18 +32,22 @@ export default function MultipleInteractionCard() {
           flexDirection: 'row',
           alignItems: 'center',
         }}>
-    <Card variant="outlined" sx={{ minWidth: 320, maxWidth: 750,  }}>
-   
+      {user.userProjects.map((project) => (
+    <Card 
+    key={project._id}
+     variant="outlined" sx={{ 
+      minWidth: 320, maxWidth: 750,  }}>
+
       <Box sx={{ position: 'relative' }}>
         <AspectRatio ratio="4/3">
           <figure>
             <img
-              alt="Yosemite by Casey Horner"
+              alt={project.title}
               width="330"
               height="247"
               sizes="338px"
               data-sizes="auto"
-              src="https://source.unsplash.com/random/300"
+              src={project.mainImage}
             />
           </figure>
         </AspectRatio>
@@ -61,19 +74,19 @@ export default function MultipleInteractionCard() {
                 alignSelf: 'flex-end',
               }}
             >
-              <Typography level="h2" noWrap sx={{ fontSize: 'lg' }}>
+              <Typography level="h2" noWrap sx={{ fontSize: 'xs' }}>
                 <Link
                   href="#dribbble-shot"
                   overlay
                   underline="none"
                   sx={{
                     color: '#fff',
-                    textOverflow: 'ellipsis',
+                    textOverflow: 'none',
                     overflow: 'hidden',
                     display: 'block',
                   }}
                 >
-                  Project Title
+                  {project.title}
                 </Link>
               </Typography>
               <IconButton size="sm" sx={{ 
@@ -101,11 +114,11 @@ export default function MultipleInteractionCard() {
           fontSize: 'sm',
           lineHeight: 'lg',
         }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          {project.summary}
         </Typography>
-
       </CardOverflow>
     </Card>
+    ))}
     </Box>
     </Container>
   );
