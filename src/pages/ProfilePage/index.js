@@ -2,6 +2,7 @@ import { Box, Container, Grid, Typography } from '@mui/material/';
 import ProfileCard from './profileCard';
 import Experience from './List';
 import FriendsList from './Friends';
+import Chip from './Chip';
 
 export default function ProfilePage() {
   return (
@@ -35,6 +36,7 @@ export default function ProfilePage() {
             }}
           >
             <Experience />
+            <Chip/>
             <FriendsList />
           </Grid>
 
