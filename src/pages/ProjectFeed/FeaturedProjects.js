@@ -10,16 +10,16 @@ import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
 
 const mock = {
-  image: 'https://assets.maccarianagency.com/backgrounds/img4.jpg',
+  image: 'https://smsh-862737-juc1ugur1qwqqqo4.stackpathdns.com/2569356/wp-content/uploads/2020/11/AdobeStock_241083104-1400x934.jpg?size=1400x934&lossy=1&strip=1&webp=1',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   title:
     'Labore et dolore magna aliqua. Eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   author: {
-    name: 'Chary Smith',
-    avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
+    name: 'John Smith',
+    avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
   },
-  date: '22 Nov',
+  date: 'July 26',
 };
 
 const FeaturedProjects = () => {
