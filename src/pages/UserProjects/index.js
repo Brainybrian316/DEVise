@@ -4,6 +4,7 @@ import { Button, Typography, Box, Card, IconButton } from '@mui/material';
 import BookmarkAdd from '@mui/icons-material/BookmarkAdd';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useGetAllUserProjectsQuery } from '../../hooks/Queries';
+import { Container } from '@mui/system';
 
 
 export default function UserProjects() {
@@ -21,7 +22,7 @@ export default function UserProjects() {
   return (
     <Box sx={{ display: 'flex', m: 2,  p: 2, justifyContent: 'space-evenly', flexWrap: 'wrap', flexDirection: 'row'   }}>
     {userProjects.map(userProject => (
-    <Card   key={userProject.id}sx={{ minWidth: '450px', maxWidth: '300px' }}>
+    <Card   key={userProject.id}sx={{ minWidth: '450px', maxWidth: '300px', m:2}}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-start'  }}>
         <Typography variant='h6'>
           {userProject.title}
@@ -67,8 +68,8 @@ export default function UserProjects() {
         </IconButton>
         </Box>
     </Card>
-
     ))}
+
     </Box>
     
   );
