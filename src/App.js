@@ -12,7 +12,6 @@ import Contact from './pages/Contact';
 import Profile from './pages/ProfilePage';
 
 
-
 function App() {
 
   return (
