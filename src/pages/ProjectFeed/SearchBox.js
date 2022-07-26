@@ -7,12 +7,12 @@ import InputAdornment from '@mui/material/InputAdornment';
 import Chip from '@mui/material/Chip';
 
 const mock = [
-  'Business',
-  'Strategy',
-  'Health',
-  'Creative',
-  'Environment',
-  'Stories',
+  'JavaScript',
+  'PHP',
+  'Java',
+  'C++',
+  'Go',
+  'Python',
 ];
 
 const SearchBox = () => {
@@ -38,7 +38,7 @@ const SearchBox = () => {
                 variant="outlined"
                 color="primary"
                 size="medium"
-                placeholder="Search an article"
+                placeholder="Search for a project"
                 fullWidth
                 InputProps={{
                   startAdornment: (
