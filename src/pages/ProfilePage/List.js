@@ -5,7 +5,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from 'react';
 
-export default function BasicSelect() {
+export default function Experience() {
   const [Experience, setExperience] = useState('');
 
   const handleChange = (event) => {
