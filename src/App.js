@@ -10,8 +10,11 @@ import Membership from "./pages/Membership";
 import { Routes, Route } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Profile from "./pages/ProfilePage";
-import { FooterContainer } from "./pages/Footer/footerContainer";
+
+import {FooterContainer} from "./pages/Footer/footerContainer"
 import IdeaBin from "./pages/IdeaBin";
+
+
 
 function App() {
   return (

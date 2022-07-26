@@ -29,7 +29,7 @@ export default function IdeaBin() {
   const [authors, setAuthors] = useState([]);
   const [videos, setVideos] = useState([]);
 
-  const { devProject } = useGetOneDevProjectQuery("62dec549ceb5842aeaeeac32");
+  const { devProject } = useGetOneDevProjectQuery("62df31432aee789f0475528e");
 
   useEffect(() => {
     if (devProject) {
@@ -43,27 +43,27 @@ export default function IdeaBin() {
   // Basically items = [1, 2, 3, 4]
 
   // The Keypress Event Handler
-  const changeChild = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") {
-        // If supposed previous child is < 0 set it to last child
-        setActiveChild((a) => (a - 1 < 0 ? items.length - 1 : a - 1));
-      } else if (e.key === "ArrowRight") {
-        // If supposed next child is > length -1 set it to first child
-        setActiveChild((a) => (a + 1 > items.length - 1 ? 0 : a + 1));
-      }
-    },
-    [items]
-  );
+  // const changeChild = useCallback(
+  //   (e: KeyboardEvent.key) => {
+  //     if (e.key === "ArrowLeft") {
+  //       // If supposed previous child is < 0 set it to last child
+  //       setActiveChild((a) => (a - 1 < 0 ? items.length - 1 : a - 1));
+  //     } else if (e.key === "ArrowRight") {
+  //       // If supposed next child is > length -1 set it to first child
+  //       setActiveChild((a) => (a + 1 > items.length - 1 ? 0 : a + 1));
+  //     }
+  //   },
+  //   [items]
+  // );
 
   // Set and cleanup the event listener
-  useEffect(() => {
-    document.addEventListener("keydown", changeChild);
+  // useEffect(() => {
+  //   document.addEventListener("keydown", changeChild);
 
-    return function cleanup() {
-      document.removeEventListener("keydown", changeChild);
-    };
-  });
+  //   return function cleanup() {
+  //     document.removeEventListener("keydown", changeChild);
+  //   };
+  // });
 
   return (
     <>
