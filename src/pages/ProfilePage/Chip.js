@@ -1,15 +1,16 @@
-import * as React from 'react';
+
 import { styled } from '@mui/material/styles';
 import Chip from '@mui/material/Chip';
-import Paper from '@mui/material/Paper';
+import { Box } from '@mui/system';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
+import { useState } from 'react';
 
 const ListItem = styled('li')(({ theme }) => ({
   margin: theme.spacing(0.5),
 }));
 
 export default function Chips() {
-  const [chipData, setChipData] = React.useState([
+  const [chipData, setChipData] = useState([
     { key: 0, label: 'HTML' },
     { key: 1, label: 'CSS' },
     { key: 2, label: 'JavaScript' },
@@ -26,7 +27,7 @@ export default function Chips() {
   };
 
   return (
-    <Paper
+    <Box
       sx={{
         display: 'flex',
         justifyContent: 'center',
@@ -54,6 +55,6 @@ export default function Chips() {
           </ListItem>
         );
       })}
-    </Paper>
+    </Box>
   );
 }

@@ -3,6 +3,7 @@ import ProfileCard from './profileCard';
 import Experience from './List';
 import FriendsList from './Friends';
 import Chip from './Chip';
+import UserProjects from './UserProjects';
 
 export default function ProfilePage() {
   return (
@@ -35,13 +36,28 @@ export default function ProfilePage() {
               bgcolor: 'background.paper',
             }}
           >
+            <Box sx={{ p: 3 }}>
             <Experience />
+            </Box>
+            <Box sx={{ p: 3 }}>
+            <Typography sx={{ mt: 1, mb: 2 }} variant="h6">
+                Languages/Tools
+                </Typography>
             <Chip/>
+            </Box>
+            <Box sx={{ p: 3 }}>
             <FriendsList />
+            </Box>
+
+            <Box sx={{ p: 3 }}>
+            <Typography sx={{ mt: 1, mb: 2 }} variant="h6">
+              My Projects
+              </Typography>
+              <UserProjects /> 
+            </Box>
           </Grid>
 
         
-
         </Grid>
       </Container>
     </>
