@@ -44,7 +44,7 @@ const mock = [
   },
 ];
 
-const LastStories = () => {
+const LatestProjects = () => {
   const theme = useTheme();
   return (
     <Box>
@@ -173,4 +173,4 @@ const LastStories = () => {
   );
 };
 
-export default LastStories;
+export default LatestProjects;

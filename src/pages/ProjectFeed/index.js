@@ -3,14 +3,13 @@ import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
-
 import Container from './Container';
 import SearchBox from './SearchBox';
-import FeaturedArticle from './FeaturedArticle';
-import LastStories from './LastStories';
-import CaseStudies from './CaseStudies';
-import PopularArticles from './PopularArticles';
-import Newsletter from './Newsletter';
+import FeaturedProjects from './FeaturedProjects';
+import LatestProjects from './LatestProjects';
+import PromotedProjects from './PromotedProjects';
+import PopularProjects from './PopularProjects';
+import AlertSubscription from './AlertSubscription';
 
 
 const ProjectFeed = () => {
@@ -71,7 +70,7 @@ const ProjectFeed = () => {
                     color: theme.palette.common.white,
                     }}
                 >
-                    Check out the latest happenings
+                    Check out all the latest and greatest projects!
                 </Typography>
                 </Box>
             </Box>
@@ -90,36 +89,27 @@ const ProjectFeed = () => {
             </Box>
 
             <Container>
-            <FeaturedArticle />
+            <FeaturedProjects />
             </Container>
 
             <Container paddingTop={'0 !important'}>
-            <LastStories />
+            <LatestProjects />
             </Container>
 
             <Container paddingTop={'0 !important'}>
-            <CaseStudies />
+            <PromotedProjects />
             </Container>
 
             <Box paddingBottom={{ xs: 2, sm: 3, md: 4 }}>
             <Container paddingTop={'0 !important'}>
-            <PopularArticles />
+            <PopularProjects />
             </Container>
             </Box>
 
-
-
             <Container>
-            <Newsletter />
+            <AlertSubscription />
             </Container>         
         </Box>
-      
-      
-
-      
-
-      
-
     );
   };
   

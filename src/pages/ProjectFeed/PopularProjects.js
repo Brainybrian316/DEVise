@@ -65,7 +65,7 @@ const mock = [
   },
 ];
 
-const PopularArticles = () => {
+const PopularProjects = () => {
   const theme = useTheme();
   return (
     <Box>
@@ -194,4 +194,4 @@ const PopularArticles = () => {
   );
 };
 
-export default PopularArticles;
+export default PopularProjects;

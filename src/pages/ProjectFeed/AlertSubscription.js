@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const Newsletter = () => {
+const AlertSubscription = () => {
   return (
     <Box>
       <Box marginBottom={4}>
@@ -72,4 +72,4 @@ const Newsletter = () => {
   );
 };
 
-export default Newsletter;
+export default AlertSubscription;

@@ -34,7 +34,7 @@ const mock = [
   },
 ];
 
-const CaseStudies = () => {
+const PromotedProjects = () => {
   const theme = useTheme();
   return (
     <Box>
@@ -184,4 +184,4 @@ const CaseStudies = () => {
   );
 };
 
-export default CaseStudies;
+export default PromotedProjects;
