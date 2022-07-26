@@ -20,7 +20,7 @@ const ProjectFeed = () => {
             position={'relative'}
             sx={{
             backgroundImage:
-                'url("https://assets.maccarianagency.com/backgrounds/img1.jpg")',
+                'url("https://www.mrjourno.com/uploads/img/623c3d6f810ee.png")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             marginTop: -13,
