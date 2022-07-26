@@ -12,35 +12,36 @@ import Avatar from '@mui/material/Avatar';
 
 const mock = [
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
+    image: 'https://images.idgesg.net/images/article/2021/04/sale_229497_article_image-100886210-large.jpg?auto=webp&quality=85,70',
     description:
       'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
     title: 'Eiusmod tempor incididunt',
     author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
+      name: 'Jane Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
+    date: 'July 26',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
+    image: 'https://insights.dice.com/wp-content/uploads/2021/04/shutterstock_1371696536.jpg',
     description: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
     title: 'Sed ut perspiciatis',
     author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img2.jpg',
+      name: 'John Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
-    date: '02 Aug',
+    date: 'July 26',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
+    image: 'https://media.bitdegree.org/storage/media/images/developing%20a%20website.o.jpg',
     description:
       'Qui blanditiis praesentium voluptatum deleniti atque corrupti',
     title: 'Unde omnis iste natus',
     author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img3.jpg',
+      name: 'Jane Smith',
+      avatar: 'https://i.pinimg.com/564x/93/d3/e3/93d3e31639a4d07613de9dccdc8bd5e8--developer-icon.jpg',
     },
-    date: '05 Mar',
+    date: 'July 26',
   },
 ];
 
@@ -57,10 +58,10 @@ const LatestProjects = () => {
       >
         <Box>
           <Typography fontWeight={700} variant={'h6'} gutterBottom>
-            Latest stories
+            Latest Projects
           </Typography>
           <Typography color={'text.secondary'}>
-            Here’s what we’ve been up to recently.
+            The newst and freshest projects out there!
           </Typography>
         </Box>
         <Box display="flex" marginTop={{ xs: 2, md: 0 }}>
