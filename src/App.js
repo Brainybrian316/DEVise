@@ -14,7 +14,6 @@ import Profile from "./pages/ProfilePage";
 import {FooterContainer} from "./pages/Footer/footerContainer"
 
 
-
 function App() {
   return (
     <ApolloProvider client={client}>
