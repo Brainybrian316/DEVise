@@ -247,7 +247,7 @@ export default function IdeaBin() {
               </Card>
             </Grid>
             <Grid item xs="auto">
-              <Card
+              {videos.length ? null : <Card
                 variant="outlined"
                 sx={{
                   boxShadow: "4px 4px rgba(0, 0, 0, 0.25)",
@@ -333,7 +333,7 @@ export default function IdeaBin() {
                     );
                   })}
                 </Carousel>
-              </Card>
+              </Card> }
               <Card
                 className="description"
                 variant="outlined"
