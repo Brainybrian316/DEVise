@@ -2,11 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import Chip from '@mui/material/Chip';
+
 
 import Container from './Container';
 import SearchBox from './SearchBox';
