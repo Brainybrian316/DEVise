@@ -31,7 +31,8 @@ const resolvers = {
       return await Subscriptions.find();
     },
     user: async (_, { id }) => {
-      return await User.findById(id);
+      return await User.findById(id)
+      .populate('userProjects');
     },
     devProject: async (_, { id }) => {
       return await DevProjects.findById(id);
