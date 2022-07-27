@@ -15,7 +15,7 @@ export default function Login() {
       const userLoggedIn = await login({ variables: { email, password } });
       if (userLoggedIn) {
         localStorage.setItem('token', userLoggedIn.data.login.token);
-        console.log(userLoggedIn);
+        window.location.assign('/profile');
       }
     } catch (error) {
       alert('invalid email or password');

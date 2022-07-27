@@ -57,7 +57,7 @@ export default function ProfileCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title={me.firstName}
+        title={me.firstName + " " + me.lastName}
         subheader="Full-Stack Developer"
       />
   
