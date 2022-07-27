@@ -10,12 +10,23 @@ const { User, DevProjects, UserProjects, Subscriptions } = require('../models');
 const resolvers = {
   Query: {
     me: async (_, args, context) => {
+      console.log('I am here', context.user);
+
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id })
-        .select('-__v -password')
-        .populate('userProjects');
-        return userData;
+        console.log('made it here too')
+        try {
+          const userData = await User.findOne({ _id: context.user._id })
+          .select('-__v -password')
+          .populate('userProjects')
+          console.log('final step')
+          console.log('logging user data',userData);
+          return userData;
+        } catch (e) {
+          console.error(e);
+        }
+       
       }
+      console.log('throwing error');
       throw new AuthenticationError('Invalid Credentials');
     },
     users: async () =>  {

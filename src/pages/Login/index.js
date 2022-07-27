@@ -15,7 +15,6 @@ export default function Login() {
       const userLoggedIn = await login({ variables: { email, password } });
       if (userLoggedIn) {
         localStorage.setItem('token', userLoggedIn.data.login.token);
-        window.location.href = 'profile';
         console.log(userLoggedIn);
       }
     } catch (error) {

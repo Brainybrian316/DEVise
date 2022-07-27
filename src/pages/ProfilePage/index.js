@@ -27,7 +27,7 @@ export default function ProfilePage() {
 
           <ProfileCard />
           </Grid>
-          <Grid
+          {/* <Grid
             item
             xs={12} md={6} lg={4}
             sx={{
@@ -55,7 +55,7 @@ export default function ProfilePage() {
               </Typography>
               <UserProjects /> 
             </Box>
-          </Grid>
+          </Grid> */}
 
         
         </Grid>

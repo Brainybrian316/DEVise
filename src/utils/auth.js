@@ -20,7 +20,7 @@ module.exports = {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
     } catch {
-      console.log('Invalid Credentials');
+      console.log('i am in auth.js');
     }
 
     return req;

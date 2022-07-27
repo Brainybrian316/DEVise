@@ -46,6 +46,7 @@ export function useGetAllUserProjectsQuery() {
 export function useGetMeQuery() {
   const { data, loading, error } = useQuery
   (GET_ME_QUERY);
+  console.log(data + 'query mutation');
   return {
     me: data?.me,
     loading,
