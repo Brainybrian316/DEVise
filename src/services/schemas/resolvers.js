@@ -11,10 +11,10 @@ const resolvers = {
   Query: {
     me: async (_, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id })
-        .select('-__v -password')
-        .populate('userProjects');
-        return userData;
+          const userData = await User.findOne({ _id: context.user._id })
+          .select('-__v -password')
+          .populate('userProjects')
+          return userData;
       }
       throw new AuthenticationError('Invalid Credentials');
     },
