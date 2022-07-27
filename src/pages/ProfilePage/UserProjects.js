@@ -11,18 +11,17 @@ import { color, Container } from '@mui/system';
 
 import { CreateNewFolder } from '@mui/icons-material';
 import CardCover from '@mui/joy/CardCover';
-import { useGetUserQuery } from '../../hooks/Queries';
+import { useGetMeQuery } from '../../hooks/Queries';
 
 
 export default function MultipleInteractionCard() {
-  const { user, loading, error } = useGetUserQuery('62e00c4f20fc6c75f60f55e6');
+
+  const { me, loading, error } = useGetMeQuery();
+  console.log(me);
 
   if (loading) return <p>Loading...</p>;
 
   if (error) return <p>Error: {error.message}</p>;
-
-  console.log(user);
-
 
   return (
     <Container maxWidth="lg">
@@ -32,7 +31,7 @@ export default function MultipleInteractionCard() {
           flexDirection: 'row',
           alignItems: 'center',
         }}>
-      {user.userProjects.map((project) => (
+      {me.userProjects.map((project) => (
     <Card 
     key={project._id}
      variant="outlined" sx={{ 
