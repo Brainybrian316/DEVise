@@ -30,6 +30,9 @@
 
 ### ✨ [Live Site](https://devise-collaboration-platform.herokuapp.com/) 
 
+### Application Homepage
+![ScreenShot](./src/assets/images/Devise-Home.png)
+
 ***
 ## Install
 
