@@ -10,7 +10,7 @@ import Membership from "./pages/Membership";
 import { Routes, Route } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Profile from "./pages/ProfilePage";
-
+import {FooterContainer} from "./pages/Footer/footerContainer"
 import IdeaBin from "./pages/IdeaBin";
 import UserProjects from "./pages/UserProjects";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
@@ -52,6 +52,7 @@ function App() {
         <Route path="/ideaBin" element={<IdeaBin />} />
         <Route path="/userProjects" element={<UserProjects />} />
       </Routes>
+      <FooterContainer />
     </ApolloProvider>
   );
 }
