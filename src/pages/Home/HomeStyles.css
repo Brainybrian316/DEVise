@@ -3,7 +3,7 @@ body {
   padding: 0px;
 
   background-color: #ffffff;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -89,7 +89,7 @@ nav .menu-btn,
   display: none;
 }
 .name {
-  font-family: "Montserrat";
+  /* font-family: "Montserrat"; */
   width: 500px;
   position: absolute;
   left: 22%;
@@ -104,7 +104,7 @@ nav .menu-btn,
   font-size: 15px;
 }
 .name h1 {
-  font-family: "Montserrat";
+  /* font-family: "Montserrat"; */
   font-size: 40px;
   margin: 0px;
   letter-spacing: 2px;
