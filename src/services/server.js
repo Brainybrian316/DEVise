@@ -27,7 +27,7 @@ async function startApolloServer() {
   });
 
 await server.start();
-server.applyMiddleware({ app });
+server.applyMiddleware({ app, path: '/' });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
