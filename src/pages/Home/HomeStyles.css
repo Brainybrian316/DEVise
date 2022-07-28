@@ -35,7 +35,8 @@ input {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
+  background-position: 95% 50%;
+  background-size: 600px;
   background-image: url('../../assets/images/background3.png');
 }
 nav {
@@ -407,7 +408,7 @@ nav .menu-btn,
 }
 @media (max-width: 1190px) {
   #main {
-    background-size: 1150px !important;
+    /* background-size: 1150px !important; */
   }
   .name {
     left: 50%;
@@ -447,7 +448,7 @@ nav .menu-btn,
 
 @media (max-width: 970px) {
 
-  .main {
+  #main {
     background-image: none;
   }
  
@@ -457,7 +458,7 @@ nav .menu-btn,
     transform: translate(-50%, -50%);
   }
   .about-image {
-    display:inline-block
+    display: none;
   }
   .cv-btn {
     margin-left: 27%;
