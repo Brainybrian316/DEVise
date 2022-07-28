@@ -22,7 +22,7 @@ import "./title.css";
 import { bgcolor } from "@mui/system";
 
 export default function IdeaBin(props) {
-  const {devId, setIdeaBinOpen} = props
+  const {devId, closeIdeaBin} = props
   // State to programmatically set active child
   const [activeChild, setActiveChild] = useState(0);
   const [items, setItems] = useState([]);
@@ -437,6 +437,20 @@ export default function IdeaBin(props) {
             </Grid>
           </Grid>
         </Box>
+        <Button variant='contained' onClick={() => closeIdeaBin('')}
+        sx={{
+        width: '100%',
+        height: '40px',
+        backgroundColor: 'pink',
+        color: 'white',
+        '&:hover': {
+          backgroundColor: 'pink',
+          opacity: '0.5'
+        }
+        }}
+        >
+          Return To Idea Bin
+          </Button>
       </Container>
     </>
   );
