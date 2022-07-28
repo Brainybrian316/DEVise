@@ -1,7 +1,7 @@
 import { Container } from '@mui/system';
 import { Avatar, Typography } from '@mui/material';
 import React from 'react';
-import './aboutUs.css';
+// import './aboutUs.css';
 import Developers from './Developer';
 
 export default function AboutUs() {
