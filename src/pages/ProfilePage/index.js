@@ -1,14 +1,30 @@
-import { Box, Container, Grid, Typography } from '@mui/material/';
+import { Box, Container, Grid, Typography, Button } from '@mui/material/';
 import ProfileCard from './profileCard';
 import Experience from './List';
 import FriendsList from './Friends';
 import Chip from './Chip';
 import UserProjects from './UserProjects';
+import Form from './Form';
+import {useState} from 'react'
 
 export default function ProfilePage() {
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+
+
+    function openModal() {
+        setOpen(true);
+    }
+
+
   return (
     <>
+         <Form
+    handleClose={handleClose}
+    open={open} 
+    />
       <Container maxWidth="lg">
+
         <Grid
           container
           direction="column"
@@ -54,6 +70,14 @@ export default function ProfilePage() {
               My Projects
               </Typography>
               <UserProjects /> 
+              <Button onClick={() => setOpen(true)}
+              sx={{
+                borderRadius: '10%',
+                fontSize: '3vh',
+                color: 'violet'
+              }}>
+                Create New Project
+              </Button>
             </Box>
           </Grid>
 

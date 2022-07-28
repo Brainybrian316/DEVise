@@ -114,7 +114,7 @@ export default function IdeaBin(props) {
                     fontSize: "2vw",
                   }}
                 >
-                  {author.charAt(1)}
+                  {author.charAt(0)}
                 </Avatar>
               ))}
             </Grid>
