@@ -16,7 +16,7 @@ function Header() {
         </p>
         <br></br>
         <p className="details">
-          Get your idea out of your head and into the world. Share it with a trusted community that knows how to stick handle it.
+          Get your idea out of your head and into the world. Share it with a trusted community that knows how to handle it.
         </p>
         <br></br>
         <p className="details">
