@@ -1,7 +1,6 @@
 body {
   margin: 0px;
   padding: 0px;
-
   background-color: #ffffff;
   font-family: 'Roboto', sans-serif;
 }
@@ -28,7 +27,7 @@ input {
 }
 
 .back-color{
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 #main {
   width: 100%;
@@ -36,6 +35,7 @@ input {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center top;
   background-image: url('../../assets/images/background3.png');
 }
 nav {
@@ -448,7 +448,7 @@ nav .menu-btn,
 @media (max-width: 970px) {
 
   .main {
-    background-image: none !important;
+    background-image: none;
   }
  
   .name {
