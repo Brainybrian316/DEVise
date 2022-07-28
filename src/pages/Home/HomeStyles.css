@@ -446,7 +446,7 @@ nav .menu-btn,
   }
 }
 
-@media (max-width: 970px) {
+@media (max-width: 1200px) {
 
   #main {
     background-image: none;
