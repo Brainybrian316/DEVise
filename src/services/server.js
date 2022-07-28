@@ -1,13 +1,10 @@
 
-const  { ApolloServerPluginDrainHttpServer } = require('apollo-server-core');
-const { InMemoryCache } = require('@apollo/client');
 const express = require('express');
-const http = require('http');
-const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+const db = require('./config/connection');
+const { ApolloServer } = require('apollo-server-express');
 const { resolvers, typeDefs } = require('./schemas');
 const { authMiddleware } = require('../utils/auth');
-const db = require('./config/connection');
 require("dotenv").config();
 
 
@@ -15,14 +12,10 @@ const PORT = process.env.PORT || 4000;
 
 async function startApolloServer() {
   const app = express();
-  const httpServer = http.createServer(app);
 
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    csrfPrevention: true,
-    cache: new InMemoryCache(),
-    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
     context: authMiddleware
   });
 
