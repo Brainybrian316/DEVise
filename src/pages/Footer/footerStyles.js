@@ -1,14 +1,12 @@
 import styled from "styled-components";
+import footerBackground from "../../assets/images/website-footer-background.png"
 
 export const Container = styled.div`
   padding: 80px 60px;
-  background: radial-gradient(
-    circle,
-    rgba(92, 39, 251, 1) 0%,
-    rgba(122, 71, 247, 1) 100%
-  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background:url(${footerBackground});
 `;
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

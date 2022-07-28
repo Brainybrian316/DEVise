@@ -1,62 +1,35 @@
 [
   {
-    "_id": "62dc637ccf6b8b047473ebd1",
-    "firstName": "Mustafa",
-    "lastName": "Blanda",
-    "username": "MustafaBlanda",
-    "email": "MustafaBlanda.Fahey@yahoo.com",
-    "password": "mixotevo",
+    "_id": "62df4529e4cb3b26874e4852",
+    "firstName": "Leon",
+    "lastName": "Kuvalis",
+    "username": "LeonKuvalis",
+    "email": "LeonKuvalis_Stracke74@yahoo.com",
+    "password": "famimaro",
     "userProjects": [
-      {
-        "contributors": [],
-        "images": [],
-        "videos": [],
-        "tags": [],
-        "rating": 0,
-        "numReviews": 0,
-        "price": 0,
-        "_id": "62dc605a2e1e28173ad438cb"
-      }
+      "62df44eb384759fbdba816db"
     ]
   },
   {
-    "_id": "62dc637ccf6b8b047473ebd3",
-    "firstName": "Beverly",
-    "lastName": "Pouros",
-    "username": "BeverlyPouros",
-    "email": "BeverlyPouros.Boyer50@hotmail.com",
-    "password": "demehoru",
+    "_id": "62df4529e4cb3b26874e4854",
+    "firstName": "Leopold",
+    "lastName": "Kuhn",
+    "username": "LeopoldKuhn",
+    "email": "LeopoldKuhn.Kertzmann9@gmail.com",
+    "password": "fuyazeja",
     "userProjects": [
-      {
-        "contributors": [],
-        "images": [],
-        "videos": [],
-        "tags": [],
-        "rating": 0,
-        "numReviews": 0,
-        "price": 0,
-        "_id": "62dc605a2e1e28173ad438cd"
-      }
+      "62df44eb384759fbdba816d9"
     ]
   },
   {
-    "_id": "62dc637ccf6b8b047473ebd5",
-    "firstName": "Valentine",
-    "lastName": "Hoeger",
-    "username": "ValentineHoeger",
-    "email": "ValentineHoeger31@yahoo.com",
-    "password": "qayuyeye",
+    "_id": "62df4529e4cb3b26874e4856",
+    "firstName": "August",
+    "lastName": "Lehner",
+    "username": "AugustLehner",
+    "email": "AugustLehner.Gutmann@hotmail.com",
+    "password": "vugimego",
     "userProjects": [
-      {
-        "contributors": [],
-        "images": [],
-        "videos": [],
-        "tags": [],
-        "rating": 0,
-        "numReviews": 0,
-        "price": 0,
-        "_id": "62dc605a2e1e28173ad438c9"
-      }
+      "62df44eb384759fbdba816d9"
     ]
   }
 ]

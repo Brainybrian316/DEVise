@@ -13,11 +13,12 @@ import MenuItem from '@mui/material/MenuItem';
 import SignupBtn from './ui/SignupBtn';
 import LoginBtn from './ui/LoginBtn';
 import { Link } from 'react-router-dom';
+import LogoutBtn from './ui/LogoutBtn';
+import ProfileBtn from './ui/ProfileBtn';
 
 // *************variables*****************
-const pages = ['Projects', 'Idea Bin', 'Dashboard', 'membership', 'Profile', 'About', 'Contact',];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
+const pages = ['IdeaBin', 'UserProjects', 'membership', 'About', 'Contact'];
+const settings = ['Profile', 'Logout'];
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -38,13 +39,13 @@ export default function NavBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Box
+          <Box
             id="logo"
             component="img"
             sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
             alt="DEVise logo"
-            src='https://i.postimg.cc/ThFt1dmY/DEVise-D-Logo-Ver1-0.png'
-        />
+            src="https://i.postimg.cc/ThFt1dmY/DEVise-D-Logo-Ver1-0.png"
+          />
 
           {/* <Link to="/"
             style={{
@@ -72,7 +73,6 @@ export default function NavBar() {
           </Typography>
           {/* </Link> */}
 
-          
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -105,9 +105,10 @@ export default function NavBar() {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                  <Link style={{textDecoration: "none", color: "black"}}
-                     to={`/${page}`}>{page}</Link>
-                    </Typography>
+                    <Link style={{ textDecoration: 'none', color: 'black' }} to={`/${page}`}>
+                      {page}
+                    </Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -118,8 +119,8 @@ export default function NavBar() {
             component="img"
             sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
             alt="DEVise logo"
-            src='https://i.postimg.cc/ThFt1dmY/DEVise-D-Logo-Ver1-0.png'
-        />
+            src="https://i.postimg.cc/ThFt1dmY/DEVise-D-Logo-Ver1-0.png"
+          />
           <Typography
             variant="h5"
             noWrap
@@ -138,7 +139,7 @@ export default function NavBar() {
           >
             DEVISE
           </Typography>
-          
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -146,41 +147,114 @@ export default function NavBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-               <Link style={{textDecoration: "none", color: "white"}}
-               to={`/${page}`}>
-                {page}
+                <Link style={{ textDecoration: 'none', color: 'white' }} to={`/${page}`}>
+                  {page}
                 </Link>
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0, }}>
-            <LoginBtn  />
-            <SignupBtn />
-            <Menu
-              sx={{ mt: '45px', }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+
+          {localStorage.getItem('token') ? (
+            <Box sx={{ flexGrow: 0 }}>
+              <ProfileBtn />
+              <LogoutBtn />
+              <Menu
+                sx={{ mt: '45px' }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => (
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+          ) : (
+            <Box sx={{ flexGrow: 0 }}>
+              <LoginBtn />
+              <SignupBtn />
+              <Menu
+                sx={{ mt: '45px' }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => (
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+          )}
         </Toolbar>
       </Container>
     </AppBar>
   );
-};
+}
+
+// {localStorage.getItem('token') ? (
+//   <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+//     <Button
+//       onClick={handleCloseNavMenu}
+//       sx={{ my: 2, color: 'white', display: 'block' }}
+//     >
+//       <Link style={{textDecoration: "none", color: "white"}}
+//       to="/Profile">
+//         Profile
+//       </Link>
+//     </Button>
+//     <Button
+//       onClick={handleCloseNavMenu}
+//       sx={{ my: 2, color: 'white', display: 'block' }}
+//     >
+//       <Link style={{textDecoration: "none", color: "white"}}
+//       to="/Logout">
+//         Logout
+//       </Link>
+//     </Button>
+//   </Box>
+// ) : (
+//   <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+//     <Button
+//       onClick={handleCloseNavMenu}
+//       sx={{ my: 2, color: 'white', display: 'block' }}
+//     >
+//       <Link style={{textDecoration: "none", color: "white"}}
+//       to="/Signup">
+//         Signup
+//       </Link>
+//     </Button>
+//     <Button
+//       onClick={handleCloseNavMenu}
+//       sx={{ my: 2, color: 'white', display: 'block' }}
+//     >
+//       <Link style={{textDecoration: "none", color: "white"}}
+//       to="/Login">
+//         Login
+//       </Link>
+//     </Button>
+//   </Box>
+// )}

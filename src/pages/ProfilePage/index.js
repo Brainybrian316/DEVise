@@ -1,42 +1,65 @@
-
-import {Box, Container} from '@mui/material/';
+import { Box, Container, Grid, Typography } from '@mui/material/';
 import ProfileCard from './profileCard';
-import Friends from './friends';
+import Experience from './List';
+import FriendsList from './Friends';
+import Chip from './Chip';
+import UserProjects from './UserProjects';
 
 export default function ProfilePage() {
   return (
     <>
-  <Container
-    maxWidth="100%"
-    maxHeight="100%"
-     sx = {{
-      margin: '0',
-      padding: '0',
-      display: 'flex',
-      flexDirection: 'row',
-     }}
-  >
-  <Box
-  sx={{
-    width: 500,
-    height: '100vh',
-    backgroundColor: 'primary.light',
-  }}
->
-  <ProfileCard />
-  <Friends />
-  </Box>
-<Box
-  sx={{
-    width: '100vw',
-    height: '100vh',
-    float : 'right',
-    backgroundColor: '#ffab91',
-  }}
->
+      <Container maxWidth="lg">
+        <Grid
+          container
+          direction="column"
+          justifyContent="space-evenly"
+          alignItems="stretch"
+          sx={{ mt: 3, mb: 3 }}
+        >
+          <Grid item
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+            xs={12} md={6} lg={4}
+          >
 
-</Box>
-</Container>
-</>
+          <ProfileCard />
+          </Grid>
+          <Grid
+            item
+            xs={12} md={6} lg={4}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              bgcolor: 'background.paper',
+            }}
+          >
+            <Box sx={{ p: 3 }}>
+            <Experience />
+            </Box>
+            <Box sx={{ p: 3 }}>
+            <Typography sx={{ mt: 1, mb: 2 }} variant="h6">
+                Languages/Tools
+                </Typography>
+            <Chip/>
+            </Box>
+            <Box sx={{ p: 3 }}>
+            <FriendsList />
+            </Box>
+
+            <Box sx={{ p: 3 }}>
+            <Typography sx={{ mt: 1, mb: 2 }} variant="h6">
+              My Projects
+              </Typography>
+              <UserProjects /> 
+            </Box>
+          </Grid>
+
+        
+        </Grid>
+      </Container>
+    </>
   );
 }

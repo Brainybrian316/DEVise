@@ -14,8 +14,8 @@ export default function Login() {
     try {
       const userLoggedIn = await login({ variables: { email, password } });
       if (userLoggedIn) {
-        alert('You are logged in');
-        console.log(userLoggedIn);
+        localStorage.setItem('token', userLoggedIn.data.login.token);
+        window.location.assign('/profile');
       }
     } catch (error) {
       alert('invalid email or password');
@@ -26,7 +26,9 @@ export default function Login() {
 
   return (
     <div>
-      <Container maxWidth="sm">
+      <Container maxWidth="sm"
+        sx={{ m: 2,  ml: 'auto', mr: 'auto', p: 2 }}
+      >
         <Box
           sx={{
             bgcolor: '#cfe8fc',
@@ -100,6 +102,7 @@ export default function Login() {
            
           </Box>
 
+    
           <Box
             sx={{
               display: 'flex',
@@ -115,10 +118,10 @@ export default function Login() {
               fontSize: '1rem',
               fontWeight: 'bold',
               '&:hover': {
-                color: '#47E9DD',
+                bgcolor: '#2c387e',
               },
              }}
-             onClick={handleSubmit}
+            onClick={handleSubmit}
             >
                 Log In
               </Button>

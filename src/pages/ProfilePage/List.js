@@ -5,7 +5,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from 'react';
 
-export default function BasicSelect() {
+export default function Experience() {
   const [Experience, setExperience] = useState('');
 
   const handleChange = (event) => {
@@ -13,7 +13,7 @@ export default function BasicSelect() {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ minWidth: 200 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Experience</InputLabel>
         <Select
