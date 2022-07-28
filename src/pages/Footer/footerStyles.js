@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import banner from "../../assets/images/website-footer-background.png"
+import footerBackground from "../../assets/images/website-footer-background.png"
 
 export const Container = styled.div`
   padding: 80px 60px;
   background-repeat: no-repeat;
   background-size: cover;
-  background:url(${banner});
+  background:url(${footerBackground});
 `;
 export const Wrapper = styled.div`
   display: flex;
