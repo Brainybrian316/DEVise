@@ -4,7 +4,7 @@ import Feature from "./Feature";
 import About from "./About";
 import Contact from "./Contact";
 
-import aboutImage from "../../assets/images/about.png";
+import aboutImage from "../../assets/images/home-page-cartoon-graphic-02.png";
 import aboutImage2 from "../../assets/images/download.png";
 
 

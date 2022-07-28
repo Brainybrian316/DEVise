@@ -36,7 +36,7 @@ input {
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('../../assets/images/background.png');
+  /* background-image: url('../../assets/images/background.png'); */
 }
 nav {
   display: flex;
@@ -406,7 +406,8 @@ nav .menu-btn,
     text-align: center;
   }
   .about-image img {
-    height: 400px;
+    width: 100%;
+  height: auto;
   }
   #features {
     height: auto;
