@@ -18,7 +18,7 @@ export const devList = [
     github: 'https://github.com/cobalt88',
     linkedin:'https://linkedin.com/in/vincent-teune',
     portfolio: 'https://vtportfolio.net/',
-    image: 'https://source.unsplash.com/random/200x200?',
+    image: require('../../assets/images/vince.jpg'),
     bio: 'Vince is a software engineer who is passionate about his craft. He is currently working on a project called DEVise.'
   },
   {
@@ -28,7 +28,7 @@ export const devList = [
     github: 'https://github.com/Vik-Maharaj',
     linkedin:'https://www.linkedin.com/in/vikaashmaharaj/',
     portfolio: 'https://vik-maharaj.github.io/vik-maharaj-web-portfolio/',
-    image: 'https://source.unsplash.com/random/200x200?',
+    image: require('../../assets/images/VIk.jpg'),
     bio: 'Vik is a software engineer who is passionate about his craft. He is currently working on a project called DEVise.'
   },
   {
