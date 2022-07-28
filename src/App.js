@@ -15,10 +15,10 @@ import IdeaBin from "./pages/IdeaBin";
 import UserProjects from "./pages/UserProjects";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-require("dotenv").config();
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: 'http://localhost:4000/graphql',
+  // uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
