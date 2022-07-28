@@ -15,6 +15,7 @@ import IdeaBin from "./pages/IdeaBin";
 import UserProjects from "./pages/UserProjects";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+require("dotenv").config();
 
 const httpLink = createHttpLink({
   uri: '/graphql',
