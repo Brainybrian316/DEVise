@@ -406,8 +406,8 @@ nav .menu-btn,
     text-align: center;
   }
   .about-image img {
-    width: 100%;
-  height: auto;
+    /* height: 400px; */
+    max-width: 95%;
   }
   #features {
     height: auto;

@@ -11,7 +11,7 @@ function Header() {
           <span>Welcome to DEVISE</span>
         </h1>
         <p className="details">
-          Welcome to DEVISE where you can share you latest
+          Welcome to DEVISE where your ideas turn into collaboration!
         </p>
         <a href="#" className="cv-btn">
           Download
