@@ -21,7 +21,8 @@ import { useGetOneDevProjectQuery } from "../../hooks/Queries";
 import "./title.css";
 import { bgcolor } from "@mui/system";
 
-export default function IdeaBin() {
+export default function IdeaBin(props) {
+  const {devId, setIdeaBinOpen} = props
   // State to programmatically set active child
   const [activeChild, setActiveChild] = useState(0);
   const [items, setItems] = useState([]);
@@ -29,7 +30,7 @@ export default function IdeaBin() {
   const [authors, setAuthors] = useState([]);
   const [videos, setVideos] = useState([]);
 
-  const { devProject } = useGetOneDevProjectQuery("62df31432aee789f0475528e");
+  const { devProject } = useGetOneDevProjectQuery(devId);
 
   useEffect(() => {
     if (devProject) {
@@ -72,6 +73,7 @@ export default function IdeaBin() {
           background: "secondary",
           height: "100vh",
           width: "100vw",
+          backgroundImage: 'rgba(255, 215, 0, 1)'
         }}
       >
         <Card

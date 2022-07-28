@@ -1,28 +1,36 @@
-
 import AspectRatio from '@mui/joy/AspectRatio';
 import { Button, Typography, Box, Card, IconButton } from '@mui/material';
 import BookmarkAdd from '@mui/icons-material/BookmarkAdd';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useGetDevProjectsQuery } from '../../hooks/Queries';
+import IdeaClick from './IdeaClick'
+import {useState} from 'react'
 
 
 
 export default function DevProjects() {
 
+  const [ideaBinOpen, setIdeaBinOpen] = useState(true)
+  const [devId, setDevId] = useState('')
   const { devProjects, loading, error } = useGetDevProjectsQuery();
 
   if (loading) return <p>Loading...</p>;
 
   if (error) return <p>Error</p>;
   
+  function openIdeaClick(id){
+    setIdeaBinOpen(!ideaBinOpen)
+    setDevId(id)
+    console.log(devId)
+  }
 
 
-
-
-  return (
-    <Box sx={{ display: 'flex', m: 2,  p: 2, justifyContent: 'space-evenly', flexWrap: 'wrap', flexDirection: 'row'   }}>
+function Page(){
+  if(ideaBinOpen) {
+    return (
+      <Box sx={{ display: 'flex', m: 2,  p: 2, justifyContent: 'space-evenly', flexWrap: 'wrap', flexDirection: 'row'   }}>
     {devProjects.map(devProject => (
-    <Card   key={devProject.id}sx={{ minWidth: '450px', maxWidth: '300px', m:2}}>
+    <Card   key={devProject._id}sx={{ minWidth: '450px', maxWidth: '300px', m:2}}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-start'  }}>
         <Typography variant='h6'>
           {devProject.title}
@@ -51,10 +59,11 @@ export default function DevProjects() {
 
       <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
 
-      <Button
+      <Button 
           variant="contained"
           sx={{ ml: 'auto', mr: 25, mb: 2, mt: 2
          }}
+         onClick={() => openIdeaClick(devProject._id)}
         >
           Learn  More
         </Button>
@@ -70,7 +79,16 @@ export default function DevProjects() {
     </Card>
     ))}
 
-    </Box>
-    
+    </Box>) 
+  } else {
+    return <IdeaClick
+    devId={devId}
+    setIdeaBinOpen={setIdeaBinOpen}
+    />
+  }
+}
+
+  return (
+   Page()
   );
 }
