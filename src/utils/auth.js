@@ -1,8 +1,13 @@
 const jwt = require('jsonwebtoken');
 require("dotenv").config();
 
-const secret = process.env.REACT_APP_ACCESS_TOKEN_SECRET;
-const expiration = process.env.REACT_APP_ACCESS_TOKEN_EXPIRATION;
+
+const secret = 'supersecret';
+const expiration = '1h';
+
+
+// const secret = process.env.REACT_APP_ACCESS_TOKEN_SECRET;
+// const expiration = process.env.REACT_APP_ACCESS_TOKEN_EXPIRATION;
 
 module.exports = {
   authMiddleware: function ({ req}) {
