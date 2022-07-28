@@ -1,8 +1,11 @@
 import styled from "styled-components";
+import footerBackground from "../../assets/images/website-footer-background.png"
 
 export const Container = styled.div`
   padding: 80px 60px;
-  background: rgba(136, 141, 206, .90);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background:url(${footerBackground});
 `;
 export const Wrapper = styled.div`
   display: flex;

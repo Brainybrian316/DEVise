@@ -10,12 +10,25 @@ function Header() {
         <h1>
           <span>Welcome to DEVISE</span>
         </h1>
+        <br></br>
         <p className="details">
-          Welcome to DEVISE where you can share you latest
+          Have an idea? Turn it into a collaboration!
         </p>
-        <a href="#" className="cv-btn">
+        <br></br>
+        <p className="details">
+          Get your idea out of your head and into the world. Share it with a trusted community that knows how to handle it.
+        </p>
+        <br></br>
+        <p className="details">
+          Once it’s live, our community can share their honest feedback with comments, up-votes and questions.
+        </p>
+        <br></br>
+        <p className="details">
+          Building can be lonely. Amplify your efforts with people that share the same passion for your idea, and start building today!
+        </p>
+        {/* <a href="#" className="cv-btn">
           Download
-        </a>
+        </a> */}
       </div>
     </div>
   );
