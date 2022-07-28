@@ -13,7 +13,7 @@
   </a>
 </p>
 
->  Coming soon...
+>  Devise is a simple, open-source, web-based application for collaboration, creating, and connecting with people. The goal is to create a platform for people to connect with each other and work on projects together. The application also features an idea bin where users can find ideas and templates to help them create their own projects. User can post project built from templates or ideas they have created themselves for others to use or reference. Finally, users are able to connect with other users  who are looking to build a project or receive help with a project they are  currently working on. This app is a full-stack application that uses MERN stack. The application is built on the Express.js framework and uses the MongoDB database. We use  graphQL to query and mutate data in the database. Finally, the application is deployed on Heroku. This is a big project and still a work in progress. We are currently working on a new version of the application that will be released in the future. For now this is the version 1.0.0 of the application and our MVP.
 
 ## Table of Contents
 - [Demo](#demo-of-project)
@@ -28,7 +28,7 @@
 ***
 ## Demo of Project 
 
-### ✨ [Live Site]() 
+### ✨ [Live Site](https://devise-collaboration-platform.herokuapp.com/) 
 
 ***
 ## Install
@@ -42,9 +42,13 @@ npm install
 Run the following command at the root of your project to start the server:
 <br>
 
-To run the server in development mode run:
+To run the server run:
 ```sh
 npm start
+```
+To run the server in development run:
+```sh
+npm run develop
 ```
 To launch the test runner in the interactive watch mode run:
 ```sh
