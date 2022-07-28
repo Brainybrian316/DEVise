@@ -32,7 +32,7 @@ input {
 }
 #main {
   width: 100%;
-  height: 768px;
+  height: 650px;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
@@ -97,11 +97,12 @@ nav .menu-btn,
   transform: translate(-22%, -50%);
 }
 .name span {
+  font-size: 75px;
   color: #1976d2;
 }
 .name .details {
   color: #333232;
-  font-size: 15px;
+  font-size: 18px;
 }
 .name h1 {
   /* font-family: "Montserrat"; */
@@ -151,7 +152,7 @@ nav .menu-btn,
 #about {
   margin-top: 0px;
   width: 100%;
-  height: 120vh;
+  height: 90vh;
   background-color: #ffffff;
   box-sizing: border-box;
   display: flex;
@@ -197,19 +198,19 @@ nav .menu-btn,
   width: 50%;
 }
 .about-image img {
-  width: 600px;
+  width: 550px;
 }
 
 #features {
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
-  font-family: calibri;
+  /* font-family: calibri; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 40px;
+  /* padding-top: 40px; */
   background-color: #ffffff;
 }
 .a-container {

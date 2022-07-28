@@ -10,6 +10,7 @@ function Header() {
         <h1>
           <span>Welcome to DEVISE</span>
         </h1>
+        <br></br>
         <p className="details">
           Have an idea? Turn it into a collaboration!
         </p>
