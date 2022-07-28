@@ -118,7 +118,7 @@ export default function Login() {
               fontSize: '1rem',
               fontWeight: 'bold',
               '&:hover': {
-                color: '#47E9DD',
+                bgcolor: '#2c387e',
               },
              }}
             onClick={handleSubmit}
