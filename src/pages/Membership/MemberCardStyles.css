@@ -3,7 +3,7 @@
 .pricing {
   width: 100%;
   padding: 9rem 3rem;
-  background: rgb(251, 248, 248);
+  /* background: rgb(251, 248, 248); */
 }
 
 .memh1{
@@ -11,7 +11,7 @@ text-align: center;
 text-decoration: solid;
 padding-top: 35px;
 text-shadow: 1px 1px 1px #e3d266da;
-background-color: rgb(251, 248, 248);
+/* background-color: rgb(251, 248, 248); */
 font-size: 41px;
 }
 
@@ -21,6 +21,7 @@ font-size: 41px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 40px;
+  background-color: white;
 }
 
 .card {

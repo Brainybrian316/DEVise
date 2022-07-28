@@ -156,7 +156,7 @@ nav .menu-btn,
   /* background-color: #ffffff; */
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('../../assets/images/background2.png');
+  /* background-image: url('../../assets/images/background2.png'); */
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -217,7 +217,7 @@ nav .menu-btn,
   /* background-color: #ffffff; */
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('../../assets/images/background2.png');
+  /* background-image: url('../../assets/images/background2.png'); */
 }
 .a-container {
   display: flex;
