@@ -356,7 +356,10 @@ nav .menu-btn,
 }
 
 #contact {
-  background-color: #1976d2;
+  /* background-color: #1976d2; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../../assets/images/website-footer-background.png');
   display: flex;
   flex-direction: column;
   justify-content: center;
