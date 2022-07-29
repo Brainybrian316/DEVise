@@ -29,7 +29,7 @@ export const devList = [
     linkedin:'https://www.linkedin.com/in/vikaashmaharaj/',
     portfolio: 'https://vik-maharaj.github.io/vik-maharaj-web-portfolio/',
     image: require('../../assets/images/VIk.jpg'),
-    bio: 'Vik is a software engineer who is passionate about his craft. He is currently working on a project called DEVise.'
+    bio: '"Vik is a web developer, obsessed about (and working towards building) technologies of the future.'
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const devList = [
     github: 'https://github.com/onlydeniros',
     linkedin:'https://www.linkedin.com/in/deniro-dumas-7b57491ba/',
     portfolio: 'https://onlydeniros.github.io/pro-portfolio/',
-    image: 'https://source.unsplash.com/random/200x200?',
+    image: require('../../assets/images/Deniro.jpeg'),
     bio: 'Deniro is a software engineer who is passionate about his craft. He is currently working on a project called DEVise.'
   },
   {
