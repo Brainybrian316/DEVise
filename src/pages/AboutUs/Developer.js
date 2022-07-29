@@ -56,7 +56,9 @@ export default function Developers() {
                     />
                   </IconButton>
                   <IconButton>
-                    <Web href={dev.portfolio} />
+                    <Web  onClick={() => {
+                        window.open(dev.  portfolio, '_blank');
+                      }} />
                   </IconButton>
                 </Box>
               </Box>

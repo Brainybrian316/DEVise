@@ -2,6 +2,7 @@
   "name": "devise",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:4000",
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@emailjs/browser": "^3.6.2",
@@ -35,8 +36,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \" nodemon ./src/services/server.js\"",
-    "develop": "nodemon ./src/services/server.js",
+    "develop": "concurrently \"react-scripts start\" \" nodemon ./src/services/server.js\"",
+    "start": "concurrently \"react-scripts start\" \" node ./src/services/server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

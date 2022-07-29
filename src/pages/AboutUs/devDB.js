@@ -18,7 +18,7 @@ export const devList = [
     github: 'https://github.com/cobalt88',
     linkedin:'https://linkedin.com/in/vincent-teune',
     portfolio: 'https://vtportfolio.net/',
-    image: 'https://source.unsplash.com/random/200x200?',
+    image: require('../../assets/images/vince.jpg'),
     bio: 'Vince is a software engineer who is passionate about his craft. He is currently working on a project called DEVise.'
   },
   {
@@ -28,8 +28,8 @@ export const devList = [
     github: 'https://github.com/Vik-Maharaj',
     linkedin:'https://www.linkedin.com/in/vikaashmaharaj/',
     portfolio: 'https://vik-maharaj.github.io/vik-maharaj-web-portfolio/',
-    image: 'https://source.unsplash.com/random/200x200?',
-    bio: 'Vik is a software engineer who is passionate about his craft. He is currently working on a project called DEVise.'
+    image: require('../../assets/images/VIk.jpg'),
+    bio: '"Vik is a web developer, obsessed about (and working towards building) technologies of the future.'
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const devList = [
     github: 'https://github.com/onlydeniros',
     linkedin:'https://www.linkedin.com/in/deniro-dumas-7b57491ba/',
     portfolio: 'https://onlydeniros.github.io/pro-portfolio/',
-    image: 'https://source.unsplash.com/random/200x200?',
+    image: require('../../assets/images/Deniro.jpeg'),
     bio: 'Deniro is a software engineer who is passionate about his craft. He is currently working on a project called DEVise.'
   },
   {
@@ -48,7 +48,7 @@ export const devList = [
     github: 'https://github.com/ethancahill',
     linkedin:'https://www.linkedin.com/in/ethan-cahill-49b485231',
     portfolio: 'https://ethancahill.github.io/cahill_portfolio/',
-    image: 'https://scontent.ftpa1-1.fna.fbcdn.net/v/t1.6435-9/107076101_3679131242103273_4833788450492534514_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=OU4MVbWGJWcAX_-NUaa&_nc_ht=scontent.ftpa1-1.fna&oh=00_AT8LB-8EhIIYp-bWgdk6zU8AF-g5yfuBondK-UDIosNKMA&oe=63097544',
+    image: require('../../assets/images/ethan.jpeg'),
     bio: 'Ethan is a software engineer, and a huge fan of the muppets. He enjoys creating cool sites and discovering new techniques to improve his skillset. He believes that having a growth mindset is the key to being successful in anything you do.'
   },
 
